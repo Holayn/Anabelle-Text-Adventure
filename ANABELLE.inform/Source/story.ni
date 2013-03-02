@@ -16,12 +16,12 @@ The max health of the player is usually 100.
 
 The present health of a person is usually 100.
 
-The player has a number called max hunger.
-The player has a number called present hunger.
+A person has a number called max hunger.
+A person has a number called present hunger.
 
-The max hunger of the player is usually 100.
+The max hunger of a person is usually 100.
 
-The present hunger of the player is usually 100.
+The present hunger of a person is usually 100.
 
 Definition: a person is dead if his present hunger is less than 1.
 
@@ -193,6 +193,14 @@ Letter magnets is scenery in Kitchen. The description is "I made it spell 'Hello
 Instead of examining Letter magnets for the second time:
 	say "tam rednu…hmmm.".
 
+The sink is a scenery supporter in Kitchen. The description is "Our sink. You can put stuff underneath it."
+
+The axe is a thing. The description is "Daddy's red fire axe."
+
+Instead of looking under the sink:
+	say "I see Daddy's red fire axe here. I lift it up. It's quite heavy but I can manage.";
+	move axe to player.
+
 	
 [BEDROOM]	
 
@@ -272,21 +280,134 @@ Instead of going through the window:
 	if bedsheets are not tied:
 		say "It's a looooong way down!".
 		
-Parking Lot is a room. It is west of Trainyard. It is east of Town Square.
+Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the west and the town square to the east." It is west of Trainyard. It is east of Town Square.
+
+Every turn:
+	If the player is in the Parking Lot:
+		if the player has been in Parking Lot for less than 2 turns:
+			say "I can see a strange looking person here. He's lying on the pavement, pawing at something and making groaning noises.";
+		if the strange looking person is in DEATH:
+			say "I see the dead person just lying here."
+
+Strange Looking Person is a male person in the Parking Lot. It is undescribed. The description is "He's scary looking. I shouldn't get too close."
+
+[done]
+Every turn:
+	If the location of the strange looking person is the location of the player:
+		if the player has been in Parking Lot for only 2 turns:
+			say "The strange looking person notices me and gets up, groaning and moaning. It's coming for me!";
+		if the player has been in Parking Lot for more than 2 turns:
+			say "The strange looking person is groaning and moaning and is trying to kill me!";
+			if a random chance of 1 in 3 succeeds:
+				say "The strange looking person swings at me but I dodge it.";
+			otherwise:
+				Let Z be a random number from 1 to 25;
+				if Z is greater than 20:
+					say "The strange looking person hits me really hard! Owieee…";
+					decrease the present health of the player by Z;
+					say "My health goes down by [Z].";
+					say "[status of the player]. (Health: [the present health of the player])[line break]".
+					
+
+					
+every turn:
+	If the present health of the strange looking person is less than 1:
+		If the location of the Strange Looking Person is the location of the player:
+			move the Strange Looking Person to DEATH;
+			say "I kill the zombie!";
+
+
+
+
+[AXE MECHANIC- STRANGE LOOKING PERSON]
+
+Instead of attacking the strange looking person with the axe:
+	If the player is carrying the axe:
+		If a random chance of 2 in 3 succeeds:
+			Let F be a random number from 15 to 30;
+			If F is greater than 25:
+				say "My axe swing sinks into the zombie!";
+				decrease the present health of the strange looking person by F;
+				say "I damaged the zombie for [F] HP.";
+				say "(Health: [the present health of the strange looking person])[line break]";
+			otherwise:
+				say "I swing my axe at the zombie, hitting him!";
+				decrease the present health of the strange looking person by F;
+				say "I damaged the zombie for [F] HP.";
+				say "(Health: [the present health of the strange looking person])[line break]";
+		otherwise:
+			say "I swing my axe but I miss!";
+	otherwise:
+		say "I don't have an axe!".
+
+Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
+
+
+Instead of attacking the strange looking person:
+	say "What do I attack the person with?"
+
+
+
+[GUN MECHANIC]
+
+[Instead of attacking the Assassin with the samurai sword:
+	If the player is carrying the samurai sword:
+		If a random chance of 2 in 3 succeeds:
+			Let F be a random number from 1 to 25;
+			If F is greater than 20:
+				say "Your blade heavily damages the Assassin!";
+				decrease the present health of the Assassin by F;
+				say "The Assassin has been damaged for [F] HP.";
+				say "(Health: [the present health of the Assassin])[line break]";
+			otherwise:
+				say "You slice the Assassin with your blade!";
+				decrease the present health of the Assassin by F;
+				say "The Assassin has been damaged for [F] HP.";
+				say "(Health: [the present health of the Assassin])[line break]";
+		otherwise:
+			say "The Assassin blocks your attack!".;
+	otherwise:
+		say "You need a sword to attack!".]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to Apartment Living Room;
+	move player to Parking Lot;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
 	move pills to player;
-	move bedsheets to player.
+	move bedsheets to player;
+	move axe to player.
 
 
+DEATH is a room.
+
+
+[PAY ATTENTION FIRST TO GENERAL GAME THEN CONCENTRATE CHANGING THE YOUS TO I'S]
 
 
 
