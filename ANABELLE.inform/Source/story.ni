@@ -28,7 +28,7 @@ Definition: a person is dead if his present hunger is less than 1.
 Definition: a person is dead if his present health is less than 1.
 
 An every turn rule:
-	if a person is dead:
+	if the player is dead:
 		say "I think I'll just lie down and sleep now.";
 		end the game in death.
 		
@@ -167,7 +167,7 @@ Instead of unlocking cupboards with key:
 
 The bullets is a thing. The bullets is in the cupboards. The printed name is "case of [bullet-count] bullet(s) for Daddy's revolver". The bullets have a number called bullet-count. The bullet-count is usually 8. The description is "Some bullets for my Daddy's revolver."
 
-The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, he always told me."
+The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot[roman type] this thing."
 
 The cupboard key is a thing. The cupboard key unlocks the cupboards. The cupboard key can be found. The cupboard key is not found.
 
@@ -193,7 +193,7 @@ Letter magnets is scenery in Kitchen. The description is "I made it spell 'Hello
 Instead of examining Letter magnets for the second time:
 	say "tam rednu…hmmm.".
 
-The sink is a scenery supporter in Kitchen. The description is "Our sink. You can put stuff underneath it."
+The sink is a scenery supporter in Kitchen. The description is "Our sink. Daddy puts stuff underneath it."
 
 The axe is a thing. The description is "Daddy's red fire axe."
 
@@ -210,19 +210,80 @@ I can see our living room to the north and our bathroom to the west."
 
 The bed is a scenery supporter in the Bedroom. "Mommy and Daddy's big bed! I feel so small lying on it. They have such big pillows and big bedsheets!"
 
-Pillows is a thing on the bed. It is undescribed. The description is "Big! Maybe I can use these somehow...".
+Pillows is a thing on the bed. It is undescribed. The description is "Big! Covered with big white pillowcases!".
+
+Pillowcase is a thing on the bed. It is undescribed. The description is "Big! Maybe I can combine something with this pillowcase to make something useful…".
+
+Understand "combine [something] with [something]" as combining it with. Combining it with is an action applying to two carried things. 
+
+The combining it with action has an object called the item built.
+
+Setting action variables for combining something with something: 
+	let X be a list of objects; 
+	add the noun to X; 
+	add the second noun to X; 
+	sort X; 
+	repeat through the Table of Outcome Objects: 
+		let Y be the component list entry; 
+		sort Y; 
+		if X is Y: 
+			now the item built is the result entry.
+Check combining it with: 
+	if the item built is nothing, 
+		say "I can't combine [the noun] and [the second noun] into anything useful." instead.
+Carry out combining it with: 
+	move the item built to the holder of the noun; 
+	move the noun to DEATH; 
+	move the second noun to DEATH.
+Report combining it with: 
+	say "I now have a [an item built]!".
+
+
+Table of Outcome objects
+component list			result
+{pillowcase, yarn}			pillowcase bag
+
+pillowcase bag is a thing.	
 
 A thing can be tied or untied.
 
-Bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can use these somehow...".
+An every turn rule:
+	if the player is not carrying the pillowcase bag:
+		change the carrying capacity of the player to 3;
+	if the player is carrying the pillowcase bag:
+		change the carrying capacity of the player to 10.
+
+Check taking a thing:
+	if the player is not carrying the pillowcase bag:
+		if the player is carrying 3 things:
+			say "I can't hold anymore! I'm going to have to find a way to hold more things…" instead;
+	if the player is carrying the pillowcase bag:
+		if the player is carrying 10 things:
+			say "I can't hold anymore! I'm going to have to make some room in my bag…" instead;
+			
+Instead of taking scenery:
+	say "Mmmph! I can't move it!"
+
+[An every turn rule:	
+	Instead of printing the things inside a container:
+		say "I see: [line break]"; list the contents of the container, with newlines, indented;]
+		
+	
+		
+poop is thing in apartment living room. it is undescribed.
+piss is thing in apartment living room. it is undescribed.
+
+Bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
 
 Nightstand is scenery container in the Bedroom. It is closed and openable. The description is "Mommy and Daddy's nightstand. It has a drawer in it."
+
+Yarn is a thing inside the Nightstand. The description is "Some of Mommy's yarn. Maybe I can make something with it…". 
 
 Flashlight is a device inside the Nightstand. The description is "Daddy's flashlight. He uses it to look under the sink." The flashlight is unlit.
 
 understand "drawer" as nightstand.
 Instead of opening nightstand:
-	say "I open the nightstand and I can see a flashlight here.";
+	say "I open the nightstand and I can see a flashlight here and some yarn.";
 	now the nightstand is open.
 	
 Batteries is a thing.
@@ -241,9 +302,17 @@ After switching on the flashlight:
 		say "The flashlight doesn't have batteries…".
 		
 
-Bathroom is west of Bedroom. "A small, bathroom. There's a toilet, a shower, a sink, and a medicine cabinet here. 
+Bathroom is west of Bedroom. "Our small bathroom. There's a toilet, a shower, a sink, and a medicine cabinet here. 
 
 I can see our bedroom to the east."
+
+Toilet is scenery in bathroom. The description is "It's just our shiny, white toilet.";
+
+Shower is scenery in bathroom. The description is "It's just our shower.";
+
+BathroomSink is scenery in bathroom. The printed name of the BathroomSink is "Sink". The description is "Our sink. Nothing too special."
+
+understand "sink" as bathroomsink.
 
 Medicine cabinet is scenery container in Bathroom. It is closed and openable. The description is "When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here."
 
@@ -282,12 +351,19 @@ Instead of going through the window:
 		
 Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the west and the town square to the east." It is west of Trainyard. It is east of Town Square.
 
+			[ENCOUNTER WITH STRANGE PERSON]
 Every turn:
 	If the player is in the Parking Lot:
 		if the player has been in Parking Lot for less than 2 turns:
 			say "I can see a strange looking person here. He's lying on the pavement, pawing at something and making groaning noises.";
 		if the strange looking person is in DEATH:
-			say "I see the dead person just lying here."
+			if the player has been in Parking Lot for 1 turns:
+				say "I see the dead person just lying here.";
+			move deadman to Parking Lot.
+			
+			
+
+
 
 Strange Looking Person is a male person in the Parking Lot. It is undescribed. The description is "He's scary looking. I shouldn't get too close."
 
@@ -296,26 +372,42 @@ Every turn:
 	If the location of the strange looking person is the location of the player:
 		if the player has been in Parking Lot for only 2 turns:
 			say "The strange looking person notices me and gets up, groaning and moaning. It's coming for me!";
-		if the player has been in Parking Lot for more than 2 turns:
+			now the strange looking person is angry;
+
+			
+Every turn rule:
+	if the location of the strange looking person is the location of the player:
+		if the strange looking person is angry:
 			say "The strange looking person is groaning and moaning and is trying to kill me!";
-			if a random chance of 1 in 3 succeeds:
-				say "The strange looking person swings at me but I dodge it.";
-			otherwise:
-				Let Z be a random number from 1 to 25;
-				if Z is greater than 20:
+			if a random chance of 2 in 3 succeeds:
+				Let Z be a random number from 1 to 15;
+				if Z is greater than 10:
 					say "The strange looking person hits me really hard! Owieee…";
 					decrease the present health of the player by Z;
 					say "My health goes down by [Z].";
-					say "[status of the player]. (Health: [the present health of the player])[line break]".
-					
+					say "[status of the player]. (Health: [the present health of the player])[line break]";
+				otherwise:
+					say "The strange looking person hits me hard.";
+					decrease the present health of the player by Z;
+					say "My health goes down by [Z].";
+					say "(Health: [the present health of the player])[line break]";
+			otherwise:
+				say "The strange looking person swings at me but I dodge it.";
+
+
+A person can be angry or not angry.					
 
 					
-every turn:
+[every turn:
 	If the present health of the strange looking person is less than 1:
-		If the location of the Strange Looking Person is the location of the player:
-			move the Strange Looking Person to DEATH;
-			say "I kill the zombie!";
+		the strange looking person is dead;
+		say "I kill the zombie!";]
 
+An every turn rule:
+	if the present health of the strange looking person is less than 1:
+		move the strange looking person to the DEATH;
+		if the strange looking person is in the DEATH for less than 2 turns, say "I land a killing blow and the person falls to the ground!";
+		
 
 
 
@@ -323,9 +415,9 @@ every turn:
 
 Instead of attacking the strange looking person with the axe:
 	If the player is carrying the axe:
-		If a random chance of 2 in 3 succeeds:
-			Let F be a random number from 15 to 30;
-			If F is greater than 25:
+		If a random chance of 4 in 5 succeeds:
+			Let F be a random number from 20 to 40;
+			If F is greater than 30:
 				say "My axe swing sinks into the zombie!";
 				decrease the present health of the strange looking person by F;
 				say "I damaged the zombie for [F] HP.";
@@ -344,30 +436,37 @@ Attacking it with is an action applying to two things. Understand "attack [somet
 
 
 Instead of attacking the strange looking person:
-	say "What do I attack the person with?"
+	say "What do I attack the person with?";
 
+Understand the command "shoot" as something new.
+Shooting it with is an action applying to two things. Understand "shoot [something] with [something]" as shooting it with.
 
+An every turn rule:
+	if the player is dead:
+		end the game in death.
 
-[GUN MECHANIC]
+understand "gun" as the revolver.
 
-[Instead of attacking the Assassin with the samurai sword:
-	If the player is carrying the samurai sword:
-		If a random chance of 2 in 3 succeeds:
-			Let F be a random number from 1 to 25;
-			If F is greater than 20:
-				say "Your blade heavily damages the Assassin!";
-				decrease the present health of the Assassin by F;
-				say "The Assassin has been damaged for [F] HP.";
-				say "(Health: [the present health of the Assassin])[line break]";
-			otherwise:
-				say "You slice the Assassin with your blade!";
-				decrease the present health of the Assassin by F;
-				say "The Assassin has been damaged for [F] HP.";
-				say "(Health: [the present health of the Assassin])[line break]";
+[GUN MECHANIC - STRANGE LOOKING PERSON]
+
+Instead of shooting the strange looking person with the revolver:
+	if the player is carrying the revolver:
+		If a random chance of 9 in 10 succeeds:
+			Let F be 100;
+			say "I shoot the person with my revolver, hitting him!";
+			decrease the present health of the strange looking person by F;
+			say "I damaged the zombie for [F] HP.";
+			say "(Health: [the present health of the strange looking person])[line break]";
 		otherwise:
-			say "The Assassin blocks your attack!".;
+			say "I shoot my revolver but I miss!";
 	otherwise:
-		say "You need a sword to attack!".]
+		say "I don't have a revolver!".
+	
+[AXE MECHANIC - REGULAR]
+
+
+
+[GUN MECHANIC - REGULAR]
 
 
 
@@ -401,11 +500,16 @@ Instead of going northwest:
 	move bandaids to player;
 	move pills to player;
 	move bedsheets to player;
+	move pillowcase bag to player;
 	move axe to player.
 
 
 DEATH is a room.
 
+understand "dead person" as the deadman.
+understand "person" as the deadman.
+
+deadman is a man in DEATH. The printed name is "dead person". The description is "Dead body of the disfigured person. Scary."
 
 [PAY ATTENTION FIRST TO GENERAL GAME THEN CONCENTRATE CHANGING THE YOUS TO I'S]
 
