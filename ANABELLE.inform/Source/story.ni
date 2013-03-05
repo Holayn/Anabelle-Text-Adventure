@@ -1,5 +1,7 @@
 "ANABELLE" by Kai Wong
 
+Include Rideable Vehicles by Graham Nelson.
+
 use no scoring
 
 When play begins: say "It's getting dark outside and Mommy and Daddy haven't been home for 2 months. There's strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out."
@@ -124,7 +126,7 @@ understand the command "use" as something new. understand "use [things]" as usin
 
 [APARTMENT]
 
-Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street. 
+Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street. 
 
 I can see our kitchen to the west and our bedroom to the south. Our door out is to the east."
 
@@ -140,7 +142,7 @@ Note is on the Glass Coffee Table. It is undescribed. The description is "Ella -
 
 understand "baywindow" as window.
 
-The window is a door in Apartment Living Room. The window is undescribed. The window is open. The window is north of the Apartment Living Room.Through the Window is Parking Lot. The description is "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is. I can probably tie something to this window."
+The window is a door in Apartment Living Room. The window is undescribed. The window is open. The window is north of the Apartment Living Room. Through the Window is Parking Lot. The description is "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is. I can probably tie something to this window."
 
 [KITCHEN]
 
@@ -270,10 +272,9 @@ Instead of taking scenery:
 		
 	
 		
-poop is thing in apartment living room. it is undescribed.
-piss is thing in apartment living room. it is undescribed.
+poop is thing in apartment living room. it is undescribed. the description is "Andy Bae is a MILF".
 
-Bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
+bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
 
 Nightstand is scenery container in the Bedroom. It is closed and openable. The description is "Mommy and Daddy's nightstand. It has a drawer in it."
 
@@ -349,7 +350,7 @@ Instead of going through the window:
 	if bedsheets are not tied:
 		say "It's a looooong way down!".
 		
-Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the west and the town square to the east." It is west of Trainyard. It is east of Town Square.
+Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the east and the town square to the west." It is west of Trainyard. It is east of Town Square.
 
 			[ENCOUNTER WITH STRANGE PERSON]
 Every turn:
@@ -461,28 +462,89 @@ Instead of shooting the strange looking person with the revolver:
 			say "I shoot my revolver but I miss!";
 	otherwise:
 		say "I don't have a revolver!".
+		
+understand "hit" as attacking.
 	
 [AXE MECHANIC - REGULAR]
 
+Instead of attacking the zombie with the axe:
+	If the player is carrying the axe:
+		If a random chance of 4 in 5 succeeds:
+			Let F be a random number from 20 to 40;
+			If F is greater than 30:
+				say "My axe swing sinks into the zombie!";
+				decrease the present health of the strange looking person by F;
+				say "I damaged the zombie for [F] HP.";
+				say "(Health: [the present health of the strange looking person])[line break]";
+			otherwise:
+				say "I swing my axe at the zombie, hitting him!";
+				decrease the present health of the strange looking person by F;
+				say "I damaged the zombie for [F] HP.";
+				say "(Health: [the present health of the strange looking person])[line break]";
+		otherwise:
+			say "I swing my axe but I miss!";
+	otherwise:
+		say "I don't have an axe!".
 
 
 [GUN MECHANIC - REGULAR]
 
+Instead of shooting the zombie with the revolver:
+	if the player is carrying the revolver:
+		If a random chance of 9 in 10 succeeds:
+			Let F be 100;
+			say "I shoot the person with my revolver, hitting him!";
+			decrease the present health of the strange looking person by F;
+			say "I damaged the zombie for [F] HP.";
+			say "(Health: [the present health of the strange looking person])[line break]";
+		otherwise:
+			say "I shoot my revolver but I miss!";
+	otherwise:
+		say "I don't have a revolver!".
 
 
+Zombie is a person. The zombie is in DEATH.
+
+Outdoors is a region.
+Town Square, Trainyard and Parking Lot are in Outdoors.
+
+An every turn rule:
+	if player is in Outdoors:
+		 if a random chance of 1 in 5 succeeds, say "A zombie notices me and starts coming to my direction!";
+		move zombie to location of player.
+
+Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small little house. To the east I can see a general store. To the north I can see a hardware store."
+
+Zombies is scenery in Town Square. The description is "Some of walking, some are sitting. They don't look very nice."
+
+Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
+
+Rail is scenery in Trainyard. The description is "I see the rail go on and on and on. I have a feeling that this is my ticket out of here."
+
+[TRAIN COUPLER]
+The Train is a room. The Train is north of the Trainyard. The description is "I'm standing on the train. It's derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.[line break][line break]I can see another train compartment to the east and the engine car to the west."
+
+train coupler is scenery in Train. The description is "It's twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow [bold type]break[roman type] this coupler apart."
 
 
+Engine car is a room. The engine car is west of the Train. The description is "I'm standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.[line break][line break]To the east I can see the train coupler."
 
+Container car is a room. The container car is east of the train. The description is "I'm standing inside the container car. It is yellow. I see a sleeping mat here and a crate.[line break][line break]I can see the train coupler to the west."
 
+understand the command "break" as something new.
+Breaking it with is an action applying to two things. Understand "break [something] with [something]" as breaking it with.
 
+Instead of breaking train coupler with hands:
+	say "I'm not that strong!"
 
+The engine door is a door in the Engine Car. It is undescribed. It is closed and openable. The engine door is west of the Engine car. Through the engine door is the engine room. The description is "A door leading to the engine room. It has a window."
 
+Engine window is scenery in Engine Car. The description is "I look inside. I see some panels with knobs and switches. There is a conductor's chair in there. Sitting on the chair is a dead man." [make it so you can look through instead of look at.]
+		
+Instead of going through engine door:
+	move player to engine room.
 
-
-
-
-
-
+The engine room is a room.
 
 
 
@@ -494,7 +556,7 @@ Instead of shooting the strange looking person with the revolver:
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to Parking Lot;
+	move player to Train;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
@@ -508,6 +570,8 @@ DEATH is a room.
 
 understand "dead person" as the deadman.
 understand "person" as the deadman.
+
+Hands is a thing.
 
 deadman is a man in DEATH. The printed name is "dead person". The description is "Dead body of the disfigured person. Scary."
 

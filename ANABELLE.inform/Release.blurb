@@ -1,18 +1,18 @@
 ! Blurb file created by Inform build 6G60
 
-status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/kwwong15/Desktop/ANABELLE/ANABELLE/ANABELLE.inform/Build/StatusCblorb.html"
+status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/kwwong15/Google Drive/ANABELLE/ANABELLE/ANABELLE.inform/Build/StatusCblorb.html"
 
 
 ! Identification
 
-project folder "/Users/kwwong15/Desktop/ANABELLE/ANABELLE/ANABELLE.inform"
-release to "/Users/kwwong15/Desktop/ANABELLE/ANABELLE/ANABELLE Materials/Release"
+project folder "/Users/kwwong15/Google Drive/ANABELLE/ANABELLE/ANABELLE.inform"
+release to "/Users/kwwong15/Google Drive/ANABELLE/ANABELLE/ANABELLE Materials/Release"
 
 ! Blorb instructions
 
 storyfile leafname "ANABELLE.zblorb"
-storyfile "/Users/kwwong15/Desktop/ANABELLE/ANABELLE/ANABELLE.inform/Build/output.z8" include
-ifiction "/Users/kwwong15/Desktop/ANABELLE/ANABELLE/ANABELLE.inform/Metadata.iFiction" include
+storyfile "/Users/kwwong15/Google Drive/ANABELLE/ANABELLE/ANABELLE.inform/Build/output.z8" include
+ifiction "/Users/kwwong15/Google Drive/ANABELLE/ANABELLE/ANABELLE.inform/Metadata.iFiction" include
 cover "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/DefaultCover.jpg"
 picture 1 "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/DefaultCover.jpg"
 
