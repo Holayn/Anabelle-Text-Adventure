@@ -16,6 +16,8 @@ The max health of a person is usually 100.
 
 The max health of the player is usually 100.
 
+The present health of the player is usually 100.
+
 The present health of a person is usually 100.
 
 A person has a number called max hunger.
@@ -274,6 +276,9 @@ Instead of taking scenery:
 		
 poop is thing in apartment living room. it is undescribed. the description is "Andy Bae is a MILF".
 
+Instead of taking poop:
+	say "ANDY BAE IS A MILF."
+
 bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
 
 Nightstand is scenery container in the Bedroom. It is closed and openable. The description is "Mommy and Daddy's nightstand. It has a drawer in it."
@@ -506,16 +511,42 @@ Instead of shooting the zombie with the revolver:
 
 Zombie is a person. It is undescribed. The description is "A dead man walking!" The zombie is in DEATH.
 
+Every turn rule:
+	if the location of the zombie is the location of the player:
+		if the zombie is angry:
+			say "The zombie is groaning and moaning and is trying to kill me!";
+			if a random chance of 2 in 3 succeeds:
+				Let Z be a random number from 1 to 15;
+				if Z is greater than 10:
+					say "The zombie hits me really hard! Owieee…";
+					decrease the present health of the player by Z;
+					say "My health goes down by [Z].";
+					say "[status of the player]. (Health: [the present health of the player])[line break]";
+				otherwise:
+					say "The zombie hits me hard.";
+					decrease the present health of the player by Z;
+					say "My health goes down by [Z].";
+					say "(Health: [the present health of the player])[line break]";
+			otherwise:
+				say "The zombie lunges at me but I dodge it.";
+		otherwise:
+			say "He hasn't noticed me yet."
+				
+An every turn rule:
+	if the location of the zombie is the location of the player for three turns:
+		now the zombie is angry.
+
+
 Outdoors is a region.
 Town Square, Trainyard and Parking Lot are in Outdoors.
 
 An every turn rule:
 	if player is in Outdoors:
-		 if a random chance of 1 in 5 succeeds, say "A zombie notices me and starts coming to my direction!";
+		 if a random chance of 1 in 5 succeeds, say "A zombie starts to take notices me. He might try kill me!";
 		move zombie to location of player;
-		change the present health of the zombie to max health.
+		change the present health of the zombie to 100.
 
-Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small little house. To the east I can see a general store. To the north I can see a hardware store."
+Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store."
 
 Zombies is scenery in Town Square. The description is "Some are walking, some are sitting. They don't look very nice."
 Zombies1 is scenery in Parking Lot. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
@@ -523,6 +554,65 @@ Zombies2 is scenery in Trainyard. The printed name is "zombies". The description
 
 Understand "zombies" as zombies2.
 Understand "zombie" as zombie.
+
+
+Front of the Small House is a room. The Front of the Small house is south of Town Square. The description is "I'm at the small, dark house. It looks scary! There's a door leading inside.[line break][line break]I see the Town Square to the north."
+
+The small house's door is north of front of the small house and south of the small house's living room. The small house's door is a scenery door. The small house's door is a closed door. The description is "The front door to the small house."
+
+Instead of opening small house's door:
+	say "I open the door.";
+	now the small house's door is open.
+
+
+Small House's Living Room is a room. The Small House's Living Room is dark. "There's a fresh zombie here! Aiee!"
+Small House's Kitchen is a room. The Small House's Kitchen is west of the Small House's Living Room.
+		
+
+Rule for printing the announcement of darkness:
+	if the location is the Small House's Living Room:
+		say "Click--now I can't see anything!." instead;
+	otherwise:
+		say "I can't see anything!"
+		
+
+Front of the General Store is a room. The general store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east."
+
+Front of the Hardware Store is a room. The hardware store is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
 
@@ -559,7 +649,7 @@ understand "dead man's hand" as hand5.
 understand "man's hand" as hand5.
 
 [PANEL]
-The panel is scenery in engine room. The description is "The panel is covered with switches and buttons.[line break][line break]Lever A's light is turned off.[line break][line break]Lever B's light is turned on.[line break][line break]Lever C's light is turned off and the lever is missing. There is a large red button that says 'Start'."
+The panel is scenery in engine room. The description is "The panel is covered with switches and buttons.[line break][line break]Lever A's light is turned off.[line break][line break]Lever B's light is turned on.[line break][line break]Lever C's light is turned off and the lever is missing.[line break][line break]There is a large red button that says 'Start'."
 Lever A is a device in engine room. Lever A is scenery. Lever A is switched on.
 Lever B is a device in engine room. Lever B is scenery. Lever B is switched off.
 Lever D is a thing in engine room. It is undescribed.The description is "It looks like it can be [bold type]put[roman type] in the slot of Lever C." The printed name is "the lever that the dead man is holding".
@@ -570,17 +660,22 @@ Instead of examining Lever C:
 	if Lever C is in lever slot:
 		say "I've taken this from the dead man. I put it into the slot of lever C.";
 	otherwise:
-		say "I've taken this from the dead man. It looks like it can be [bold type]put[roman type] in the slot of Lever C." instead;
+		say "I've taken this from the dead man. It looks like the [bold type]lever[roman type]can be [bold type]put[roman type] in the slot of Lever C." instead;
 
 Instead of taking lever D:
 	say "Taken.";
 	move lever c to player;
 	move lever D to DEATH.
 	
-Lever slot is scenery in engine room. It is undescribed. The description is "It belongs to Lever C."
+Instead of switching on Lever B:
+	say "I switch the Lever B on. There's a satisfying clunk!";
+	now the Lever B is switched on.
+	
+lever slot is scenery in engine room. It is undescribed. The description is "It belongs to Lever C."
 
 understand "slot" as the lever slot.
 understand "lever C slot" as lever slot.
+understand "slot C" as the lever slot.
 
 Instead of putting lever C in lever slot:
 	say "I put the lever C into the lever slot and flip it on!";
@@ -588,6 +683,10 @@ Instead of putting lever C in lever slot:
 
 understand "lever that the dead man is holding" as lever D.
 understand "the lever that the dead man is holding" as lever D.
+
+understand "lever that the dead man is holding" as lever C.
+understand "the lever that the dead man is holding" as lever C.
+
 
 
 
@@ -603,6 +702,24 @@ understand the command "put" as something new.
 Putting it in is an action applying to two things. Understand "put [something] in [something]" as putting it in.
 
 
+Button is a device in Engine Room. It is undescribed. The Button can be pressed. The description is "The button is red. It has the word 'Start' on it."
+
+understand "red button" as the button.
+understand "large red button" as the button.
+
+
+Instead of pushing the button:
+	if Lever A is switched on:
+		if Lever B is switched on:
+			if Lever C is switched on:
+				end the game in victory;
+			otherwise:
+				say "Not all of the levers are switched on yet!";
+		otherwise:
+			say "Not all of the levers are switched on yet!";
+	otherwise:
+		say "Not all of the levers are switched on yet!"
+
 
 
 
@@ -615,14 +732,15 @@ Putting it in is an action applying to two things. Understand "put [something] i
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to engine room;
+	move player to town square;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
 	move pills to player;
 	move bedsheets to player;
 	move pillowcase bag to player;
-	move axe to player.
+	move axe to player;
+	move lever C to player.
 
 
 DEATH is a room.

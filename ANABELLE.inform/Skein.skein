@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Skein rootNode="node-0x635a70" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x608030" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x160a4c30" />
-  <item nodeId="node-0x635a70">
+  <activeNode nodeId="node-0x608030" />
+  <item nodeId="node-0x608030">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
@@ -12,7 +12,7 @@ It&apos;s getting dark outside and Mommy and Daddy haven&apos;t been home for 2 
 
 ANABELLE
 An Interactive Fiction by Kai Wong
-Release 1 / Serial number 130305 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130306 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
@@ -22,552 +22,401 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="445">NO</temporary>
+    <temporary score="63">NO</temporary>
     <children>
-      <child nodeId="node-0x1a266af0" />
-      <child nodeId="node-0x607c00" />
-      <child nodeId="node-0x608270" />
-      <child nodeId="node-0x607d50" />
-      <child nodeId="node-0x635ac0" />
+      <child nodeId="node-0x607150" />
+      <child nodeId="node-0x6068b0" />
+      <child nodeId="node-0x606d10" />
+      <child nodeId="node-0x606e60" />
+      <child nodeId="node-0xe4b21e0" />
+      <child nodeId="node-0x607f70" />
+      <child nodeId="node-0x4762c30" />
+      <child nodeId="node-0xe4f7850" />
     </children>
   </item>
-  <item nodeId="node-0x635ac0">
+  <item nodeId="node-0xe4f7850">
+    <command xml:space="preserve">wn</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="31">YES</temporary>
+    <children>
+      <child nodeId="node-0xe42aa80" />
+    </children>
+  </item>
+  <item nodeId="node-0xe42aa80">
     <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
+    <result xml:space="preserve">Town Square
+I&apos;m here at the town square. I see some zombies milling about.
 
-The door to the engine car is to the east.
+To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="445">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="31">YES</temporary>
     <children>
-      <child nodeId="node-0x14d67e00" />
-      <child nodeId="node-0x11221ff0" />
-      <child nodeId="node-0x112ab770" />
-      <child nodeId="node-0x1126d090" />
-      <child nodeId="node-0x19fbdea0" />
-      <child nodeId="node-0x112359a0" />
-      <child nodeId="node-0xf654990" />
-      <child nodeId="node-0xf618130" />
+      <child nodeId="node-0xe47dd20" />
     </children>
   </item>
-  <item nodeId="node-0xf618130">
-    <command xml:space="preserve">x lever D</command>
-    <result xml:space="preserve">It looks like it could be put in the slot of Lever C.
+  <item nodeId="node-0xe47dd20">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="400">YES</temporary>
-  </item>
-  <item nodeId="node-0xf654990">
-    <command xml:space="preserve">x dead man</command>
-    <result xml:space="preserve">Looks like he died here…it makes me too sad to think about. He&apos;s holding something in his hand.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="419">YES</temporary>
+    <temporary score="31">YES</temporary>
     <children>
-      <child nodeId="node-0x112066c0" />
+      <child nodeId="node-0x72eb1c0" />
     </children>
   </item>
-  <item nodeId="node-0x112066c0">
-    <command xml:space="preserve">x hand</command>
-    <result xml:space="preserve">The dead man&apos;s hand is still grasping a lever.
+  <item nodeId="node-0x72eb1c0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="419">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="31">YES</temporary>
     <children>
-      <child nodeId="node-0x112448e0" />
+      <child nodeId="node-0x72217e0" />
     </children>
   </item>
-  <item nodeId="node-0x112448e0">
-    <command xml:space="preserve">x lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B, the lever that the dead man is holding or Lever slot?
+  <item nodeId="node-0x72217e0">
+    <command xml:space="preserve">x door</command>
+    <result xml:space="preserve">The front door to the small house.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="419">YES</temporary>
+    <temporary score="31">YES</temporary>
     <children>
-      <child nodeId="node-0x19fad300" />
-      <child nodeId="node-0x14d8bc40" />
+      <child nodeId="node-0x6e8ea0" />
     </children>
   </item>
-  <item nodeId="node-0x14d8bc40">
-    <command xml:space="preserve">lever that the dead man is holding</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
+  <item nodeId="node-0x6e8ea0">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You open the small house&apos;s door.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="378">YES</temporary>
-    <children>
-      <child nodeId="node-0x11239360" />
-    </children>
+    <temporary score="30">YES</temporary>
   </item>
-  <item nodeId="node-0x11239360">
-    <command xml:space="preserve">x lever that the dead man is holding</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="377">YES</temporary>
-  </item>
-  <item nodeId="node-0x19fad300">
-    <command xml:space="preserve">x lever that the dead man is holding</command>
-    <result xml:space="preserve">It looks like it can be put in the slot of Lever C.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="419">YES</temporary>
-    <children>
-      <child nodeId="node-0x19fc2df0" />
-    </children>
-  </item>
-  <item nodeId="node-0x19fc2df0">
-    <command xml:space="preserve">take lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B, the lever that the dead man is holding or Lever slot?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="419">YES</temporary>
-    <children>
-      <child nodeId="node-0x14d02270" />
-    </children>
-  </item>
-  <item nodeId="node-0x14d02270">
-    <command xml:space="preserve">lever that the dead man is holding</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="418">YES</temporary>
-  </item>
-  <item nodeId="node-0x112359a0">
-    <command xml:space="preserve">x man</command>
-    <result xml:space="preserve">Looks like he died here…it makes me too sad to think about. He&apos;s holding something in his hand.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="432">YES</temporary>
-    <children>
-      <child nodeId="node-0x14d20780" />
-    </children>
-  </item>
-  <item nodeId="node-0x14d20780">
-    <command xml:space="preserve">x hand</command>
-    <result xml:space="preserve">The dead man&apos;s hand is still grasping a lever.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="432">YES</temporary>
-    <children>
-      <child nodeId="node-0x1126d360" />
-    </children>
-  </item>
-  <item nodeId="node-0x1126d360">
-    <command xml:space="preserve">take lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B, the lever that the dead man is holding or Lever slot?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="432">YES</temporary>
-    <children>
-      <child nodeId="node-0x14de5150" />
-    </children>
-  </item>
-  <item nodeId="node-0x14de5150">
-    <command xml:space="preserve">lever that the dead man is holding</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="432">YES</temporary>
-    <children>
-      <child nodeId="node-0x19fb8190" />
-    </children>
-  </item>
-  <item nodeId="node-0x19fb8190">
-    <command xml:space="preserve">x lever</command>
-    <result xml:space="preserve">(Lever C)
-It looks like it can be put in the slot of Lever C.
-
-Lever C is currently switched off.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="431">YES</temporary>
-  </item>
-  <item nodeId="node-0x19fbdea0">
-    <command xml:space="preserve">take lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B, the lever that the dead man is holding or Lever slot?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="426">YES</temporary>
-    <children>
-      <child nodeId="node-0x14dba0d0" />
-    </children>
-  </item>
-  <item nodeId="node-0x14dba0d0">
-    <command xml:space="preserve">x lever D</command>
-    <result xml:space="preserve">It looks like it can be put in the slot of Lever C.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="426">YES</temporary>
-    <children>
-      <child nodeId="node-0x11271750" />
-    </children>
-  </item>
-  <item nodeId="node-0x11271750">
-    <command xml:space="preserve">take lever D</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="426">YES</temporary>
-    <children>
-      <child nodeId="node-0x19f9cf80" />
-    </children>
-  </item>
-  <item nodeId="node-0x19f9cf80">
-    <command xml:space="preserve">put lever into slot</command>
-    <result xml:space="preserve">I didn&apos;t understand that sentence.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="426">YES</temporary>
-    <children>
-      <child nodeId="node-0xf6ca830" />
-    </children>
-  </item>
-  <item nodeId="node-0xf6ca830">
-    <command xml:space="preserve">put lever c in lever slot</command>
-    <result xml:space="preserve">I put the lever C into the lever slot and flip it on!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="426">YES</temporary>
-    <children>
-      <child nodeId="node-0x16012a00" />
-    </children>
-  </item>
-  <item nodeId="node-0x16012a00">
-    <command xml:space="preserve">x lever slot</command>
-    <result xml:space="preserve">You see nothing special about Lever slot.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="425">YES</temporary>
-  </item>
-  <item nodeId="node-0x1126d090">
-    <command xml:space="preserve">take lever D</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="435">YES</temporary>
-    <children>
-      <child nodeId="node-0x14daf1b0" />
-      <child nodeId="node-0x16042250" />
-    </children>
-  </item>
-  <item nodeId="node-0x16042250">
-    <command xml:space="preserve">x lever c</command>
-    <result xml:space="preserve">I&apos;ve taken this from the dead man. It looks like it can be put in the slot of Lever C.
-
-Lever C is currently switched off.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="434">YES</temporary>
-  </item>
-  <item nodeId="node-0x14daf1b0">
-    <command xml:space="preserve">i</command>
-    <result xml:space="preserve">I&apos;m carrying: 
-Lever C
-an axe
-pillowcase bag
-bedsheets
-2 pills
-1 bandaids
-a case of 8 bullet(s) for Daddy&apos;s revolver
-a revolver
-(Health: 100)
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="408">YES</temporary>
-  </item>
-  <item nodeId="node-0x112ab770">
-    <command xml:space="preserve">x lever that the dead man is holding</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="391">YES</temporary>
-    <children>
-      <child nodeId="node-0x14d4e4a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x14d4e4a0">
+  <item nodeId="node-0x4762c30">
     <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
+    <result xml:space="preserve">Town Square
+I&apos;m here at the town square. I see some zombies milling about.
 
-The door to the engine car is to the east.
-
-You can see the lever that the dead man is holding here.
+To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
 
 &gt;</result>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="391">YES</temporary>
+    <changed>NO</changed>
+    <temporary score="63">YES</temporary>
     <children>
-      <child nodeId="node-0x14db2ce0" />
+      <child nodeId="node-0x72be570" />
+      <child nodeId="node-0x6af1c0" />
+      <child nodeId="node-0xe493870" />
+      <child nodeId="node-0x4752000" />
     </children>
   </item>
-  <item nodeId="node-0x14db2ce0">
+  <item nodeId="node-0x4752000">
     <command xml:space="preserve">restart</command>
     <result xml:space="preserve">Are you sure you want to restart? </result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="391">YES</temporary>
+    <temporary score="22">YES</temporary>
     <children>
-      <child nodeId="node-0x14d519a0" />
+      <child nodeId="node-0x6e4d240" />
     </children>
   </item>
-  <item nodeId="node-0x14d519a0">
+  <item nodeId="node-0x6e4d240">
     <command xml:space="preserve">yes</command>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="390">YES</temporary>
+    <temporary score="21">YES</temporary>
   </item>
-  <item nodeId="node-0x11221ff0">
-    <command xml:space="preserve">x lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B or the lever that the dead man is holding?
+  <item nodeId="node-0xe493870">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Parking Lot
+I&apos;m here in the parking lot in front of our small little apartment.
+
+I can see a trainyard to the east and the town square to the west.
+
+I can see a strange looking person here. He&apos;s lying on the pavement, pawing at something and making groaning noises.
+
+A zombie notices me and starts coming to my direction!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="399">YES</temporary>
+    <temporary score="12">YES</temporary>
+  </item>
+  <item nodeId="node-0x6af1c0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="63">YES</temporary>
     <children>
-      <child nodeId="node-0x64e04b0" />
-      <child nodeId="node-0x160bec30" />
-      <child nodeId="node-0x1607df60" />
-      <child nodeId="node-0x1606a3e0" />
+      <child nodeId="node-0x471cec0" />
+      <child nodeId="node-0x47d1a90" />
+      <child nodeId="node-0x72efe80" />
+      <child nodeId="node-0xe4be090" />
     </children>
   </item>
-  <item nodeId="node-0x1606a3e0">
-    <command xml:space="preserve">x dead man</command>
-    <result xml:space="preserve">Looks like he died here…it makes me too sad to think about. He&apos;s holding something in his hand.
+  <item nodeId="node-0xe4be090">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
 
 &gt;</result>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="372">YES</temporary>
+    <changed>NO</changed>
+    <temporary score="59">YES</temporary>
     <children>
-      <child nodeId="node-0x160bafe0" />
+      <child nodeId="node-0x7226db0" />
+      <child nodeId="node-0x6d4d40" />
     </children>
   </item>
-  <item nodeId="node-0x160bafe0">
-    <command xml:space="preserve">x man&apos;s hand</command>
-    <result xml:space="preserve">The dead man&apos;s hand is still grasping a lever.
+  <item nodeId="node-0x6d4d40">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="372">YES</temporary>
+    <temporary score="55">YES</temporary>
     <children>
-      <child nodeId="node-0xf669530" />
+      <child nodeId="node-0x4755820" />
     </children>
   </item>
-  <item nodeId="node-0xf669530">
-    <command xml:space="preserve">x lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B or LeverD?
+  <item nodeId="node-0x4755820">
+    <command xml:space="preserve">go through door</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Darkness
+It is pitch dark, and you can&apos;t see a thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="372">YES</temporary>
+    <temporary score="54">YES</temporary>
   </item>
-  <item nodeId="node-0x1607df60">
-    <command xml:space="preserve">x leverD</command>
-    <result xml:space="preserve">It looks like it could fit in the slot of Lever C.
+  <item nodeId="node-0x7226db0">
+    <command xml:space="preserve">go through door</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Darkness
+It is pitch dark, and you can&apos;t see a thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="58">YES</temporary>
+  </item>
+  <item nodeId="node-0x72efe80">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Town Square
+I&apos;m here at the town square. I see some zombies milling about.
+
+To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="380">YES</temporary>
+    <temporary score="11">YES</temporary>
+    <children>
+      <child nodeId="node-0x51452c0" />
+    </children>
   </item>
-  <item nodeId="node-0x160bec30">
-    <command xml:space="preserve">x lever that the dead man is holding</command>
+  <item nodeId="node-0x51452c0">
+    <command xml:space="preserve">x zombies</command>
+    <result xml:space="preserve">Some are walking, some are sitting. They don&apos;t look very nice.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="10">YES</temporary>
+  </item>
+  <item nodeId="node-0x47d1a90">
+    <command xml:space="preserve">x door</command>
+    <result xml:space="preserve">The front door to the small house.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="37">YES</temporary>
+    <children>
+      <child nodeId="node-0x72f2d90" />
+    </children>
+  </item>
+  <item nodeId="node-0x72f2d90">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">I open the door.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="37">YES</temporary>
+    <children>
+      <child nodeId="node-0x51f6890" />
+    </children>
+  </item>
+  <item nodeId="node-0x51f6890">
+    <command xml:space="preserve">go through door</command>
+    <result xml:space="preserve">
+Darkness
+It is pitch dark, and you can&apos;t see a thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="37">YES</temporary>
+    <children>
+      <child nodeId="node-0x72bb6a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x72bb6a0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Darkness
+It is pitch dark, and you can&apos;t see a thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="36">YES</temporary>
+  </item>
+  <item nodeId="node-0x471cec0">
+    <command xml:space="preserve">go through door</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Darkness
+It is pitch dark, and you can&apos;t see a thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="63">YES</temporary>
+    <children>
+      <child nodeId="node-0x2dbc00" />
+    </children>
+  </item>
+  <item nodeId="node-0x2dbc00">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Darkness
+It is pitch dark, and you can&apos;t see a thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="62">YES</temporary>
+  </item>
+  <item nodeId="node-0x72be570">
+    <command xml:space="preserve">x small house</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="385">YES</temporary>
+    <temporary score="17">YES</temporary>
     <children>
-      <child nodeId="node-0xf6170c0" />
+      <child nodeId="node-0x299180" />
     </children>
   </item>
-  <item nodeId="node-0xf6170c0">
-    <command xml:space="preserve">x lever</command>
-    <result xml:space="preserve">(the lever that the dead man is holding)
-You see nothing special about the lever that the dead man is holding.
+  <item nodeId="node-0x299180">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Small House
+I&apos;m at the small, dark house. It looks scary!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="384">YES</temporary>
+    <temporary score="16">YES</temporary>
   </item>
-  <item nodeId="node-0x64e04b0">
-    <command xml:space="preserve">lever that the dead man is holding</command>
-    <result xml:space="preserve">It looks like it could fit in the slot of Lever C.
+  <item nodeId="node-0x607f70">
+    <command xml:space="preserve">press poop</command>
+    <result xml:space="preserve">Nothing obvious happens.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="399">YES</temporary>
+    <temporary score="448">YES</temporary>
     <children>
-      <child nodeId="node-0x14db0d50" />
+      <child nodeId="node-0x607fc0" />
     </children>
   </item>
-  <item nodeId="node-0x14db0d50">
-    <command xml:space="preserve">take lever</command>
-    <result xml:space="preserve">Which do you mean, Lever A, Lever B or the lever that the dead man is holding?
+  <item nodeId="node-0x607fc0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Engine Room
+I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
+
+The door to the engine car is to the east.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="399">YES</temporary>
+    <temporary score="448">YES</temporary>
     <children>
-      <child nodeId="node-0xf615bb0" />
+      <child nodeId="node-0x608080" />
     </children>
   </item>
-  <item nodeId="node-0xf615bb0">
-    <command xml:space="preserve">lever that the dead man is holding</command>
-    <result xml:space="preserve">Taken.
+  <item nodeId="node-0x608080">
+    <command xml:space="preserve">x panel</command>
+    <result xml:space="preserve">The panel is covered with switches and buttons.
+
+Lever A&apos;s light is turned off.
+
+Lever B&apos;s light is turned on.
+
+Lever C&apos;s light is turned off and the lever is missing. There is a large red button that says &quot;Start&quot;.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="399">YES</temporary>
+    <temporary score="447">YES</temporary>
+  </item>
+  <item nodeId="node-0xe4b21e0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="22">YES</temporary>
     <children>
-      <child nodeId="node-0x11225240" />
+      <child nodeId="node-0x72d2fa0" />
     </children>
   </item>
-  <item nodeId="node-0x11225240">
-    <command xml:space="preserve">put lever C into slot</command>
-    <result xml:space="preserve">I didn&apos;t understand that sentence.
+  <item nodeId="node-0x72d2fa0">
+    <command xml:space="preserve">x poop</command>
+    <result xml:space="preserve">Andy Bae is a MILF
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="398">YES</temporary>
+    <temporary score="18">YES</temporary>
   </item>
-  <item nodeId="node-0x14d67e00">
-    <command xml:space="preserve">take lever d</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="445">YES</temporary>
-    <children>
-      <child nodeId="node-0x19fb0590" />
-      <child nodeId="node-0x19f6cb50" />
-    </children>
-  </item>
-  <item nodeId="node-0x19f6cb50">
-    <command xml:space="preserve">x lever c</command>
-    <result xml:space="preserve">I&apos;ve taken this from the dead man. It looks like it can be put in the slot of Lever C.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="445">YES</temporary>
-    <children>
-      <child nodeId="node-0x19ff6010" />
-      <child nodeId="node-0x14d37bc0" />
-    </children>
-  </item>
-  <item nodeId="node-0x14d37bc0">
-    <command xml:space="preserve">put lever c into slot</command>
-    <result xml:space="preserve">I didn&apos;t understand that sentence.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="439">YES</temporary>
-  </item>
-  <item nodeId="node-0x19ff6010">
-    <command xml:space="preserve">put lever c in slot</command>
-    <result xml:space="preserve">I put the lever C into the lever slot and flip it on!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="445">YES</temporary>
-    <children>
-      <child nodeId="node-0x160a4c30" />
-    </children>
-  </item>
-  <item nodeId="node-0x160a4c30">
-    <command xml:space="preserve">x lever c</command>
-    <result xml:space="preserve">I&apos;ve taken this from the dead man. It looks like it can be put in the slot of Lever C.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="444">YES</temporary>
-  </item>
-  <item nodeId="node-0x19fb0590">
-    <command xml:space="preserve">i</command>
-    <result xml:space="preserve">I&apos;m carrying: 
-the lever that the dead man is holding
-an axe
-pillowcase bag
-bedsheets
-2 pills
-1 bandaids
-a case of 8 bullet(s) for Daddy&apos;s revolver
-a revolver
-(Health: 100)
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="403">YES</temporary>
-  </item>
-  <item nodeId="node-0x607d50">
+  <item nodeId="node-0x606e60">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there.
 
@@ -576,10 +425,10 @@ a revolver
     <changed>NO</changed>
     <temporary score="490">YES</temporary>
     <children>
-      <child nodeId="node-0x607ce0" />
+      <child nodeId="node-0x606df0" />
     </children>
   </item>
-  <item nodeId="node-0x607ce0">
+  <item nodeId="node-0x606df0">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there.
 
@@ -588,10 +437,10 @@ a revolver
     <changed>YES</changed>
     <temporary score="490">YES</temporary>
     <children>
-      <child nodeId="node-0x607c70" />
+      <child nodeId="node-0x606d80" />
     </children>
   </item>
-  <item nodeId="node-0x607c70">
+  <item nodeId="node-0x606d80">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">As I open the door, a dozen zombies flood into the room, groaning and moaning, reaching and grasping their rotten arms towards me. I am trapped. I guess I&apos;ll be seeing Mommy and Daddy again very soon.
 
@@ -608,7 +457,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <changed>YES</changed>
     <temporary score="489">YES</temporary>
   </item>
-  <item nodeId="node-0x608270">
+  <item nodeId="node-0x606d10">
     <command xml:space="preserve">x baywindow</command>
     <result xml:space="preserve">I look out our open window. I can see a form of something crawling down below on the street but I can&apos;t really tell what it is.
 
@@ -617,11 +466,11 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x608190" />
-      <child nodeId="node-0x608200" />
+      <child nodeId="node-0x606c30" />
+      <child nodeId="node-0x606ca0" />
     </children>
   </item>
-  <item nodeId="node-0x608200">
+  <item nodeId="node-0x606ca0">
     <command xml:space="preserve">x window</command>
     <result xml:space="preserve">I look out our open window. I can see a form of something crawling down below on the street but I can&apos;t really tell what it is.
 
@@ -630,7 +479,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <changed>YES</changed>
     <temporary score="500">YES</temporary>
   </item>
-  <item nodeId="node-0x608190">
+  <item nodeId="node-0x606c30">
     <command xml:space="preserve">s</command>
     <result xml:space="preserve">
 Bedroom
@@ -643,10 +492,10 @@ I can see our living room to the north and our bathroom to the west.
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x6084d0" />
+      <child nodeId="node-0x606bc0" />
     </children>
   </item>
-  <item nodeId="node-0x6084d0">
+  <item nodeId="node-0x606bc0">
     <command xml:space="preserve">x bed</command>
     <result xml:space="preserve">Mommy and Daddy&apos;s big bed! I feel so small lying on it. They have such big pillows and big bedsheets!
 
@@ -655,10 +504,10 @@ I can see our living room to the north and our bathroom to the west.
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x608470" />
+      <child nodeId="node-0x606b50" />
     </children>
   </item>
-  <item nodeId="node-0x608470">
+  <item nodeId="node-0x606b50">
     <command xml:space="preserve">take bedsheets</command>
     <result xml:space="preserve">Taken.
 
@@ -667,10 +516,10 @@ I can see our living room to the north and our bathroom to the west.
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x607f80" />
+      <child nodeId="node-0x606ae0" />
     </children>
   </item>
-  <item nodeId="node-0x607f80">
+  <item nodeId="node-0x606ae0">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">
 Apartment Living Room
@@ -683,10 +532,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x607f10" />
+      <child nodeId="node-0x606a70" />
     </children>
   </item>
-  <item nodeId="node-0x607f10">
+  <item nodeId="node-0x606a70">
     <command xml:space="preserve">tie bedsheets to window</command>
     <result xml:space="preserve">I tie the bedsheets to the window and let it hang down below to the ground.
 
@@ -695,10 +544,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x607ea0" />
+      <child nodeId="node-0x606a00" />
     </children>
   </item>
-  <item nodeId="node-0x607ea0">
+  <item nodeId="node-0x606a00">
     <command xml:space="preserve">go through window</command>
     <result xml:space="preserve">You can&apos;t go that way.
 
@@ -707,10 +556,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x607e30" />
+      <child nodeId="node-0x606990" />
     </children>
   </item>
-  <item nodeId="node-0x607e30">
+  <item nodeId="node-0x606990">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">You can&apos;t go that way.
 
@@ -719,10 +568,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="510">YES</temporary>
     <children>
-      <child nodeId="node-0x607dc0" />
+      <child nodeId="node-0x606920" />
     </children>
   </item>
-  <item nodeId="node-0x607dc0">
+  <item nodeId="node-0x606920">
     <command xml:space="preserve">open window</command>
     <result xml:space="preserve">That&apos;s already open.
 
@@ -731,7 +580,7 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="509">YES</temporary>
   </item>
-  <item nodeId="node-0x607c00">
+  <item nodeId="node-0x6068b0">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -743,10 +592,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="458">YES</temporary>
     <children>
-      <child nodeId="node-0x607b90" />
+      <child nodeId="node-0x606840" />
     </children>
   </item>
-  <item nodeId="node-0x607b90">
+  <item nodeId="node-0x606840">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There쁕୤&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -758,10 +607,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="458">YES</temporary>
     <children>
-      <child nodeId="node-0x607b20" />
+      <child nodeId="node-0x606f90" />
     </children>
   </item>
-  <item nodeId="node-0x607b20">
+  <item nodeId="node-0x606f90">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -773,10 +622,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="458">YES</temporary>
     <children>
-      <child nodeId="node-0x6080c0" />
+      <child nodeId="node-0x607000" />
     </children>
   </item>
-  <item nodeId="node-0x6080c0">
+  <item nodeId="node-0x607000">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -788,10 +637,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="458">YES</temporary>
     <children>
-      <child nodeId="node-0x608010" />
+      <child nodeId="node-0x607070" />
     </children>
   </item>
-  <item nodeId="node-0x608010">
+  <item nodeId="node-0x607070">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There夀&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -803,10 +652,10 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="458">YES</temporary>
     <children>
-      <child nodeId="node-0x608060" />
+      <child nodeId="node-0x6070e0" />
     </children>
   </item>
-  <item nodeId="node-0x608060">
+  <item nodeId="node-0x6070e0">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
@@ -818,13 +667,13 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
     <changed>YES</changed>
     <temporary score="457">YES</temporary>
   </item>
-  <item nodeId="node-0x1a266af0">
+  <item nodeId="node-0x607150">
     <command xml:space="preserve"></command>
     <result xml:space="preserve">I beg your pardon?
 
 &gt;</result>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="435">YES</temporary>
+    <changed>NO</changed>
+    <temporary score="455">YES</temporary>
   </item>
 </Skein>
