@@ -327,7 +327,7 @@ Bandaids is a thing inside Medicine cabinet. The printed name is "[bandaid-count
 
 The Hallway is a room.
 
-Apartment Door is scenery in Apartment Living Room. The Apartment Door is a door. It is closed and openable. The Apartment Door is east of Apartment Living Room. Through the Apartment Door is the Hallway.
+Apartment Door is scenery in Apartment Living Room. The Apartment Door is a door. It is closed and openable. The Apartment Door is east of Apartment Living Room. Through the Apartment Door is the Hallway. The description is "I hear some scary groaning and moaning noises through the door. I think I'll have to find a different way out."
 
 Instead of going through Apartment Door:
 	say "As I walk to our front door, I hear scary noises coming from the other side. I don't want to go through there. I should find a different way out."
@@ -502,8 +502,9 @@ Instead of shooting the zombie with the revolver:
 	otherwise:
 		say "I don't have a revolver!".
 
+[ZOMBIE]
 
-Zombie is a person. The zombie is in DEATH.
+Zombie is a person. It is undescribed. The description is "A dead man walking!" The zombie is in DEATH.
 
 Outdoors is a region.
 Town Square, Trainyard and Parking Lot are in Outdoors.
@@ -511,11 +512,17 @@ Town Square, Trainyard and Parking Lot are in Outdoors.
 An every turn rule:
 	if player is in Outdoors:
 		 if a random chance of 1 in 5 succeeds, say "A zombie notices me and starts coming to my direction!";
-		move zombie to location of player.
+		move zombie to location of player;
+		change the present health of the zombie to max health.
 
 Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small little house. To the east I can see a general store. To the north I can see a hardware store."
 
-Zombies is scenery in Town Square. The description is "Some of walking, some are sitting. They don't look very nice."
+Zombies is scenery in Town Square. The description is "Some are walking, some are sitting. They don't look very nice."
+Zombies1 is scenery in Parking Lot. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
+Zombies2 is scenery in Trainyard. The printed name is "zombies". The description is "Some of walking, some are sitting. They don't look very nice."
+
+Understand "zombies" as zombies2.
+Understand "zombie" as zombie.
 
 Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
 
@@ -537,14 +544,66 @@ Breaking it with is an action applying to two things. Understand "break [somethi
 Instead of breaking train coupler with hands:
 	say "I'm not that strong!"
 
-The engine door is a door in the Engine Car. It is undescribed. It is closed and openable. The engine door is west of the Engine car. Through the engine door is the engine room. The description is "A door leading to the engine room. It has a window."
-
 Engine window is scenery in Engine Car. The description is "I look inside. I see some panels with knobs and switches. There is a conductor's chair in there. Sitting on the chair is a dead man." [make it so you can look through instead of look at.]
-		
-Instead of going through engine door:
-	move player to engine room.
 
-The engine room is a room.
+The Engine Room is a room. The description is "I'm inside the engine room. There's a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.[line break][line break]The door to the engine car is to the east."
+
+The chair is scenery in Engine Room. The description is "The conductor's chair."
+
+The deadperson5 is scenery in Engine Room. The description is "Looks like he died here…it makes me too sad to think about. He's holding something in his hand."
+
+The hand5 is scenery in engine room. The description is "The dead man's hand is still grasping a lever."
+
+understand "hand" as hand5.
+understand "dead man's hand" as hand5.
+understand "man's hand" as hand5.
+
+[PANEL]
+The panel is scenery in engine room. The description is "The panel is covered with switches and buttons.[line break][line break]Lever A's light is turned off.[line break][line break]Lever B's light is turned on.[line break][line break]Lever C's light is turned off and the lever is missing. There is a large red button that says 'Start'."
+Lever A is a device in engine room. Lever A is scenery. Lever A is switched on.
+Lever B is a device in engine room. Lever B is scenery. Lever B is switched off.
+Lever D is a thing in engine room. It is undescribed.The description is "It looks like it can be [bold type]put[roman type] in the slot of Lever C." The printed name is "the lever that the dead man is holding".
+
+Lever C is a device in DEATH. Lever C is scenery. The lever C is switched off. The description is "I've taken this from the dead man. It looks like it can be [bold type]put[roman type] in the slot of Lever C."
+
+Instead of examining Lever C:
+	if Lever C is in lever slot:
+		say "I've taken this from the dead man. I put it into the slot of lever C.";
+	otherwise:
+		say "I've taken this from the dead man. It looks like it can be [bold type]put[roman type] in the slot of Lever C." instead;
+
+Instead of taking lever D:
+	say "Taken.";
+	move lever c to player;
+	move lever D to DEATH.
+	
+Lever slot is scenery in engine room. It is undescribed. The description is "It belongs to Lever C."
+
+understand "slot" as the lever slot.
+understand "lever C slot" as lever slot.
+
+Instead of putting lever C in lever slot:
+	say "I put the lever C into the lever slot and flip it on!";
+	now the Lever C is switched on.
+
+understand "lever that the dead man is holding" as lever D.
+understand "the lever that the dead man is holding" as lever D.
+
+
+
+understand "dead man" as deadperson5.
+understand "man" as deadperson5.
+
+understand "engine door" as enginedoor5.
+understand "door" as enginedoor5.
+
+The enginedoor5 is west of the engine car and east of the engine room. The enginedoor5 is a scenery door. The enginedoor5 is an open door. The description is "A door leading to the engine room. It has a window."
+
+understand the command "put" as something new.
+Putting it in is an action applying to two things. Understand "put [something] in [something]" as putting it in.
+
+
+
 
 
 
@@ -556,7 +615,7 @@ The engine room is a room.
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to Train;
+	move player to engine room;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
