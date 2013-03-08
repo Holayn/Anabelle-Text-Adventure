@@ -31,6 +31,8 @@ Definition: a person is dead if his present hunger is less than 1.
 
 Definition: a person is dead if his present health is less than 1.
 
+Definition: the zombie is dead if its present health is less than 1.
+
 An every turn rule:
 	if the player is dead:
 		say "I think I'll just lie down and sleep now.";
@@ -40,7 +42,7 @@ every turn:
 	if a random chance of 1 in 3 succeeds, decrease present hunger of the player by a random number between 3 and 6.
 
 After printing the name of a dead person:
-    if the person is dead for at least 1 turn, say "[apostrophe]s dead body" instead.
+	if the person is dead for at least 1 turn, say "[apostrophe]s dead body" instead.
 
 Instead of taking inventory:
 if the number of things enclosed by the player is 0, say "I don[apostrophe]t seem to have anything at the moment.[line break](Health: [present health of the player])[line break](Hunger: [the present hunger of the player])[line break]" instead;
@@ -126,7 +128,10 @@ understand the command "use" as something new. understand "use [things]" as usin
 [END RULES]
 
 
+Chapter 1 Apartment
+
 [APARTMENT]
+
 
 Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street. 
 
@@ -137,6 +142,10 @@ understand "table" as the glass coffee table.
 
 Couch is scenery in Apartment Living Room. "It's a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo."
 [Think about turning TV on/off]
+
+Instead of looking under couch:
+	say "Nothing much."
+	
 TV is scenery in Apartment Living Room. "Our TV is on. It's replaying the statewide message that was sent out months ago. 'Seek shelter and food. Stay inside at all times. Do NOT go outside in any case. This has been an official CEDA announcement.'" 
 Glass coffee table is scenery supporter in Apartment Living Room. The description is "Mommy left a note on top of the table for me."
 
@@ -255,14 +264,14 @@ An every turn rule:
 	if the player is not carrying the pillowcase bag:
 		change the carrying capacity of the player to 3;
 	if the player is carrying the pillowcase bag:
-		change the carrying capacity of the player to 10.
+		change the carrying capacity of the player to 15.
 
 Check taking a thing:
 	if the player is not carrying the pillowcase bag:
 		if the player is carrying 3 things:
 			say "I can't hold anymore! I'm going to have to find a way to hold more things…" instead;
 	if the player is carrying the pillowcase bag:
-		if the player is carrying 10 things:
+		if the player is carrying 15 things:
 			say "I can't hold anymore! I'm going to have to make some room in my bag…" instead;
 			
 Instead of taking scenery:
@@ -353,96 +362,15 @@ Instead of going through the window:
 		say "I climb down the bedsheets to the street below. Horay!";
 		move the player to Parking Lot;
 	if bedsheets are not tied:
-		say "It's a looooong way down!".
+		say "It's a looooong way down!"
+		
+
 		
 Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the east and the town square to the west." It is west of Trainyard. It is east of Town Square.
-
-			[ENCOUNTER WITH STRANGE PERSON]
-Every turn:
-	If the player is in the Parking Lot:
-		if the player has been in Parking Lot for less than 2 turns:
-			say "I can see a strange looking person here. He's lying on the pavement, pawing at something and making groaning noises.";
-		if the strange looking person is in DEATH:
-			if the player has been in Parking Lot for 1 turns:
-				say "I see the dead person just lying here.";
-			move deadman to Parking Lot.
-			
-			
-
-
-
-Strange Looking Person is a male person in the Parking Lot. It is undescribed. The description is "He's scary looking. I shouldn't get too close."
-
-[done]
-Every turn:
-	If the location of the strange looking person is the location of the player:
-		if the player has been in Parking Lot for only 2 turns:
-			say "The strange looking person notices me and gets up, groaning and moaning. It's coming for me!";
-			now the strange looking person is angry;
-
-			
-Every turn rule:
-	if the location of the strange looking person is the location of the player:
-		if the strange looking person is angry:
-			say "The strange looking person is groaning and moaning and is trying to kill me!";
-			if a random chance of 2 in 3 succeeds:
-				Let Z be a random number from 1 to 15;
-				if Z is greater than 10:
-					say "The strange looking person hits me really hard! Owieee…";
-					decrease the present health of the player by Z;
-					say "My health goes down by [Z].";
-					say "[status of the player]. (Health: [the present health of the player])[line break]";
-				otherwise:
-					say "The strange looking person hits me hard.";
-					decrease the present health of the player by Z;
-					say "My health goes down by [Z].";
-					say "(Health: [the present health of the player])[line break]";
-			otherwise:
-				say "The strange looking person swings at me but I dodge it.";
-
-
-A person can be angry or not angry.					
-
-					
-[every turn:
-	If the present health of the strange looking person is less than 1:
-		the strange looking person is dead;
-		say "I kill the zombie!";]
-
-An every turn rule:
-	if the present health of the strange looking person is less than 1:
-		move the strange looking person to the DEATH;
-		if the strange looking person is in the DEATH for less than 2 turns, say "I land a killing blow and the person falls to the ground!";
-		
-
-
-
-[AXE MECHANIC- STRANGE LOOKING PERSON]
-
-Instead of attacking the strange looking person with the axe:
-	If the player is carrying the axe:
-		If a random chance of 4 in 5 succeeds:
-			Let F be a random number from 20 to 40;
-			If F is greater than 30:
-				say "My axe swing sinks into the zombie!";
-				decrease the present health of the strange looking person by F;
-				say "I damaged the zombie for [F] HP.";
-				say "(Health: [the present health of the strange looking person])[line break]";
-			otherwise:
-				say "I swing my axe at the zombie, hitting him!";
-				decrease the present health of the strange looking person by F;
-				say "I damaged the zombie for [F] HP.";
-				say "(Health: [the present health of the strange looking person])[line break]";
-		otherwise:
-			say "I swing my axe but I miss!";
-	otherwise:
-		say "I don't have an axe!".
+	
 
 Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
 
-
-Instead of attacking the strange looking person:
-	say "What do I attack the person with?";
 
 Understand the command "shoot" as something new.
 Shooting it with is an action applying to two things. Understand "shoot [something] with [something]" as shooting it with.
@@ -453,20 +381,6 @@ An every turn rule:
 
 understand "gun" as the revolver.
 
-[GUN MECHANIC - STRANGE LOOKING PERSON]
-
-Instead of shooting the strange looking person with the revolver:
-	if the player is carrying the revolver:
-		If a random chance of 9 in 10 succeeds:
-			Let F be 100;
-			say "I shoot the person with my revolver, hitting him!";
-			decrease the present health of the strange looking person by F;
-			say "I damaged the zombie for [F] HP.";
-			say "(Health: [the present health of the strange looking person])[line break]";
-		otherwise:
-			say "I shoot my revolver but I miss!";
-	otherwise:
-		say "I don't have a revolver!".
 		
 understand "hit" as attacking.
 	
@@ -478,14 +392,14 @@ Instead of attacking the zombie with the axe:
 			Let F be a random number from 20 to 40;
 			If F is greater than 30:
 				say "My axe swing sinks into the zombie!";
-				decrease the present health of the strange looking person by F;
+				decrease the present health of the zombie by F;
 				say "I damaged the zombie for [F] HP.";
-				say "(Health: [the present health of the strange looking person])[line break]";
+				say "(Health: [the present health of the zombie])[line break]";
 			otherwise:
 				say "I swing my axe at the zombie, hitting him!";
-				decrease the present health of the strange looking person by F;
+				decrease the present health of the zombie by F;
 				say "I damaged the zombie for [F] HP.";
-				say "(Health: [the present health of the strange looking person])[line break]";
+				say "(Health: [the present health of the zombie])[line break]";
 		otherwise:
 			say "I swing my axe but I miss!";
 	otherwise:
@@ -499,9 +413,9 @@ Instead of shooting the zombie with the revolver:
 		If a random chance of 9 in 10 succeeds:
 			Let F be 100;
 			say "I shoot the person with my revolver, hitting him!";
-			decrease the present health of the strange looking person by F;
+			decrease the present health of the zombie by F;
 			say "I damaged the zombie for [F] HP.";
-			say "(Health: [the present health of the strange looking person])[line break]";
+			say "(Health: [the present health of the zombie])[line break]";
 		otherwise:
 			say "I shoot my revolver but I miss!";
 	otherwise:
@@ -509,42 +423,74 @@ Instead of shooting the zombie with the revolver:
 
 [ZOMBIE]
 
-Zombie is a person. It is undescribed. The description is "A dead man walking!" The zombie is in DEATH.
+Instead of attacking the zombie:
+	say "Attack with what? Try re-say that. I can't even understand you."
+	
+Instead of attacking the zombie with the revolver:
+	try shooting the zombie with the revolver.
+
+Zombie is a person. It is undescribed. The description is "It's a dead man that is walking! I should [bold type]attack it with something[roman type]." The zombie is in DEATH.
+
+[Every turn rule:
+	if the location of the player is not the location of the zombie:
+		if a random chance of 1 in 5 succeeds:
+				say "A zombie starts to take notices me. He might try kill me!";
+				move zombie to location of player;
+				change the present health of the zombie to 100.]
+				
+
 
 Every turn rule:
 	if the location of the zombie is the location of the player:
-		if the zombie is angry:
-			say "The zombie is groaning and moaning and is trying to kill me!";
+		if the zombie is dead:
+			say "The zombie crumples to the ground.";
+			move the zombie to DEATH;
+		if the zombie is not dead:
+			say "A zombie is groaning and moaning and is trying to kill me![line break][line break]";
 			if a random chance of 2 in 3 succeeds:
 				Let Z be a random number from 1 to 15;
 				if Z is greater than 10:
-					say "The zombie hits me really hard! Owieee…";
+					say "The zombie hits me really hard! Owieee…[line break][line break]";
 					decrease the present health of the player by Z;
 					say "My health goes down by [Z].";
-					say "[status of the player]. (Health: [the present health of the player])[line break]";
+					say "(Health: [the present health of the player])[line break]";
 				otherwise:
-					say "The zombie hits me hard.";
+					say "The zombie hits me hard.[line break][line break]";
 					decrease the present health of the player by Z;
 					say "My health goes down by [Z].";
 					say "(Health: [the present health of the player])[line break]";
 			otherwise:
 				say "The zombie lunges at me but I dodge it.";
-		otherwise:
-			say "He hasn't noticed me yet."
+	otherwise:
+		if the player is in Outdoors:
+			if a random chance of 1 in 3 succeeds:
+				say "A zombie takes notice of me!";
+				move zombie to location of player;
+				change the present health of the zombie to 100;
+			otherwise:
+				say "There are zombies about!"
+
+[BUG]
+[BUG]			
+[BUG- IF THE ZOMBIE GETS SHOT DEAD, WILL STILL ATTACK THAT TURN!]
+[BUG]
+[BUG]		
 				
-An every turn rule:
-	if the location of the zombie is the location of the player for three turns:
-		now the zombie is angry.
+		
+Chapter 2 Outdoors
+			
 
-
+		
 Outdoors is a region.
-Town Square, Trainyard and Parking Lot are in Outdoors.
+Town Square, Trainyard, Front of the Small House, Front of the Hardware Store, Front of the General Store and Parking Lot are in Outdoors.
 
-An every turn rule:
-	if player is in Outdoors:
-		 if a random chance of 1 in 5 succeeds, say "A zombie starts to take notices me. He might try kill me!";
-		move zombie to location of player;
-		change the present health of the zombie to 100.
+DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, Front of the Hardware Store, Front of the General Store and Parking Lot. "I see some dead zombies lying around."
+
+understand "dead zombie" as the deadzombie.
+
+
+
+
 
 Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store."
 
@@ -558,23 +504,75 @@ Understand "zombie" as zombie.
 
 Front of the Small House is a room. The Front of the Small house is south of Town Square. The description is "I'm at the small, dark house. It looks scary! There's a door leading inside.[line break][line break]I see the Town Square to the north."
 
-The small house's door is north of front of the small house and south of the small house's living room. The small house's door is a scenery door. The small house's door is a closed door. The description is "The front door to the small house."
+The small house's door is south of front of the small house and north of the small house's living room. The small house's door is a scenery door. The small house's door is a closed door. The description is "The front door to the small house."
 
 Instead of opening small house's door:
 	say "I open the door.";
 	now the small house's door is open.
 
 
-Small House's Living Room is a room. The Small House's Living Room is dark. "There's a fresh zombie here! Aiee!"
-Small House's Kitchen is a room. The Small House's Kitchen is west of the Small House's Living Room.
+Small House's Living Room is a room. The Small House's Living Room is dark. The printed name is "Small House's Living Room". The description is "I'm in the small house's living room. There's not much here, just a dusty couch and a broken TV.[line break][line break]I see the exit to the north and the kitchen to the west.";
+
+understand "couch" as the dusty couch.
+
+Dusty couch is scenery in small house's living room. The description is "It's just a dusty couch."
+
+Instead of looking under the dusty couch:
+	say "Just a lot of dust and unhappiness."
+
+Small House's Kitchen is a room. The Small House's Kitchen is west of the Small House's Living Room. The printed name is "Small House's Kitchen". The Small House's Kitchen is dark. The description is "I see some cupboards here."
+
+understand "cupboards" as kitchencupboards
+
+kitchencupboards is scenery container in Small House's kitchen. The kitchencupboards is closed and openable. The printed name is "cupboards". The description is "Some cupboards. There's a door on it."
+
+Instead of opening the kitchencupboards:
+	say "I open the cupboards and I can see some: [line break]"; list the contents of the kitchencupboards, with newlines, indented;
+	now the kitchencupboards are open.
+	
+understand "salisbury steak" as canned salisbury steak.
+understand "steak" as canned salisbury steak.
+understand "beans" as canned beans.
+
+Canned Salisbury Steak is a thing inside the kitchencupboards.
+
+Instead of eating the canned salisbury steak:
+	increase the present health of the player by 30;
+	say "I pry open the can of salisbury steak, revealing the dark, juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+	move the canned salisbury steak to DEATH.
+
+Canned Beans is a thing inside the kitchencupboards.
+
+Instead of eating the canned beans:
+	increase the present health of the player by 25;
+	increase the present hunger of the player by 15;
+	say "I pry open the can of beans, revealing soft, juicy beans! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+	move the canned beans to DEATH.
 		
+Rule for printing the description of a dark room:
+	say "I can't see a thing! I'll have to get a light on in here!"
+	
+[HOW TO MAKE IT SO IT SAYS I CANT SEE THAT!!!]
 
 Rule for printing the announcement of darkness:
 	if the location is the Small House's Living Room:
 		say "Click--now I can't see anything!." instead;
 	otherwise:
 		say "I can't see anything!"
-		
+			
+An every turn rule:
+	if the player is in small house's living room for the first time:	
+		if the flashlight is lit:
+			move the zombie to the location of the player;
+			if the zombie is dead:
+				move the zombie to DEATH;
+			if the zombie is not dead:
+				say "There's a zombie here!";
+		if the flashlight is not lit:
+			say "I hear some odd breathing noises.";
+	otherwise:
+		do nothing;
+	
 
 Front of the General Store is a room. The general store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east."
 
@@ -608,7 +606,7 @@ Front of the Hardware Store is a room. The hardware store is north of the Town S
 
 
 
-
+Chapter 3 The Train
 
 
 
@@ -732,15 +730,18 @@ Instead of pushing the button:
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to town square;
+	move player to small house's kitchen;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
 	move pills to player;
+	move flashlight to player;
+	move batteries to player;
 	move bedsheets to player;
 	move pillowcase bag to player;
 	move axe to player;
-	move lever C to player.
+	move lever C to player;
+	now the flashlight is lit.
 
 
 DEATH is a room.

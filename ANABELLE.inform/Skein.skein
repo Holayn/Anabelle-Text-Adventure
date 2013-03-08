@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Skein rootNode="node-0x608030" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x539ad40" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x608030" />
-  <item nodeId="node-0x608030">
+  <activeNode nodeId="node-0x1bf8d2a0" />
+  <item nodeId="node-0x539ad40">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
@@ -12,7 +12,7 @@ It&apos;s getting dark outside and Mommy and Daddy haven&apos;t been home for 2 
 
 ANABELLE
 An Interactive Fiction by Kai Wong
-Release 1 / Serial number 130306 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130308 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
@@ -22,216 +22,995 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="63">NO</temporary>
+    <temporary score="1047">NO</temporary>
     <children>
-      <child nodeId="node-0x607150" />
-      <child nodeId="node-0x6068b0" />
-      <child nodeId="node-0x606d10" />
-      <child nodeId="node-0x606e60" />
-      <child nodeId="node-0xe4b21e0" />
-      <child nodeId="node-0x607f70" />
-      <child nodeId="node-0x4762c30" />
-      <child nodeId="node-0xe4f7850" />
+      <child nodeId="node-0x12773ec0" />
+      <child nodeId="node-0x185f2c20" />
+      <child nodeId="node-0x1bf3e120" />
+      <child nodeId="node-0x528abb0" />
     </children>
   </item>
-  <item nodeId="node-0xe4f7850">
-    <command xml:space="preserve">wn</command>
+  <item nodeId="node-0x528abb0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Darkness
+I can&apos;t see a thing! I&apos;ll have to get a light on in here!
+
+Small House&apos;s Kitchen
+I see some cupboards here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1047">YES</temporary>
+    <children>
+      <child nodeId="node-0x1857fef0" />
+      <child nodeId="node-0x185db980" />
+      <child nodeId="node-0xe470e70" />
+      <child nodeId="node-0x1853ecd0" />
+      <child nodeId="node-0x185b6470" />
+      <child nodeId="node-0x1bfc7f40" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfc7f40">
+    <command xml:space="preserve">open cupboards</command>
+    <result xml:space="preserve">I open the cupboards and I can see some: 
+Canned Salisbury Steak
+Canned Beans
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1047">YES</temporary>
+    <children>
+      <child nodeId="node-0x1a225ca0" />
+      <child nodeId="node-0x1bf28d50" />
+      <child nodeId="node-0x1bfc5b90" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfc5b90">
+    <command xml:space="preserve">take canned beans</command>
+    <result xml:space="preserve">I can&apos;t hold anymore! I&apos;m going to have to make some room in my bag…
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1037">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfde610" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfde610">
+    <command xml:space="preserve">take beans</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1028">YES</temporary>
+  </item>
+  <item nodeId="node-0x1bf28d50">
+    <command xml:space="preserve">take al;</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1035">YES</temporary>
+    <children>
+      <child nodeId="node-0x20351b60" />
+    </children>
+  </item>
+  <item nodeId="node-0x20351b60">
+    <command xml:space="preserve">take all</command>
+    <result xml:space="preserve">Canned Salisbury Steak: I can&apos;t hold anymore! I&apos;m going to have to make some room in my bag…Canned Beans: I can&apos;t hold anymore! I&apos;m going to have to make some room in my bag…
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1035">YES</temporary>
+    <children>
+      <child nodeId="node-0x20393070" />
+    </children>
+  </item>
+  <item nodeId="node-0x20393070">
+    <command xml:space="preserve">take canned beans</command>
+    <result xml:space="preserve">I can&apos;t hold anymore! I&apos;m going to have to make some room in my bag…
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1035">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfee8b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfee8b0">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">I&apos;m carrying: 
+Lever C
+an axe
+pillowcase bag
+bedsheets
+Batteries
+Flashlight
+2 pills
+1 bandaids
+a case of 8 bullet(s) for Daddy&apos;s revolver
+a revolver
+(Health: 100)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1034">YES</temporary>
+  </item>
+  <item nodeId="node-0x1a225ca0">
+    <command xml:space="preserve">take beans</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1047">YES</temporary>
+    <children>
+      <child nodeId="node-0x203b7d50" />
+      <child nodeId="node-0x1bf8d2a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf8d2a0">
+    <command xml:space="preserve">eat beans</command>
+    <result xml:space="preserve">I pry open the can of beans, revealing soft, juicy beans! I quickly gobble it down.
+
+(Health: 125)
+(Hunger: 110)
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1046">YES</temporary>
+  </item>
+  <item nodeId="node-0x203b7d50">
+    <command xml:space="preserve">take steak</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1043">YES</temporary>
+    <children>
+      <child nodeId="node-0x1f73ed10" />
+    </children>
+  </item>
+  <item nodeId="node-0x1f73ed10">
+    <command xml:space="preserve">eat steak</command>
+    <result xml:space="preserve">I pry open the can of salisbury steak, revealing the dark, juicy meat! I quickly gobble it down.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1042">YES</temporary>
+  </item>
+  <item nodeId="node-0x185b6470">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Kitchen
+I see some cupboards here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1011">YES</temporary>
+    <children>
+      <child nodeId="node-0x18583a50" />
+      <child nodeId="node-0x1bf2a390" />
+      <child nodeId="node-0x185b66a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x185b66a0">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+The zombie crumples to the ground.
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie lunges at me but I dodge it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="939">YES</temporary>
+  </item>
+  <item nodeId="node-0x1bf2a390">
+    <command xml:space="preserve">open cupboards</command>
+    <result xml:space="preserve">That&apos;s not something you can open.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1011">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfd4cd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfd4cd0">
+    <command xml:space="preserve">open kitchencupboards</command>
+    <result xml:space="preserve">That&apos;s not something you can open.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1011">YES</temporary>
+    <children>
+      <child nodeId="node-0x1733c570" />
+    </children>
+  </item>
+  <item nodeId="node-0x1733c570">
+    <command xml:space="preserve">x cupboards</command>
+    <result xml:space="preserve">In cupboards is Canned Salisbury Steak.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1010">YES</temporary>
+  </item>
+  <item nodeId="node-0x18583a50">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me really hard! Owieee…
+
+My health goes down by 14.
+(Health: 86)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="933">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf9cf90" />
+      <child nodeId="node-0x1bfd7e00" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfd7e00">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+The zombie crumples to the ground.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="933">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf0f7e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf0f7e0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+The zombie crumples to the ground.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="932">YES</temporary>
+  </item>
+  <item nodeId="node-0x1bf9cf90">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+There are zombies about!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="917">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf9c0d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf9c0d0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie takes notice of me!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="917">YES</temporary>
+    <children>
+      <child nodeId="node-0x18565120" />
+    </children>
+  </item>
+  <item nodeId="node-0x18565120">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie lunges at me but I dodge it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="917">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfb1630" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfb1630">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me hard.
+
+My health goes down by 2.
+(Health: 98)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="916">YES</temporary>
+  </item>
+  <item nodeId="node-0x1853ecd0">
+    <command xml:space="preserve">turn on flashlight</command>
+    <result xml:space="preserve">The flashlight turns on!
+
+Small House&apos;s Kitchen
+I see some cupboards here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1004">YES</temporary>
+  </item>
+  <item nodeId="node-0xe470e70">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Darkness
+I can&apos;t see a thing! I&apos;ll have to get a light on in here!
+
+I hear some odd breathing noises.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="966">YES</temporary>
+    <children>
+      <child nodeId="node-0x185b6110" />
+      <child nodeId="node-0x185b8c30" />
+      <child nodeId="node-0x1a28ee90" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a28ee90">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="884">YES</temporary>
+  </item>
+  <item nodeId="node-0x185b8c30">
+    <command xml:space="preserve">turn on flashlight</command>
+    <result xml:space="preserve">The flashlight turns on!
+
+There&apos;s a zombie here!
+
+Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="966">YES</temporary>
+    <children>
+      <child nodeId="node-0x131d95c0" />
+      <child nodeId="node-0x173a91a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x173a91a0">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+The zombie crumples to the ground.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="966">YES</temporary>
+    <children>
+      <child nodeId="node-0x185d9290" />
+    </children>
+  </item>
+  <item nodeId="node-0x185d9290">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="966">YES</temporary>
+    <children>
+      <child nodeId="node-0x185999c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x185999c0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="966">YES</temporary>
+    <children>
+      <child nodeId="node-0xe407970" />
+    </children>
+  </item>
+  <item nodeId="node-0xe407970">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="965">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf33bd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf33bd0">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: -100)
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie lunges at me but I dodge it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="909">YES</temporary>
+  </item>
+  <item nodeId="node-0x131d95c0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me hard.
+
+My health goes down by 10.
+(Health: 90)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="954">YES</temporary>
+  </item>
+  <item nodeId="node-0x185b6110">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+There are zombies about!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="946">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf116c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf116c0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie takes notice of me!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="946">YES</temporary>
+    <children>
+      <child nodeId="node-0x185d2630" />
+    </children>
+  </item>
+  <item nodeId="node-0x185d2630">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+The zombie crumples to the ground.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="946">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfb2900" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfb2900">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie takes notice of me!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="945">YES</temporary>
+  </item>
+  <item nodeId="node-0x185db980">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie lunges at me but I dodge it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="937">YES</temporary>
+    <children>
+      <child nodeId="node-0x18506ef0" />
+    </children>
+  </item>
+  <item nodeId="node-0x18506ef0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+There are zombies about!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="936">YES</temporary>
+    <children>
+      <child nodeId="node-0x54d0e40" />
+    </children>
+  </item>
+  <item nodeId="node-0x54d0e40">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Darkness
+I can&apos;t see a thing! I&apos;ll have to get a light on in here!
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me hard.
+
+My health goes down by 3.
+(Health: 83)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="926">YES</temporary>
+    <children>
+      <child nodeId="node-0x17397960" />
+    </children>
+  </item>
+  <item nodeId="node-0x17397960">
+    <command xml:space="preserve">turn on flashlight</command>
+    <result xml:space="preserve">The flashlight turns on!
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me really hard! Owieee…
+
+My health goes down by 11.
+(Health: 72)
+
+Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="926">YES</temporary>
+    <children>
+      <child nodeId="node-0x1a2f8ce0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a2f8ce0">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie lunges at me but I dodge it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="926">YES</temporary>
+    <children>
+      <child nodeId="node-0x185e9020" />
+    </children>
+  </item>
+  <item nodeId="node-0x185e9020">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="926">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfa90e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfa90e0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">(first opening the small house&apos;s door)
+I open the door.
+
+Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+There are zombies about!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="926">YES</temporary>
+    <children>
+      <child nodeId="node-0x1736e070" />
+    </children>
+  </item>
+  <item nodeId="node-0x1736e070">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room.
+
+I see the exit to the north and the kitchen to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="925">YES</temporary>
+  </item>
+  <item nodeId="node-0x1857fef0">
+    <command xml:space="preserve">go through door</command>
+    <result xml:space="preserve">A zombie takes notice of me!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="885">YES</temporary>
+  </item>
+  <item nodeId="node-0x1bf3e120">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">I don&apos;t seem to have anything at the moment.
+(Health: 100)
+(Hunger: 100)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bff1390" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bff1390">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf4ffc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf4ffc0">
+    <command xml:space="preserve">eat poop</command>
+    <result xml:space="preserve">(first taking poop)
+ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfac4a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfac4a0">
+    <command xml:space="preserve">poop</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="31">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0xe42aa80" />
+      <child nodeId="node-0x2034e030" />
     </children>
   </item>
-  <item nodeId="node-0xe42aa80">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Town Square
-I&apos;m here at the town square. I see some zombies milling about.
-
-To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
+  <item nodeId="node-0x2034e030">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="31">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0xe47dd20" />
+      <child nodeId="node-0x185c4190" />
     </children>
   </item>
-  <item nodeId="node-0xe47dd20">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">
-Front of the Small House
-I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
-
-I see the Town Square to the north.
+  <item nodeId="node-0x185c4190">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="31">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0x72eb1c0" />
+      <child nodeId="node-0x1bf4b0b0" />
     </children>
   </item>
-  <item nodeId="node-0x72eb1c0">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">You can&apos;t go that way.
+  <item nodeId="node-0x1bf4b0b0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="31">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0x72217e0" />
+      <child nodeId="node-0x1bf95630" />
     </children>
   </item>
-  <item nodeId="node-0x72217e0">
-    <command xml:space="preserve">x door</command>
-    <result xml:space="preserve">The front door to the small house.
+  <item nodeId="node-0x1bf95630">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="31">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0x6e8ea0" />
+      <child nodeId="node-0x1a23e590" />
     </children>
   </item>
-  <item nodeId="node-0x6e8ea0">
-    <command xml:space="preserve">open door</command>
-    <result xml:space="preserve">You open the small house&apos;s door.
+  <item nodeId="node-0x1a23e590">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="30">YES</temporary>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf0d5b0" />
+    </children>
   </item>
-  <item nodeId="node-0x4762c30">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Town Square
-I&apos;m here at the town square. I see some zombies milling about.
-
-To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
+  <item nodeId="node-0x1bf0d5b0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="63">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0x72be570" />
-      <child nodeId="node-0x6af1c0" />
-      <child nodeId="node-0xe493870" />
-      <child nodeId="node-0x4752000" />
+      <child nodeId="node-0x1bf27860" />
     </children>
   </item>
-  <item nodeId="node-0x4752000">
+  <item nodeId="node-0x1bf27860">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bfde080" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bfde080">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf0e1d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf0e1d0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1858d0a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1858d0a0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1a2a8b40" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a2a8b40">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x17329830" />
+    </children>
+  </item>
+  <item nodeId="node-0x17329830">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf49360" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf49360">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1003">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bff2b20" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bff2b20">
     <command xml:space="preserve">restart</command>
     <result xml:space="preserve">Are you sure you want to restart? </result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="22">YES</temporary>
+    <temporary score="1003">YES</temporary>
     <children>
-      <child nodeId="node-0x6e4d240" />
+      <child nodeId="node-0x1bfd37b0" />
     </children>
   </item>
-  <item nodeId="node-0x6e4d240">
+  <item nodeId="node-0x1bfd37b0">
     <command xml:space="preserve">yes</command>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="21">YES</temporary>
+    <temporary score="1002">YES</temporary>
   </item>
-  <item nodeId="node-0xe493870">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Parking Lot
-I&apos;m here in the parking lot in front of our small little apartment.
-
-I can see a trainyard to the east and the town square to the west.
-
-I can see a strange looking person here. He&apos;s lying on the pavement, pawing at something and making groaning noises.
-
-A zombie notices me and starts coming to my direction!
+  <item nodeId="node-0x185f2c20">
+    <command xml:space="preserve">look under couch</command>
+    <result xml:space="preserve">You find nothing of interest.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="12">YES</temporary>
+    <temporary score="983">YES</temporary>
   </item>
-  <item nodeId="node-0x6af1c0">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">
-Front of the Small House
+  <item nodeId="node-0x12773ec0">
+    <command xml:space="preserve">x couch</command>
+    <result xml:space="preserve">It&apos;s a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x1a2d31e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a2d31e0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Front of the Small House
 I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
 
 I see the Town Square to the north.
 
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="63">YES</temporary>
-    <children>
-      <child nodeId="node-0x471cec0" />
-      <child nodeId="node-0x47d1a90" />
-      <child nodeId="node-0x72efe80" />
-      <child nodeId="node-0xe4be090" />
-    </children>
-  </item>
-  <item nodeId="node-0xe4be090">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="59">YES</temporary>
-    <children>
-      <child nodeId="node-0x7226db0" />
-      <child nodeId="node-0x6d4d40" />
-    </children>
-  </item>
-  <item nodeId="node-0x6d4d40">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">You can&apos;t go that way.
+A zombie takes notice of me!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="55">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x4755820" />
+      <child nodeId="node-0x1bfee400" />
     </children>
   </item>
-  <item nodeId="node-0x4755820">
-    <command xml:space="preserve">go through door</command>
-    <result xml:space="preserve">(first opening the small house&apos;s door)
-I open the door.
-
-Darkness
-It is pitch dark, and you can&apos;t see a thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-  </item>
-  <item nodeId="node-0x7226db0">
-    <command xml:space="preserve">go through door</command>
-    <result xml:space="preserve">(first opening the small house&apos;s door)
-I open the door.
-
-Darkness
-It is pitch dark, and you can&apos;t see a thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="58">YES</temporary>
-  </item>
-  <item nodeId="node-0x72efe80">
+  <item nodeId="node-0x1bfee400">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">
 Town Square
@@ -239,441 +1018,203 @@ I&apos;m here at the town square. I see some zombies milling about.
 
 To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store.
 
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="11">YES</temporary>
-    <children>
-      <child nodeId="node-0x51452c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x51452c0">
-    <command xml:space="preserve">x zombies</command>
-    <result xml:space="preserve">Some are walking, some are sitting. They don&apos;t look very nice.
+There are zombies about!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="10">YES</temporary>
-  </item>
-  <item nodeId="node-0x47d1a90">
-    <command xml:space="preserve">x door</command>
-    <result xml:space="preserve">The front door to the small house.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="37">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x72f2d90" />
+      <child nodeId="node-0x17300bf0" />
     </children>
   </item>
-  <item nodeId="node-0x72f2d90">
-    <command xml:space="preserve">open door</command>
-    <result xml:space="preserve">I open the door.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="37">YES</temporary>
-    <children>
-      <child nodeId="node-0x51f6890" />
-    </children>
-  </item>
-  <item nodeId="node-0x51f6890">
-    <command xml:space="preserve">go through door</command>
+  <item nodeId="node-0x17300bf0">
+    <command xml:space="preserve">s</command>
     <result xml:space="preserve">
-Darkness
-It is pitch dark, and you can&apos;t see a thing.
+Front of the Small House
+I&apos;m at the small, dark house. It looks scary! There&apos;s a door leading inside.
+
+I see the Town Square to the north.
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me hard.
+
+My health goes down by 8.
+(Health: 92)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="37">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x72bb6a0" />
+      <child nodeId="node-0x5178500" />
     </children>
   </item>
-  <item nodeId="node-0x72bb6a0">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Darkness
-It is pitch dark, and you can&apos;t see a thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="36">YES</temporary>
-  </item>
-  <item nodeId="node-0x471cec0">
-    <command xml:space="preserve">go through door</command>
+  <item nodeId="node-0x5178500">
+    <command xml:space="preserve">s</command>
     <result xml:space="preserve">(first opening the small house&apos;s door)
 I open the door.
 
 Darkness
-It is pitch dark, and you can&apos;t see a thing.
+I can&apos;t see a thing! I&apos;ll have to get a light on in here!
+
+I hear some odd breathing noises.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="63">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x2dbc00" />
+      <child nodeId="node-0x82e60a0" />
     </children>
   </item>
-  <item nodeId="node-0x2dbc00">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Darkness
-It is pitch dark, and you can&apos;t see a thing.
+  <item nodeId="node-0x82e60a0">
+    <command xml:space="preserve">turn on flashlight</command>
+    <result xml:space="preserve">The flashlight turns on!
+
+There&apos;s a zombie here!
+
+Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room. There&apos;s not much here, just a dusty couch and a broken TV.
+
+I see the exit to the north and the kitchen to the west.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="62">YES</temporary>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf31da0" />
+    </children>
   </item>
-  <item nodeId="node-0x72be570">
-    <command xml:space="preserve">x small house</command>
+  <item nodeId="node-0x1bf31da0">
+    <command xml:space="preserve">shoot zombie with gun</command>
+    <result xml:space="preserve">I shoot the person with my revolver, hitting him!
+I damaged the zombie for 100 HP.
+(Health: 0)
+
+The zombie crumples to the ground.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x1bf34da0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1bf34da0">
+    <command xml:space="preserve">x zombie</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="17">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x299180" />
+      <child nodeId="node-0x20339460" />
     </children>
   </item>
-  <item nodeId="node-0x299180">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">
-Small House
-I&apos;m at the small, dark house. It looks scary!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="16">YES</temporary>
-  </item>
-  <item nodeId="node-0x607f70">
-    <command xml:space="preserve">press poop</command>
-    <result xml:space="preserve">Nothing obvious happens.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="448">YES</temporary>
-    <children>
-      <child nodeId="node-0x607fc0" />
-    </children>
-  </item>
-  <item nodeId="node-0x607fc0">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="448">YES</temporary>
-    <children>
-      <child nodeId="node-0x608080" />
-    </children>
-  </item>
-  <item nodeId="node-0x608080">
-    <command xml:space="preserve">x panel</command>
-    <result xml:space="preserve">The panel is covered with switches and buttons.
-
-Lever A&apos;s light is turned off.
-
-Lever B&apos;s light is turned on.
-
-Lever C&apos;s light is turned off and the lever is missing. There is a large red button that says &quot;Start&quot;.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="447">YES</temporary>
-  </item>
-  <item nodeId="node-0xe4b21e0">
-    <command xml:space="preserve">take poop</command>
-    <result xml:space="preserve">ANDY BAE IS A MILF.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="22">YES</temporary>
-    <children>
-      <child nodeId="node-0x72d2fa0" />
-    </children>
-  </item>
-  <item nodeId="node-0x72d2fa0">
-    <command xml:space="preserve">x poop</command>
-    <result xml:space="preserve">Andy Bae is a MILF
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="18">YES</temporary>
-  </item>
-  <item nodeId="node-0x606e60">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="490">YES</temporary>
-    <children>
-      <child nodeId="node-0x606df0" />
-    </children>
-  </item>
-  <item nodeId="node-0x606df0">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="490">YES</temporary>
-    <children>
-      <child nodeId="node-0x606d80" />
-    </children>
-  </item>
-  <item nodeId="node-0x606d80">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">As I open the door, a dozen zombies flood into the room, groaning and moaning, reaching and grasping their rotten arms towards me. I am trapped. I guess I&apos;ll be seeing Mommy and Daddy again very soon.
-
-
-
-    *** You have died ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="489">YES</temporary>
-  </item>
-  <item nodeId="node-0x606d10">
-    <command xml:space="preserve">x baywindow</command>
-    <result xml:space="preserve">I look out our open window. I can see a form of something crawling down below on the street but I can&apos;t really tell what it is.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606c30" />
-      <child nodeId="node-0x606ca0" />
-    </children>
-  </item>
-  <item nodeId="node-0x606ca0">
-    <command xml:space="preserve">x window</command>
-    <result xml:space="preserve">I look out our open window. I can see a form of something crawling down below on the street but I can&apos;t really tell what it is.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="500">YES</temporary>
-  </item>
-  <item nodeId="node-0x606c30">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">
-Bedroom
-Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.
-
-I can see our living room to the north and our bathroom to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606bc0" />
-    </children>
-  </item>
-  <item nodeId="node-0x606bc0">
-    <command xml:space="preserve">x bed</command>
-    <result xml:space="preserve">Mommy and Daddy&apos;s big bed! I feel so small lying on it. They have such big pillows and big bedsheets!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606b50" />
-    </children>
-  </item>
-  <item nodeId="node-0x606b50">
-    <command xml:space="preserve">take bedsheets</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606ae0" />
-    </children>
-  </item>
-  <item nodeId="node-0x606ae0">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">
-Apartment Living Room
-Our living room…or mine now, anyways. There夀&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606a70" />
-    </children>
-  </item>
-  <item nodeId="node-0x606a70">
-    <command xml:space="preserve">tie bedsheets to window</command>
-    <result xml:space="preserve">I tie the bedsheets to the window and let it hang down below to the ground.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606a00" />
-    </children>
-  </item>
-  <item nodeId="node-0x606a00">
-    <command xml:space="preserve">go through window</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606990" />
-    </children>
-  </item>
-  <item nodeId="node-0x606990">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="510">YES</temporary>
-    <children>
-      <child nodeId="node-0x606920" />
-    </children>
-  </item>
-  <item nodeId="node-0x606920">
-    <command xml:space="preserve">open window</command>
-    <result xml:space="preserve">That&apos;s already open.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="509">YES</temporary>
-  </item>
-  <item nodeId="node-0x6068b0">
+  <item nodeId="node-0x20339460">
     <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
+    <result xml:space="preserve">Small House&apos;s Living Room
+I&apos;m in the small house&apos;s living room. There&apos;s not much here, just a dusty couch and a broken TV.
 
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+I see the exit to the north and the kitchen to the west.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="458">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x606840" />
+      <child nodeId="node-0x185122c0" />
     </children>
   </item>
-  <item nodeId="node-0x606840">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There쁕୤&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+  <item nodeId="node-0x185122c0">
+    <command xml:space="preserve">x zombie</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="458">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x606f90" />
+      <child nodeId="node-0x1bf3aae0" />
     </children>
   </item>
-  <item nodeId="node-0x606f90">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+  <item nodeId="node-0x1bf3aae0">
+    <command xml:space="preserve">x couch</command>
+    <result xml:space="preserve">It&apos;s just a dusty couch.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="458">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x607000" />
+      <child nodeId="node-0x1bf0ef60" />
     </children>
   </item>
-  <item nodeId="node-0x607000">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+  <item nodeId="node-0x1bf0ef60">
+    <command xml:space="preserve">look under couch</command>
+    <result xml:space="preserve">Just a lot of dust and unhappiness.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="458">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x607070" />
+      <child nodeId="node-0x1bf8c7e0" />
     </children>
   </item>
-  <item nodeId="node-0x607070">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There夀&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+  <item nodeId="node-0x1bf8c7e0">
+    <command xml:space="preserve">restrat</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="458">YES</temporary>
+    <temporary score="983">YES</temporary>
     <children>
-      <child nodeId="node-0x6070e0" />
+      <child nodeId="node-0x82d7200" />
     </children>
   </item>
-  <item nodeId="node-0x6070e0">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Apartment Living Room
-Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV where I watch Sesame Street. A glass coffee table is next to the couch. A large baywindow looks out to the street.
-
-I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+  <item nodeId="node-0x82d7200">
+    <command xml:space="preserve">yes</command>
+    <result xml:space="preserve">That was a rhetorical question.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="457">YES</temporary>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x20340d30" />
+    </children>
   </item>
-  <item nodeId="node-0x607150">
+  <item nodeId="node-0x20340d30">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x185bcd70" />
+    </children>
+  </item>
+  <item nodeId="node-0x185bcd70">
     <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?
-
-&gt;</result>
+    <result xml:space="preserve">Please answer yes or no.&gt; </result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="455">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="983">YES</temporary>
+    <children>
+      <child nodeId="node-0x1737c370" />
+    </children>
+  </item>
+  <item nodeId="node-0x1737c370">
+    <command xml:space="preserve">yes</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="982">YES</temporary>
   </item>
 </Skein>
