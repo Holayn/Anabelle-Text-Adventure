@@ -6,6 +6,7 @@ use no scoring
 
 When play begins: say "It's getting dark outside and Mommy and Daddy haven't been home for 2 months. There's strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out."
 
+Chapter 0 The Rules
 
 [START RULES]
 
@@ -191,13 +192,15 @@ Instead of looking under the Floor mat:
 		now the cupboard key is found;
 		now the player carries the cupboard key;
 		say "I find a key under the floor mat, which I bend down and pick up."
-The Floor mat is a scenery supporter in the Kitchen. The description is "A regular, brown floor mat."
+		
+The Floor mat is a scenery supporter in the Kitchen. The description is "A regular, brown floor mat. It looks like it has been recently moved..."
 
 [CHECK OPENING REFRIGERATOR]
 
 The stove is a scenery container in Kitchen. It is closed and openable. The description is "There isn't much special about our stove."
 
 The refrigerator is a scenery container in Kitchen. It is closed and openable.
+
 Instead of examining refrigerator:
 	say "It's the brand new white refrigerator we got a few months ago. There's letter magnets on it."
 
@@ -211,7 +214,7 @@ The sink is a scenery supporter in Kitchen. The description is "Our sink. Daddy 
 The axe is a thing. The description is "Daddy's red fire axe."
 
 Instead of looking under the sink:
-	say "I see Daddy's red fire axe here. I lift it up. It's quite heavy but I can manage.";
+	say "I see Daddy's red fire axe here. I lift it up. It's quite heavy but I can manage, so I take it.";
 	move axe to player.
 
 	
@@ -254,23 +257,25 @@ Report combining it with:
 
 Table of Outcome objects
 component list			result
-{pillowcase, yarn}			pillowcase bag
+{pillowcase, yarn}			pillowcasebag
 
-pillowcase bag is a thing.	
+pillowcasebag is a thing. the printed name is "pillowcase bag".
+
+understand "pillowcase bag" as the pillowcasebag.	
 
 A thing can be tied or untied.
 
 An every turn rule:
-	if the player is not carrying the pillowcase bag:
+	if the player is not carrying the pillowcasebag:
 		change the carrying capacity of the player to 3;
-	if the player is carrying the pillowcase bag:
+	if the player is carrying the pillowcasebag:
 		change the carrying capacity of the player to 15.
 
 Check taking a thing:
-	if the player is not carrying the pillowcase bag:
+	if the player is not carrying the pillowcasebag:
 		if the player is carrying 3 things:
 			say "I can't hold anymore! I'm going to have to find a way to hold more things…" instead;
-	if the player is carrying the pillowcase bag:
+	if the player is carrying the pillowcasebag:
 		if the player is carrying 15 things:
 			say "I can't hold anymore! I'm going to have to make some room in my bag…" instead;
 			
@@ -492,7 +497,7 @@ understand "dead zombie" as the deadzombie.
 
 
 
-Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the east I can see a general store. To the north I can see a hardware store."
+Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store."
 
 Zombies is scenery in Town Square. The description is "Some are walking, some are sitting. They don't look very nice."
 Zombies1 is scenery in Parking Lot. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
@@ -502,7 +507,7 @@ Understand "zombies" as zombies2.
 Understand "zombie" as zombie.
 
 
-Front of the Small House is a room. The Front of the Small house is south of Town Square. The description is "I'm at the small, dark house. It looks scary! There's a door leading inside.[line break][line break]I see the Town Square to the north."
+Front of the Small House is a room. The Front of the Small house is south of Town Square. The description is "I'm at the small, dark house. It looks scary! There's a door leading inside.[line break][line break]I see the town square to the north."
 
 The small house's door is south of front of the small house and north of the small house's living room. The small house's door is a scenery door. The small house's door is a closed door. The description is "The front door to the small house."
 
@@ -515,12 +520,17 @@ Small House's Living Room is a room. The Small House's Living Room is dark. The 
 
 understand "couch" as the dusty couch.
 
-Dusty couch is scenery in small house's living room. The description is "It's just a dusty couch."
+Dusty couch is scenery in small house's living room. The description is "It's just a dusty couch. It looks like it was recently disturbed…"
+
+Old rusty wrench is a thing. The description is "It's an old wrench, used many times."
 
 Instead of looking under the dusty couch:
-	say "Just a lot of dust and unhappiness."
+	say "There's an old rusty wrench under here. I take it because maybe it'll be useful later.";
+	move the old rusty wrench to the player.
 
-Small House's Kitchen is a room. The Small House's Kitchen is west of the Small House's Living Room. The printed name is "Small House's Kitchen". The Small House's Kitchen is dark. The description is "I see some cupboards here."
+	
+
+Small House's Kitchen is a room. The Small House's Kitchen is west of the Small House's Living Room. The printed name is "Small House's Kitchen". The Small House's Kitchen is dark. The description is "I'm in the kitchen. This place looks like a mess, with everything spilled everywhere and things hanging lopsidedly. There are some cupboards here.[line break][line break]I see the living room to the east and the backyard to the south."
 
 understand "cupboards" as kitchencupboards
 
@@ -537,17 +547,47 @@ understand "beans" as canned beans.
 Canned Salisbury Steak is a thing inside the kitchencupboards.
 
 Instead of eating the canned salisbury steak:
-	increase the present health of the player by 30;
-	say "I pry open the can of salisbury steak, revealing the dark, juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
-	move the canned salisbury steak to DEATH.
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I pry open the can of salisbury steak, revealing the dark, juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the canned salisbury steak to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I pry open the can of salisbury steak, revealing the dark, juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the canned salisbury steak to DEATH.
+
 
 Canned Beans is a thing inside the kitchencupboards.
 
 Instead of eating the canned beans:
-	increase the present health of the player by 25;
-	increase the present hunger of the player by 15;
-	say "I pry open the can of beans, revealing soft, juicy beans! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
-	move the canned beans to DEATH.
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I pry open the can of beans, revealing soft, juicy beans! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the canned beans to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I pry open the can of beans, revealing soft, juicy beans! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the canned beans to DEATH;
+		
+Coke is a thing inside the kitchencupboards.
+
+Instead of drinking the coke:
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I pry open the cap of the coke and I can hear the bubbling and fizzing! I quickly drink it down. Ahh! Good stuff.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the coke to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I pry open the cap of the coke and I can hear the bubbling and fizzing! I quickly drink it down. Ahh! Good stuff.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the coke to DEATH.
+
+
 		
 Rule for printing the description of a dark room:
 	say "I can't see a thing! I'll have to get a light on in here!"
@@ -572,9 +612,185 @@ An every turn rule:
 			say "I hear some odd breathing noises.";
 	otherwise:
 		do nothing;
+		
+Backyard of the Small House is a room. It is south of the Small House's Living Room. The description is "It's a nice, small backyard, covered with grass and plants. I see a small water cistern near the wall.[line break][line break]To the north I can see the living room."
+
+Understand "small water cistern" and "water cistern" as the cistern.
+
+Cistern is scenery in Backyard of the Small House. The description is "A small, water cistern. It has a pump on it."
+
+Understand "pump" as the cistern.
+
+Instead of using the cistern:
+	if the player is carrying the water bottle:
+		say "I fill my water bottle full of crystal clean water!";
+		now the water bottle is not empty;
+	if the player is not carrying the water bottle:
+		say "The water spalshes out onto the ground. I'm going to have to find a way to hold all this water!".
+
+	
+Chapter 3 The General Store
+
+The Front of the General Store is a room. The front of the general store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
+
+The general store's door is east of the general store and west of the front of the general store. The general store's door is a scenery door. The general store's door is a closed door. The description is "The door to the general store."
+
+The GeneralStore is a room. The GeneralStore is west of the general store's door. The printed name is "General Store." The description is "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor.[line break][line break]The exit is to the east."
+
+tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: talk, ask, give."
+
+understand "man" and "tall man" as the tallman.
+
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "converse with [someone]" as talking to.
+Check talking to: say "[The noun] doesn't reply."
+
+The large bag is scenery in generalstore. The description is "The man's large bag."
+Instead of talking to tallman:
+	say "[one of]'Hi, mister.' you say timidly.[paragraph break]'Hello, little girl. What is your name?' says the tall man.[paragraph break]'My name is Anabelle.'[paragraph break]'That's a nice name, Anabelle.' he says, shifting his weight to hide his bag.[or]I should ask him about something.[stopping]"	
+
+Understand "bag", "the bag", "his bag", "man's large bag", and "his large bag" as "[large bag]".
+
+
+Instead of asking tallman for the large bag:
+	if the player carries the revolver:
+		say "'[one of]Oh, it's just my bag, you know' he says. 'Nothing in it for you, really.'[or]I should somehow convince him to give me his bag.[stopping]";
+	if the tallman carries the revolver:
+		say "'Sure, little girl!' he says happily. 'Take what you want from my bag!'";
+		say "[paragraph break]I open the bag and there are tons of goodies! I take some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle.";
+		move potato chips to player;
+		move can of SPAM to player;
+		move chicken noodle soup to player;
+		move water bottle to player;
+		now the water bottle is empty.
+		
+A thing can be empty or not empty.
+
+The water bottle is a thing. The description is "A small, dark green water bottle."
+
+Potato chips is a thing. The description is "A bag of delicious potato chips."
+
+Instead of eating the potato chips:
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I open the bag of chips, revealing its crunchy contents!! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the potato chips to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I open the bag of chips, revealing its crunchy contents!! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the potato chips to DEATH;
+		
+understand "chips" as the potato chips.
+
+
+Can of SPAM is a thing. The description is "A can of creamy SPAM."
+
+understand "SPAM" as the can of spam.
+
+Instead of eating the can of SPAM:
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I pry open the can of SPAM, revealing the soft juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the can of SPAM to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I pry open the can of SPAM, revealing the soft, juicy meat! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the can of SPAM to DEATH;
+
+
+Can of Chicken Noodle Soup is a thing. The description is "Mmm. Chicken noodle soup!"
+
+understand "soup" as the can of chicken noodle soup.
+
+understand "chicken noodle soup" as the can of chicken noodle soup.
+
+Instead of eating the can of chicken noodle soup:
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "I pry open the can of chicken noodle soup! Mmm, so good! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the can of chicken noodle soup to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "I pry open the can of chicken noodle soup! Mmm, so good! I quickly gobble it down.[line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the can of chicken noodle soup to DEATH;
+
+
+Understand "spam" as the can of spam.
+
+Instead of examining the water bottle:
+	if the water bottle is empty:
+		say "A small, dark green water bottle. There isn't a single drop of water in here! i should go fill it up someplace.";
+	if the water bottle is not empty:
+		say "A small, dark green water bottle. There's some water in here.".
+
+Instead of drinking the water bottle:
+	if the water bottle is empty:
+		say "There isn't any water in here!";
+	if the water bottle is not empty:
+		if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+			increase the present health of the player by 25;
+			increase the present hunger of the player by 15;
+			say "I drink the nice cool water from my water bottle! Mmm, refrshing![line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+			now the water bottle is empty;
+		otherwise:
+			now the present health of the player is 100;
+			now the present hunger of the player is 100;
+			say "I drink the nice cool water from my water bottle! Mmm, refrshing![line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+			now the water bottle is empty.
 	
 
-Front of the General Store is a room. The general store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east."
+Instead of asking tallman about "[large bag]":
+	say "'[one of]Oh, it's just my bag, you know' he says. 'Nothing in it for you, really.'[or]I should somehow convince him to give me his bag.[stopping]"
+	
+Instead of giving something to tallman:
+	say "The tall man looks at it, but he doesn't appear interested. 'I don't really want that' he says.'"
+	
+Instead of giving revolver to tallman:
+	say "The tall man looks at the revolver and asks 'Really? For me? Wow, thank you! I really needed a weapon.'";
+	move revolver to tallman.
+	
+Instead of giving axe to tallman:
+	say "The tall man looks disdainfully at the axe and says 'I don't really like axes.'".
+	
+
+Instead of attacking the tallman:
+	if a random chance of 1 in 2 succeeds:
+		remove the tallman from play;
+		say "I kill the man.";
+	otherwise:
+		say "I try to shoot the man with my gun but I miss! He runs out of the room.";
+		remove the tallman from play.
+		
+Instead of attacking the tallman with the revolver:
+	if a random chance of 1 in 2 succeeds:
+		remove the tallman from play;
+		say "I kill the man.";
+	otherwise:
+		say "I try to shoot the man with my gun but I miss! He runs out of the room.";
+		remove the tallman from play.
+		
+Instead of attacking the tallman with the axe:
+	if a random chance of 1 in 2 succeeds:
+		remove the tallman from play;
+		say "I kill the man with a swift chop of my axe.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";;
+		move potato chips to player;
+		move can of SPAM to player;
+		move chicken noodle soup to player;
+		move water bottle to player;
+		now the water bottle is empty;
+	otherwise:
+		say "I swing the axe at the man but I miss! He runs out of the room.";
+		remove the tallman from play.
+
+
+	
+
+Chapter 4 The Hardward Store
 
 Front of the Hardware Store is a room. The hardware store is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
 
@@ -606,7 +822,7 @@ Front of the Hardware Store is a room. The hardware store is north of the Town S
 
 
 
-Chapter 3 The Train
+Chapter 5 The Train
 
 
 
@@ -730,7 +946,7 @@ Instead of pushing the button:
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to small house's kitchen;
+	move player to town square;
 	move revolver to player;
 	move bullets to player;
 	move bandaids to player;
@@ -738,16 +954,21 @@ Instead of going northwest:
 	move flashlight to player;
 	move batteries to player;
 	move bedsheets to player;
-	move pillowcase bag to player;
+	move pillowcasebag to player;
 	move axe to player;
 	move lever C to player;
-	now the flashlight is lit.
+	now the flashlight is lit;
+	move water bottle to player.
 
 
 DEATH is a room.
 
 understand "dead person" as the deadman.
 understand "person" as the deadman.
+
+understand "fire axe" as the axe.
+understand "fridge" as the refrigerator.
+
 
 Hands is a thing.
 
@@ -756,6 +977,7 @@ deadman is a man in DEATH. The printed name is "dead person". The description is
 [PAY ATTENTION FIRST TO GENERAL GAME THEN CONCENTRATE CHANGING THE YOUS TO I'S]
 
 
+[CODE IN WRENCH]
 
 
 
