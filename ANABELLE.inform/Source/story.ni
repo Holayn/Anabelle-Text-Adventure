@@ -1,10 +1,8 @@
 "ANABELLE" by Kai Wong
 
-Include Rideable Vehicles by Graham Nelson.
-
 use no scoring
 
-When play begins: say "It's getting dark outside and Mommy and Daddy haven't been home for 2 months. There's strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out."
+When play begins: say "It's getting dark outside and Mommy and Daddy hasn't been home for 2 months. There's strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out."
 
 Chapter 0 The Rules
 
@@ -97,6 +95,7 @@ To say status of the player:
 		say "I'm not hungry at all. Let's go do something!"
 
 [format for code above taken from Brandon Lau's 'Assassin']
+[also formed the code to make something completely new (the hunger system)]
 
 Instead of eating the pain pills:
 	if the pill-count of the pills is greater than 0:
@@ -124,7 +123,11 @@ Instead of using the bandaids:
 	otherwise:
 		say "I don't have any more pills left…".
 		
+[taken from Assassin]
+		
 understand the command "use" as something new. understand "use [things]" as using. using is an action applying to one thing.
+
+
 
 
 
@@ -144,12 +147,12 @@ understand "coffee table" as the glass coffee table.
 understand "table" as the glass coffee table.
 
 Couch is scenery in Apartment Living Room. "It's a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo."
-[Think about turning TV on/off]
 
 Instead of looking under couch:
 	say "Nothing much."
 	
 TV is scenery in Apartment Living Room. "Our TV is on. It's replaying the statewide message that was sent out months ago. 'Seek shelter and food. Stay inside at all times. Do NOT go outside in any case. This has been an official CEDA announcement.'" 
+
 Glass coffee table is scenery supporter in Apartment Living Room. The description is "Mommy left a note on top of the table for me."
 
 Note is on the Glass Coffee Table. It is undescribed. The description is "Ella - We're heading into town for the day. We'll be back before nightfall. Don't worry, sweetie. - Love, Mommy."
@@ -172,16 +175,7 @@ Instead of unlocking cupboards with key:
 	now the cupboards are open.
 	
 	
-[Check printing "You can't see any such thing.":
-	say "I can't see that." instead.]
-
-[Check opening cupboards:
-	if cupboards are unlocked:
-		say "I see my Daddy's gun and bullets." instead.]
-
 				[GUN]
-
-The bullets is a thing. The bullets is in the cupboards. The printed name is "case of [bullet-count] bullet(s) for Daddy's revolver". The bullets have a number called bullet-count. The bullet-count is usually 8. The description is "Some bullets for my Daddy's revolver."
 
 The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot[roman type] this thing."
 
@@ -265,6 +259,8 @@ pillowcasebag is a thing. the printed name is "pillowcase bag".
 
 understand "pillowcase bag" as the pillowcasebag.	
 
+[taken from Assassin]
+
 A thing can be tied or untied.
 
 An every turn rule:
@@ -281,13 +277,11 @@ Check taking a thing:
 		if the player is carrying 15 things:
 			say "I can't hold anymore! I'm going to have to make some room in my bag…" instead;
 			
+[my own code!]
+			
 Instead of taking scenery:
 	say "Mmmph! I can't move it!"
 
-[An every turn rule:	
-	Instead of printing the things inside a container:
-		say "I see: [line break]"; list the contents of the container, with newlines, indented;]
-		
 	
 		
 poop is thing in apartment living room. it is undescribed. the description is "Andy Bae is a MILF".
@@ -371,7 +365,7 @@ Instead of going through the window:
 	if bedsheets are not tied:
 		say "It's a looooong way down!"
 		
-
+[my way of escaping from apartment. taken from my original game]
 		
 Parking Lot is a room. The description is "I'm here in the parking lot in front of our small little apartment.[line break][line break]I can see a trainyard to the east and the town square to the west." It is west of Trainyard. It is east of Town Square.
 	
@@ -390,6 +384,8 @@ understand "gun" as the revolver.
 
 		
 understand "hit" as attacking.
+
+[COMBAT SYSTEM TAKEN FROM ASSASSIN]
 	
 [AXE MECHANIC - REGULAR]
 
@@ -438,12 +434,6 @@ Instead of attacking the zombie with the revolver:
 
 Zombie is a person. It is undescribed. The description is "It's a dead man that is walking! I should [bold type]attack it with something[roman type]." The zombie is in DEATH.
 
-[Every turn rule:
-	if the location of the player is not the location of the zombie:
-		if a random chance of 1 in 5 succeeds:
-				say "A zombie starts to take notices me. He might try kill me!";
-				move zombie to location of player;
-				change the present health of the zombie to 100.]
 				
 
 
@@ -476,13 +466,6 @@ Every turn rule:
 				change the present health of the zombie to 100;
 			otherwise:
 				say "There are zombies about!"
-
-[BUG]
-[BUG]			
-[BUG- IF THE ZOMBIE GETS SHOT DEAD, WILL STILL ATTACK THAT TURN!]
-[BUG]
-[BUG]		
-				
 		
 Chapter 2 Outdoors
 			
@@ -491,13 +474,9 @@ Chapter 2 Outdoors
 Outdoors is a region.
 Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneral Store and Parking Lot are in Outdoors.
 
-DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, Frontofthe HardwareStore, FrontoftheGeneralStore and Parking Lot. "I see some dead zombies lying around."
+DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneralStore, Parking Lot, Small House's Living Room, and Shelf B. "A zombie I recently mauled."
 
 understand "dead zombie" as the deadzombie.
-
-
-
-
 
 Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store."
 
@@ -526,6 +505,12 @@ Dusty couch is scenery in small house's living room. The description is "It's ju
 
 Old rusty wrench is a thing. The description is "It's an old wrench, used many times."
 
+instead of examining the old rusty wrench:
+	if the old rusty wrench is not broken:
+		say "It's an old wrench, used many times.";
+	if the old rusty wrench is broken:
+		say "It's an old wrench, now broken into tiny pieces."
+
 Instead of looking under the dusty couch:
 	say "There's an old rusty wrench under here. I take it because maybe it'll be useful later.";
 	move the old rusty wrench to the player.
@@ -545,6 +530,8 @@ Instead of opening the kitchencupboards:
 understand "salisbury steak" as canned salisbury steak.
 understand "steak" as canned salisbury steak.
 understand "beans" as canned beans.
+
+[MY OWN FOOD/HEALTH SYSTEM]
 
 Canned Salisbury Steak is a thing inside the kitchencupboards.
 
@@ -633,11 +620,11 @@ Instead of using the cistern:
 	
 Chapter 3 The General Store
 
-The FrontoftheGeneral Store is a room. The printed name is "Front of the General Store". The frontofthegeneral store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
+The FrontoftheGeneralStore is a room. The printed name is "Front of the General Store". The frontofthegeneralstore is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
 
-The generalstoredoor is east of the general store and west of the front of the general store. The general store's door is a scenery door. The general store's door is a closed door. The description is "The door to the general store."
+The generalstoredoor is east of the generalstore and west of the frontofthegeneralstore. The generalstoredoor is a scenery door. The generalstoredoor is open. The description is "The door to the general store."
 
-The GeneralStore is a room. The GeneralStore is west of the general store's door. The printed name is "General Store." The description is "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor. There's a counter in the corner.[line break][line break]The exit is to the east."
+The GeneralStore is a room. The GeneralStore is west of the generalstoredoor. The printed name is "General Store." The description is "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor. There's a counter in the corner.[line break][line break]The exit is to the east."
 
 Counter is scenery in GeneralStore. The description is "A small counter where people check their goods out. There's something behind the counter."
 
@@ -650,7 +637,7 @@ Instead of looking behind the counter:
 	if the toolbox is not in the generalstore:
 		say "I see a small toolbox here.";
 		move toolbox to generalstore;
-	if the toolbox is in the general store:
+	if the toolbox is in the generalstore:
 		say "I see a toolbox here."
 	
 understand "heavy duty spanner" as the spanner.
@@ -796,26 +783,19 @@ Instead of attacking the tallman:
 		remove the tallman from play.
 		
 Instead of attacking the tallman with the revolver:
-	if a random chance of 1 in 2 succeeds:
-		remove the tallman from play;
-		say "I kill the man.";
-	otherwise:
-		say "I try to shoot the man with my gun but I miss! He runs out of the room.";
-		remove the tallman from play.
+	remove the tallman from play;
+	say "I try to kill the man but he screams and runs out the door. He leaves his bag behind.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
+
 		
 Instead of attacking the tallman with the axe:
-	if a random chance of 1 in 2 succeeds:
-		remove the tallman from play;
-		say "I kill the man with a swift chop of my axe.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
-		move potato chips to player;
-		move can of SPAM to player;
-		move chicken noodle soup to player;
-		move water bottle to player;
-		now the water bottle is empty;
-	otherwise:
-		say "I swing the axe at the man but I miss! He runs out of the room.";
-		remove the tallman from play.
-
+	remove the tallman from play;
+	say "I try to kill the man but he screams and runs out the door. He leaves his bag behind.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
+	move potato chips to player;
+	move can of SPAM to player;
+	move chicken noodle soup to player;
+	move water bottle to player;
+	now the water bottle is empty;
+	
 
 	
 
@@ -823,7 +803,7 @@ Chapter 4 The Hardward Store
 
 FrontoftheHardwareStore is a room. The printed name is "Front of the Hardware Store". The frontofthehardwarestore is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
 
- The hardwarestoredoor is north of the frontofthehardwarestore and south of the Hardware Store. Hardwarestoredoor is a scenery door. The hardwarestoredoor is open. The printed name is "hardware store's door".
+The hardwarestoredoor is north of the frontofthehardwarestore and south of the Hardware Store. Hardwarestoredoor is a scenery door. The hardwarestoredoor is open. The printed name is "hardware store's door".
 
 understand "door" as the hardwarestoredoor.
 
@@ -847,31 +827,10 @@ Batteries is a thing inside Shelf C. "I see some batteries here!" The descriptio
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Chapter 5 The Train
 
 
-
+[MADE THE TRAIN A SEPERATE ROOM]
 
 
 Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
@@ -881,7 +840,28 @@ Rail is scenery in Trainyard. The description is "I see the rail go on and on an
 [TRAIN COUPLER]
 The Train is a room. The Train is north of the Trainyard. The description is "I'm standing on the train. It's derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.[line break][line break]I can see another train compartment to the east and the engine car to the west."
 
-train coupler is scenery in Train. The description is "It's twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow [bold type]break[roman type] this coupler apart."
+train coupler is a thing in Train. the train coupler is undescribed. the train coupler can be broken or not broken. the train coupler is not broken. The description is "It's twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow [bold type]break[roman type] this coupler apart."
+
+
+
+Understand the command "use" as something new.
+Using it with is an action applying to two things. Understand "use [something] with [something]" as using it with.
+
+A thing can be broken or not broken.
+
+Instead of breaking the train coupler with the wrench:
+	if the wrench is not broken:
+		say "CRINK! The old rusty wrench breaks right in half!";
+		now the wrench is broken;
+	if the wrench is broken:
+		say "The wrench is broken. I can't use it anymore!"
+		
+Instead of breaking the train coupler with the spanner:
+	say "MMMMMMMPH![line break][line break]*snap!*[line break][line break]The train coupler slides apart! Hooooray!";
+	now the train coupler is broken.
+	
+Instead of breaking the train coupler with the cable cutters:
+	say "MMMMMMMPH! Darn, I'm not strong enough to cut the coupler.".
 
 
 Engine car is a room. The engine car is west of the Train. The description is "I'm standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.[line break][line break]To the east I can see the train coupler."
@@ -909,9 +889,12 @@ understand "dead man's hand" as hand5.
 understand "man's hand" as hand5.
 
 [PANEL]
-The panel is scenery in engine room. The description is "The panel is covered with switches and buttons.[line break][line break]Lever A's light is turned off.[line break][line break]Lever B's light is turned on.[line break][line break]Lever C's light is turned off and the lever is missing.[line break][line break]There is a large red button that says 'Start'."
+The panel is scenery in engine room. The description is "The panel is covered with switches and buttons. There is lever A, lever B and lever C. There is a large red button that says 'Start'."
+
 Lever A is a device in engine room. Lever A is scenery. Lever A is switched on.
+
 Lever B is a device in engine room. Lever B is scenery. Lever B is switched off.
+
 Lever D is a thing in engine room. It is undescribed.The description is "It looks like it can be [bold type]put[roman type] in the slot of Lever C." The printed name is "the lever that the dead man is holding".
 
 Lever C is a device in DEATH. Lever C is scenery. The lever C is switched off. The description is "I've taken this from the dead man. It looks like it can be [bold type]put[roman type] in the slot of Lever C."
@@ -926,6 +909,8 @@ Instead of taking lever D:
 	say "Taken.";
 	move lever c to player;
 	move lever D to DEATH.
+
+[kind of a kinky way to get lever C]
 	
 Instead of switching on Lever B:
 	say "I switch the Lever B on. There's a satisfying clunk!";
@@ -959,7 +944,7 @@ understand "door" as enginedoor5.
 The enginedoor5 is west of the engine car and east of the engine room. The enginedoor5 is a scenery door. The enginedoor5 is an open door. The description is "A door leading to the engine room. It has a window."
 
 understand the command "put" as something new.
-Putting it in is an action applying to two things. Understand "put [something] in [something]" as putting it in.
+Putting it in is an action applying to two things. Understand "put [something] in [something]" and "put [something] into [something]" as putting it in.
 
 
 Button is a device in Engine Room. It is undescribed. The Button can be pressed. The description is "The button is red. It has the word 'Start' on it."
@@ -967,12 +952,21 @@ Button is a device in Engine Room. It is undescribed. The Button can be pressed.
 understand "red button" as the button.
 understand "large red button" as the button.
 
+[ENDING!]
 
 Instead of pushing the button:
 	if Lever A is switched on:
 		if Lever B is switched on:
 			if Lever C is switched on:
-				end the game in victory;
+				if the train coupler is broken:
+					if the tallman is not in the GeneralStore:
+						say "Just as I press the button, the tall man from the store hops into the car with me! 'Not so fast, little girl! You're giving me the controls to this thing. Now back off!'[line break][line break]You may have escaped from the town, but you have not escaped from the man.";
+						end the game in victory;
+					if the tallman is in the GeneralStore:
+						say "Just as I press the button, the tall man from the store hops into the car with me! 'Hold on, little girl! Thanks for lending me this gun! I happen to know where these tracks go and I'll help you get to where you want to go!'[line break][line break]With the man's help, you steer the train to a future full of hope and happiness.";
+					end the game in victory;
+				otherwise:
+					say "The train won't budge with the coupler still attached!";
 			otherwise:
 				say "Not all of the levers are switched on yet!";
 		otherwise:
@@ -987,12 +981,17 @@ Instead of pushing the button:
 
 understand "bandaid" as the bandaids.
 
+[~~~~~~~~~~]
+[~~~~~~~~~~~~]
+[EXTRA STUFF]
+[~~~~~~~~~~~~]
+[~~~~~~~~~~]
+
 
 [OUT OF WORLD MOVE]
 Instead of going northwest:
-	move player to town square;
+	move player to train;
 	move revolver to player;
-	move bullets to player;
 	move bandaids to player;
 	move pills to player;
 	move flashlight to player;
@@ -1002,7 +1001,14 @@ Instead of going northwest:
 	move axe to player;
 	move lever C to player;
 	now the flashlight is lit;
-	move water bottle to player.
+	move water bottle to player;
+	move spanner to player;
+	move wrench to player;
+	move cable cutters to player;
+	now lever A is switched on;
+	now lever B is switched on;
+	now lever C is switched on;
+	now the train coupler is broken.
 
 
 DEATH is a room.
@@ -1017,12 +1023,6 @@ understand "fridge" as the refrigerator.
 Hands is a thing.
 
 deadman is a man in DEATH. The printed name is "dead person". The description is "Dead body of the disfigured person. Scary."
-
-[PAY ATTENTION FIRST TO GENERAL GAME THEN CONCENTRATE CHANGING THE YOUS TO I'S]
-
-
-[CODE IN WRENCH]
-
 
 
 
