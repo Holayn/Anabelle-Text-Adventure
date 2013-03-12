@@ -55,23 +55,23 @@ Check examining the player:
 To say status of the player:
 	let x be the present health of the player;
 	if x is 100:
-		say "I feel perfectly fine, like being in a sunny field.";
+		say "I feel perfectly fine, like being in a sunny field.[line break]";
 	otherwise if x is at most 10:
-		say "I'm shaking all over and I can't see straight.";
+		say "I'm shaking all over and I can't see straight.[line break]";
 	otherwise if x is at most 20:
-		say "I don't feel well at all. My knees are shaking and I can't see clearly. Where's Mommy";
+		say "I don't feel well at all. My knees are shaking and I can't see clearly. Where's Mommy?[line break]";
 	otherwise if x is at most 30:
-        		say "I feel sore all over and could use some Band-Aids right now.";
+        		say "I feel sore all over and could use some Band-Aids right now.[line break]";
     	otherwise if x is at most 60:
-      	  	say "I don't feel too good.";
+      	  	say "I don't feel too good.[line break]";
     	otherwise if x is at most 70:
-        		say "I feel like my injuries are nothing! I may be a little girl, but I can take this!";
+        		say "I feel like my injuries are nothing! I may be a little girl, but I can take this![line break]";
     	otherwise if x is at most 80:
-        		say "I can almost pretend I don't hurt right now.";
+        		say "I can almost pretend I don't hurt right now.[line break]";
     	otherwise if x is at most 90:
-        		say "I have some cuts and bruises. Where's Mommy to help put on Band-aids?";
+        		say "I have some cuts and bruises. Where's Mommy to help put on Band-aids?[line break]";
     	otherwise:
-        		say "I'm a little messy, but Mommy always tells me that I look cute.";
+        		say "I'm a little messy, but Mommy always tells me that I look cute.[line break]";
 	let y be the present hunger of the player;
 	if y is 100:
 		say "I don't feel hungry at all right now! Let's go do something.";
@@ -109,6 +109,8 @@ Instead of eating the pain pills:
 			say "I eat the pills and suddenly I have no more pain in my boo-boos![line break](Health: [the present health of the player])".;
 	otherwise:
 		say "I don't have any more pills left…".
+		
+Understand "putting on" as using.
 
 Instead of using the bandaids:
 	if the bandaid-count of the bandaids is greater than 0:
@@ -301,12 +303,16 @@ Yarn is a thing inside the Nightstand. The description is "Some of Mommy's yarn.
 
 Flashlight is a device inside the Nightstand. The description is "Daddy's flashlight. He uses it to look under the sink." The flashlight is unlit.
 
+Check examining the flashlight:
+	if the player is carrying batteries:
+		say "Daddy's flashlight. It now has batteries inside." instead.
+
 understand "drawer" as nightstand.
 Instead of opening nightstand:
 	say "I open the nightstand and I can see a flashlight here and some yarn.";
 	now the nightstand is open.
 	
-Batteries is a thing.
+
 
 Instead of taking batteries:
 	say "I take the batteries and put it in my flashlight.";
@@ -336,13 +342,9 @@ understand "sink" as bathroomsink.
 
 Medicine cabinet is scenery container in Bathroom. It is closed and openable. The description is "When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here."
 
-Check opening medicine cabinet:
-	say "I open the medicine cabinet. I can see some pain pills and a bandaid.";
-	[omit contents in listing.]
-
 Pain pills is a thing inside the Medicine cabinet. The printed name is "[pill-count] pills". The pills has a number called pill-count. The pill-count of the pills is usually 2. The description is "Mmm yum! Some pain pills! Maybe I can eat these if I get hurt."
 
-Bandaids is a thing inside Medicine cabinet. The printed name is "[bandaid-count] bandaids". The bandaids has a number called bandaid-count. The bandaid-count of the bandaids is usually 1. The description is "Some bandaids if I get any boo-boos."
+Bandaids is a thing inside Medicine cabinet. The printed name is "[bandaid-count] bandaids". The bandaids has a number called bandaid-count. The bandaid-count of the bandaids is usually 1. The description is "Some bandaids  I can [bold type]use[roman type]if I get any boo-boos."
 
 The Hallway is a room.
 
@@ -487,9 +489,9 @@ Chapter 2 Outdoors
 
 		
 Outdoors is a region.
-Town Square, Trainyard, Front of the Small House, Front of the Hardware Store, Front of the General Store and Parking Lot are in Outdoors.
+Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneral Store and Parking Lot are in Outdoors.
 
-DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, Front of the Hardware Store, Front of the General Store and Parking Lot. "I see some dead zombies lying around."
+DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, Frontofthe HardwareStore, FrontoftheGeneralStore and Parking Lot. "I see some dead zombies lying around."
 
 understand "dead zombie" as the deadzombie.
 
@@ -631,21 +633,48 @@ Instead of using the cistern:
 	
 Chapter 3 The General Store
 
-The Front of the General Store is a room. The front of the general store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
+The FrontoftheGeneral Store is a room. The printed name is "Front of the General Store". The frontofthegeneral store is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
 
-The general store's door is east of the general store and west of the front of the general store. The general store's door is a scenery door. The general store's door is a closed door. The description is "The door to the general store."
+The generalstoredoor is east of the general store and west of the front of the general store. The general store's door is a scenery door. The general store's door is a closed door. The description is "The door to the general store."
 
-The GeneralStore is a room. The GeneralStore is west of the general store's door. The printed name is "General Store." The description is "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor.[line break][line break]The exit is to the east."
+The GeneralStore is a room. The GeneralStore is west of the general store's door. The printed name is "General Store." The description is "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor. There's a counter in the corner.[line break][line break]The exit is to the east."
+
+Counter is scenery in GeneralStore. The description is "A small counter where people check their goods out. There's something behind the counter."
+
+Looking behind is an action applying to one thing. Understand "look behind [something]" as looking behind.
+
+Check looking behind:
+	say "I don't find much behind [the noun]."
+
+Instead of looking behind the counter:
+	if the toolbox is not in the generalstore:
+		say "I see a small toolbox here.";
+		move toolbox to generalstore;
+	if the toolbox is in the general store:
+		say "I see a toolbox here."
+	
+understand "heavy duty spanner" as the spanner.
+
+Spanner is a thing. The description is "A heavy duty spanner. Maybe I can use this later."
+
+Toolbox is a scenery container. It is undescribed. The toolbox is closed and openable. The description is "A small, red toolbox."
+
+understand "small red toolbox", "red toolbox" and "small toolbox" as the toolbox.
+
+Instead of opening the toolbox:
+	say "I open the small toolbox and see a heavy duty spanner.";
+	now the toolbox is open;
+	move the spanner to the toolbox.
 
 tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: talk, ask, give."
 
 understand "man" and "tall man" as the tallman.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "converse with [someone]" as talking to.
-Check talking to: say "[The noun] doesn't reply."
+Check talking to: say "[The noun] doesn't reply."
 
 The large bag is scenery in generalstore. The description is "The man's large bag."
-Instead of talking to tallman:
+Instead of talking to tallman:
 	say "[one of]'Hi, mister.' you say timidly.[paragraph break]'Hello, little girl. What is your name?' says the tall man.[paragraph break]'My name is Anabelle.'[paragraph break]'That's a nice name, Anabelle.' he says, shifting his weight to hide his bag.[or]I should ask him about something.[stopping]"	
 
 Understand "bag", "the bag", "his bag", "man's large bag", and "his large bag" as "[large bag]".
@@ -777,7 +806,7 @@ Instead of attacking the tallman with the revolver:
 Instead of attacking the tallman with the axe:
 	if a random chance of 1 in 2 succeeds:
 		remove the tallman from play;
-		say "I kill the man with a swift chop of my axe.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";;
+		say "I kill the man with a swift chop of my axe.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
 		move potato chips to player;
 		move can of SPAM to player;
 		move chicken noodle soup to player;
@@ -792,11 +821,28 @@ Instead of attacking the tallman with the axe:
 
 Chapter 4 The Hardward Store
 
-Front of the Hardware Store is a room. The hardware store is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
+FrontoftheHardwareStore is a room. The printed name is "Front of the Hardware Store". The frontofthehardwarestore is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
 
+ The hardwarestoredoor is north of the frontofthehardwarestore and south of the Hardware Store. Hardwarestoredoor is a scenery door. The hardwarestoredoor is open. The printed name is "hardware store's door".
 
+understand "door" as the hardwarestoredoor.
 
+Hardware Store is a room. The Hardware store is north of the hardwarestoredoor. The printed name is "Hardware Store". The description is "I'm in the hardware store. There are a lot of towering shelves here.[line break][line break]Shelf A is to the north. Shelf B is to the east. Shelf C is to the west. The door out is to the south."
 
+Shelf A is a room. Shelf A is north of the hardware store. The description is "I'm standing in the aisle of shelf A.[line break][line break]I see the main room to the south."
+
+Cable cutters is a thing. Cable cutters is in Shelf A. "I see a pair of strong cable cutters here." The description is "A pair of strong cable cutters. Maybe I could use these later?"
+
+Shelf B is a room. Shelf B is east of the hardware store. The description is "I'm standing in the aisle of shelf B. I see the main room to the west."
+
+Instead of going east in the Hardware Store for the first time:
+	move the player to Shelf B;
+	move the zombie to Shelf B;
+	say "Aieeee!".
+
+Shelf C is a room. Shelf C is west of the hardware store. The description is "I'm standing in the aisle of shelf C.[line break][line break]I see the main room to the east."
+
+Batteries is a thing inside Shelf C. "I see some batteries here!" The description is "Maybe these batteries can fit into my flashlight!"
 
 
 
@@ -939,9 +985,7 @@ Instead of pushing the button:
 
 
 
-
-
-
+understand "bandaid" as the bandaids.
 
 
 [OUT OF WORLD MOVE]
@@ -952,7 +996,7 @@ Instead of going northwest:
 	move bandaids to player;
 	move pills to player;
 	move flashlight to player;
-	move batteries to player;
+	[move batteries to player;]
 	move bedsheets to player;
 	move pillowcasebag to player;
 	move axe to player;
