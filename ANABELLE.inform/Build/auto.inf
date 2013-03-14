@@ -561,7 +561,7 @@ Property short_name_indef 0; ! not used by I7, but an interesting hook in the li
 
 Constant life = NULL;
 
-Constant ActionCount = 90;
+Constant ActionCount = 91;
 
 Fake_Action ListMiscellany;
 Fake_Action Miscellany;
@@ -8962,7 +8962,7 @@ Array valued_property_offsets --> valued_property_offsets_SIZE;
 ];
 
 
-Constant NUMBER_RULEBOOKS_CREATED = 395;
+Constant NUMBER_RULEBOOKS_CREATED = 398;
 Constant V0_printing_the_name_of_some = 0;
 Constant V1_printing_the_plural_name_ = 1;
 Constant V2_printing_a_number_of_some = 2;
@@ -11599,7 +11599,7 @@ Array Global_Vars -->
 Array T0_final_question_options table  tab_0_0 tab_0_1 tab_0_2 tab_0_3 tab_0_4;
 Array tab_0_0 table $0064 0  (SC_78)  (SC_79)  (SC_80)  (SC_81)  (SC_82) ;
 Array tab_0_1 table $0465 1  (0)  (0)  (1)  (0)  (0) ;
-Array tab_0_2 table $2066 2  (Consult_Grammar_141)  (Consult_Grammar_142)  (Consult_Grammar_143)  (Consult_Grammar_144)  (Consult_Grammar_145) ;
+Array tab_0_2 table $2066 2  (Consult_Grammar_143)  (Consult_Grammar_144)  (Consult_Grammar_145)  (Consult_Grammar_146)  (Consult_Grammar_147) ;
 Array tab_0_3 table $0067 3  (IMMEDIATELY_RESTART_VM_R)  (IMMEDIATELY_RESTORE_SAVED_R)  TABLE_NOVALUE (IMMEDIATELY_QUIT_R)  (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4  TABLE_NOVALUE TABLE_NOVALUE (V26_amusing_a_victorious_pla)  TABLE_NOVALUE TABLE_NOVALUE;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
@@ -11739,8 +11739,9 @@ Array ActionData table
   ##A87_using_it_with  $$00011011  OBJECT_TY OBJECT_TY  0 20087
   ##A88_breaking_it_with  $$00011011  OBJECT_TY OBJECT_TY  0 20088
   ##A89_putting_it_in  $$00011011  OBJECT_TY OBJECT_TY  0 20089
+  ##A90_casting_xyzzy  $$00000000  OBJECT_TY OBJECT_TY  0 20090
 ;
-Constant AD_RECORDS = 90;
+Constant AD_RECORDS = 91;
 [ ANSTVC_7 pos state;
     if (state == 1) {
         MStack-->pos = I90_apartment_living_room; pos++;
@@ -11887,6 +11888,7 @@ Constant AD_RECORDS = 90;
         ##A87_using_it_with: print "using"; print " "; if (for_say == 2) print "it"; else DA_Name(n); print " "; print "with"; if (for_say ~= 2) { print " "; DA_Name(s); }
         ##A88_breaking_it_with: print "breaking"; print " "; if (for_say == 2) print "it"; else DA_Name(n); print " "; print "with"; if (for_say ~= 2) { print " "; DA_Name(s); }
         ##A89_putting_it_in: print "putting"; print " "; if (for_say == 2) print "it"; else DA_Name(n); print " "; print "in"; if (for_say ~= 2) { print " "; DA_Name(s); }
+        ##A90_casting_xyzzy: print "casting xyzzy"; 
     }
 ];
 
@@ -11902,7 +11904,7 @@ Array ActionCoding -->
     ##Sleep ##Quit ##Save ##Restore ##Restart ##Verify ##ScriptOn ##ScriptOff
     ##Version ##Score ##LMode3 ##LMode2 ##LMode1 ##NotifyOn ##NotifyOff ##Pronouns
     ##A80_commanding ##A81_using ##A82_combining_it_with ##A83_attacking_it_with ##A84_shooting_it_with ##A85_looking_behind ##A86_talking_to ##A87_using_it_with
-    ##A88_breaking_it_with ##A89_putting_it_in;
+    ##A88_breaking_it_with ##A89_putting_it_in ##A90_casting_xyzzy;
 
 
 Array ActionHappened --> 0 0 0 0 0 0;
@@ -11998,6 +12000,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ A87_using_it_withSub; return GenericVerbSub(386,387,388); ];
 [ A88_breaking_it_withSub; return GenericVerbSub(389,390,391); ];
 [ A89_putting_it_inSub; return GenericVerbSub(392,393,394); ];
+[ A90_casting_xyzzySub; return GenericVerbSub(395,396,397); ];
 
 [ MistakeActionSub;
     switch(understand_as_mistake_number) {
@@ -13624,7 +13627,7 @@ self = noun;
 ! No specific request
 ! Instead of asking tallman about ~[large bag]~:
 [ R_811 ;
-   if ((action ==##Ask) &&  (actor==player) && ((noun == I156_tallman) && (true)) && (Consult_Grammar_146(consult_from, consult_words)~=GPR_FAIL)) { ! Runs only when pattern matches
+   if ((action ==##Ask) &&  (actor==player) && ((noun == I156_tallman) && (true)) && (Consult_Grammar_148(consult_from, consult_words)~=GPR_FAIL)) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_811, 811);
       ! phrase 1
@@ -21481,6 +21484,25 @@ self = noun;
    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
+
+! ----------------------------------------------------------------------------------------------------
+! Rules in rulebook: check Casting xyzzy (B395_check_casting_xyzzy)
+! ----------------------------------------------------------------------------------------------------
+! Rule 1/1 ! Check casting xyzzy:
+! ----------------------------------------------------------------------------------------------------
+! No specific request
+! Check casting xyzzy:
+[ R_830 ;
+   if (actor == player) {
+   if (debug_rules) DB_Rule(R_830, 830);
+      ! phrase 1
+      ! [1: say ~Did you know, taking the poop is against the rules?~ instead]
+      say__p=1;ParaContent();  print (PrintText) SC_264;  new_line; rtrue; .L_Say181; .L_SayX181; rtrue;
+   } ! Runs only when actor is the player
+   else if (debug_rules > 1) DB_Rule(R_830, 830, true);
+   rfalse;
+];
+! ----------------------------------------------------------------------------------------------------
 ! Definitions of displaced and unbooked rules
 
 ! Definitions of adjectives
@@ -23556,7 +23578,7 @@ Array TimedEventTimesTable table 0 0;
 
 
 
-Array rulebooks_array --> B0_procedural B1_startup B2_turn_sequence B3_shutdown B4_scene_changing B5_when_play_begins B6_when_play_ends B7_when_scene_begins B8_when_scene_ends B9_every_turn B10_action_processing B11_setting_action_variables B12_specific_action_processi B13_player_s_action_awarenes B14_accessibility B15_reaching_inside B16_reaching_outside B17_visibility B18_persuasion B19_unsuccessful_attempt_by B20_before B21_instead B22_check B23_carry_out B24_after B25_report B26_does_the_player_mean B27_when_entire_game_begins B28_when_entire_game_ends B29_before_printing_the_name B30_for_printing_the_name B31_after_printing_the_name B32_before_printing_the_plur B33_for_printing_the_plural_ B34_after_printing_the_plura B35_before_printing_a_number B36_for_printing_a_number B37_after_printing_a_number B38_before_printing_room_des B39_for_printing_room_descri B40_after_printing_room_desc B41_before_listing_contents B42_for_listing_contents B43_after_listing_contents B44_before_grouping_together B45_for_grouping_together B46_after_grouping_together B47_before_writing_a_paragra B48_for_writing_a_paragraph_ B49_after_writing_a_paragrap B50_before_listing_nondescri B51_for_listing_nondescript_ B52_after_listing_nondescrip B53_before_printing_the_name B54_for_printing_the_name_of B55_after_printing_the_name_ B56_before_printing_the_desc B57_for_printing_the_descrip B58_after_printing_the_descr B59_before_printing_the_anno B60_for_printing_the_announc B61_after_printing_the_annou B62_before_printing_the_anno B63_for_printing_the_announc B64_after_printing_the_annou B65_before_printing_a_refusa B66_for_printing_a_refusal_t B67_after_printing_a_refusal B68_before_constructing_the_ B69_for_constructing_the_sta B70_after_constructing_the_s B71_before_printing_the_bann B72_for_printing_the_banner_ B73_after_printing_the_banne B74_before_reading_a_command B75_for_reading_a_command B76_after_reading_a_command B77_before_deciding_the_scop B78_for_deciding_the_scope B79_after_deciding_the_scope B80_before_deciding_the_conc B81_for_deciding_the_conceal B82_after_deciding_the_conce B83_before_deciding_whether_ B84_for_deciding_whether_all B85_after_deciding_whether_a B86_before_clarifying_the_pa B87_for_clarifying_the_parse B88_after_clarifying_the_par B89_before_asking_which_do_y B90_for_asking_which_do_you_ B91_after_asking_which_do_yo B92_before_printing_a_parser B93_for_printing_a_parser_er B94_after_printing_a_parser_ B95_before_supplying_a_missi B96_for_supplying_a_missing_ B97_after_supplying_a_missin B98_before_supplying_a_missi B99_for_supplying_a_missing_ B100_after_supplying_a_missi B101_before_implicitly_takin B102_for_implicitly_taking B103_after_implicitly_taking B104_before_starting_the_vir B105_for_starting_the_virtua B106_after_starting_the_virt B107_before_amusing_a_victor B108_for_amusing_a_victoriou B109_after_amusing_a_victori B110_before_printing_the_pla B111_for_printing_the_player B112_after_printing_the_play B113_before_handling_the_fin B114_for_handling_the_final_ B115_after_handling_the_fina B116_before_printing_the_loc B117_for_printing_the_locale B118_after_printing_the_loca B119_before_choosing_notable B120_for_choosing_notable_lo B121_after_choosing_notable_ B122_before_printing_a_local B123_for_printing_a_locale_p B124_after_printing_a_locale B125_check_taking_inventory B126_carry_out_taking_invent B127_report_taking_inventory B128_check_taking B129_carry_out_taking B130_report_taking B131_check_removing_it_from B132_carry_out_removing_it_f B133_report_removing_it_from B134_check_dropping B135_carry_out_dropping B136_report_dropping B137_check_putting_it_on B138_carry_out_putting_it_on B139_report_putting_it_on B140_check_inserting_it_into B141_carry_out_inserting_it_ B142_report_inserting_it_int B143_check_eating B144_carry_out_eating B145_report_eating B146_check_going B147_carry_out_going B148_report_going B149_check_entering B150_carry_out_entering B151_report_entering B152_check_exiting B153_carry_out_exiting B154_report_exiting B155_check_getting_off B156_carry_out_getting_off B157_report_getting_off B158_check_looking B159_carry_out_looking B160_report_looking B161_check_examining B162_carry_out_examining B163_report_examining B164_check_looking_under B165_carry_out_looking_under B166_report_looking_under B167_check_searching B168_carry_out_searching B169_report_searching B170_check_consulting_it_abo B171_carry_out_consulting_it B172_report_consulting_it_ab B173_check_locking_it_with B174_carry_out_locking_it_wi B175_report_locking_it_with B176_check_unlocking_it_with B177_carry_out_unlocking_it_ B178_report_unlocking_it_wit B179_check_switching_on B180_carry_out_switching_on B181_report_switching_on B182_check_switching_off B183_carry_out_switching_off B184_report_switching_off B185_check_opening B186_carry_out_opening B187_report_opening B188_check_closing B189_carry_out_closing B190_report_closing B191_check_wearing B192_carry_out_wearing B193_report_wearing B194_check_taking_off B195_carry_out_taking_off B196_report_taking_off B197_check_giving_it_to B198_carry_out_giving_it_to B199_report_giving_it_to B200_check_showing_it_to B201_carry_out_showing_it_to B202_report_showing_it_to B203_check_waking B204_carry_out_waking B205_report_waking B206_check_throwing_it_at B207_carry_out_throwing_it_a B208_report_throwing_it_at B209_check_attacking B210_carry_out_attacking B211_report_attacking B212_check_kissing B213_carry_out_kissing B214_report_kissing B215_check_answering_it_that B216_carry_out_answering_it_ B217_report_answering_it_tha B218_check_telling_it_about B219_carry_out_telling_it_ab B220_report_telling_it_about B221_check_asking_it_about B222_carry_out_asking_it_abo B223_report_asking_it_about B224_check_asking_it_for B225_carry_out_asking_it_for B226_report_asking_it_for B227_check_waiting B228_carry_out_waiting B229_report_waiting B230_check_touching B231_carry_out_touching B232_report_touching B233_check_waving B234_carry_out_waving B235_report_waving B236_check_pulling B237_carry_out_pulling B238_report_pulling B239_check_pushing B240_carry_out_pushing B241_report_pushing B242_check_turning B243_carry_out_turning B244_report_turning B245_check_pushing_it_to B246_carry_out_pushing_it_to B247_report_pushing_it_to B248_check_squeezing B249_carry_out_squeezing B250_report_squeezing B251_check_saying_yes B252_carry_out_saying_yes B253_report_saying_yes B254_check_saying_no B255_carry_out_saying_no B256_report_saying_no B257_check_burning B258_carry_out_burning B259_report_burning B260_check_waking_up B261_carry_out_waking_up B262_report_waking_up B263_check_thinking B264_carry_out_thinking B265_report_thinking B266_check_smelling B267_carry_out_smelling B268_report_smelling B269_check_listening_to B270_carry_out_listening_to B271_report_listening_to B272_check_tasting B273_carry_out_tasting B274_report_tasting B275_check_cutting B276_carry_out_cutting B277_report_cutting B278_check_jumping B279_carry_out_jumping B280_report_jumping B281_check_tying_it_to B282_carry_out_tying_it_to B283_report_tying_it_to B284_check_drinking B285_carry_out_drinking B286_report_drinking B287_check_saying_sorry B288_carry_out_saying_sorry B289_report_saying_sorry B290_check_swearing_obscenel B291_carry_out_swearing_obsc B292_report_swearing_obscene B293_check_swearing_mildly B294_carry_out_swearing_mild B295_report_swearing_mildly B296_check_swinging B297_carry_out_swinging B298_report_swinging B299_check_rubbing B300_carry_out_rubbing B301_report_rubbing B302_check_setting_it_to B303_carry_out_setting_it_to B304_report_setting_it_to B305_check_waving_hands B306_carry_out_waving_hands B307_report_waving_hands B308_check_buying B309_carry_out_buying B310_report_buying B311_check_singing B312_carry_out_singing B313_report_singing B314_check_climbing B315_carry_out_climbing B316_report_climbing B317_check_sleeping B318_carry_out_sleeping B319_report_sleeping B320_check_quitting_the_game B321_carry_out_quitting_the_ B322_report_quitting_the_gam B323_check_saving_the_game B324_carry_out_saving_the_ga B325_report_saving_the_game B326_check_restoring_the_gam B327_carry_out_restoring_the B328_report_restoring_the_ga B329_check_restarting_the_ga B330_carry_out_restarting_th B331_report_restarting_the_g B332_check_verifying_the_sto B333_carry_out_verifying_the B334_report_verifying_the_st B335_check_switching_the_sto B336_carry_out_switching_the B337_report_switching_the_st B338_check_switching_the_sto B339_carry_out_switching_the B340_report_switching_the_st B341_check_requesting_the_st B342_carry_out_requesting_th B343_report_requesting_the_s B344_check_requesting_the_sc B345_carry_out_requesting_th B346_report_requesting_the_s B347_check_preferring_abbrev B348_carry_out_preferring_ab B349_report_preferring_abbre B350_check_preferring_unabbr B351_carry_out_preferring_un B352_report_preferring_unabb B353_check_preferring_someti B354_carry_out_preferring_so B355_report_preferring_somet B356_check_switching_score_n B357_carry_out_switching_sco B358_report_switching_score_ B359_check_switching_score_n B360_carry_out_switching_sco B361_report_switching_score_ B362_check_requesting_the_pr B363_carry_out_requesting_th B364_report_requesting_the_p B365_check_commanding B366_carry_out_commanding B367_report_commanding B368_check_using B369_carry_out_using B370_report_using B371_check_combining_it_with B372_carry_out_combining_it_ B373_report_combining_it_wit B374_check_attacking_it_with B375_carry_out_attacking_it_ B376_report_attacking_it_wit B377_check_shooting_it_with B378_carry_out_shooting_it_w B379_report_shooting_it_with B380_check_looking_behind B381_carry_out_looking_behin B382_report_looking_behind B383_check_talking_to B384_carry_out_talking_to B385_report_talking_to B386_check_using_it_with B387_carry_out_using_it_with B388_report_using_it_with B389_check_breaking_it_with B390_carry_out_breaking_it_w B391_report_breaking_it_with B392_check_putting_it_in B393_carry_out_putting_it_in B394_report_putting_it_in 0;
+Array rulebooks_array --> B0_procedural B1_startup B2_turn_sequence B3_shutdown B4_scene_changing B5_when_play_begins B6_when_play_ends B7_when_scene_begins B8_when_scene_ends B9_every_turn B10_action_processing B11_setting_action_variables B12_specific_action_processi B13_player_s_action_awarenes B14_accessibility B15_reaching_inside B16_reaching_outside B17_visibility B18_persuasion B19_unsuccessful_attempt_by B20_before B21_instead B22_check B23_carry_out B24_after B25_report B26_does_the_player_mean B27_when_entire_game_begins B28_when_entire_game_ends B29_before_printing_the_name B30_for_printing_the_name B31_after_printing_the_name B32_before_printing_the_plur B33_for_printing_the_plural_ B34_after_printing_the_plura B35_before_printing_a_number B36_for_printing_a_number B37_after_printing_a_number B38_before_printing_room_des B39_for_printing_room_descri B40_after_printing_room_desc B41_before_listing_contents B42_for_listing_contents B43_after_listing_contents B44_before_grouping_together B45_for_grouping_together B46_after_grouping_together B47_before_writing_a_paragra B48_for_writing_a_paragraph_ B49_after_writing_a_paragrap B50_before_listing_nondescri B51_for_listing_nondescript_ B52_after_listing_nondescrip B53_before_printing_the_name B54_for_printing_the_name_of B55_after_printing_the_name_ B56_before_printing_the_desc B57_for_printing_the_descrip B58_after_printing_the_descr B59_before_printing_the_anno B60_for_printing_the_announc B61_after_printing_the_annou B62_before_printing_the_anno B63_for_printing_the_announc B64_after_printing_the_annou B65_before_printing_a_refusa B66_for_printing_a_refusal_t B67_after_printing_a_refusal B68_before_constructing_the_ B69_for_constructing_the_sta B70_after_constructing_the_s B71_before_printing_the_bann B72_for_printing_the_banner_ B73_after_printing_the_banne B74_before_reading_a_command B75_for_reading_a_command B76_after_reading_a_command B77_before_deciding_the_scop B78_for_deciding_the_scope B79_after_deciding_the_scope B80_before_deciding_the_conc B81_for_deciding_the_conceal B82_after_deciding_the_conce B83_before_deciding_whether_ B84_for_deciding_whether_all B85_after_deciding_whether_a B86_before_clarifying_the_pa B87_for_clarifying_the_parse B88_after_clarifying_the_par B89_before_asking_which_do_y B90_for_asking_which_do_you_ B91_after_asking_which_do_yo B92_before_printing_a_parser B93_for_printing_a_parser_er B94_after_printing_a_parser_ B95_before_supplying_a_missi B96_for_supplying_a_missing_ B97_after_supplying_a_missin B98_before_supplying_a_missi B99_for_supplying_a_missing_ B100_after_supplying_a_missi B101_before_implicitly_takin B102_for_implicitly_taking B103_after_implicitly_taking B104_before_starting_the_vir B105_for_starting_the_virtua B106_after_starting_the_virt B107_before_amusing_a_victor B108_for_amusing_a_victoriou B109_after_amusing_a_victori B110_before_printing_the_pla B111_for_printing_the_player B112_after_printing_the_play B113_before_handling_the_fin B114_for_handling_the_final_ B115_after_handling_the_fina B116_before_printing_the_loc B117_for_printing_the_locale B118_after_printing_the_loca B119_before_choosing_notable B120_for_choosing_notable_lo B121_after_choosing_notable_ B122_before_printing_a_local B123_for_printing_a_locale_p B124_after_printing_a_locale B125_check_taking_inventory B126_carry_out_taking_invent B127_report_taking_inventory B128_check_taking B129_carry_out_taking B130_report_taking B131_check_removing_it_from B132_carry_out_removing_it_f B133_report_removing_it_from B134_check_dropping B135_carry_out_dropping B136_report_dropping B137_check_putting_it_on B138_carry_out_putting_it_on B139_report_putting_it_on B140_check_inserting_it_into B141_carry_out_inserting_it_ B142_report_inserting_it_int B143_check_eating B144_carry_out_eating B145_report_eating B146_check_going B147_carry_out_going B148_report_going B149_check_entering B150_carry_out_entering B151_report_entering B152_check_exiting B153_carry_out_exiting B154_report_exiting B155_check_getting_off B156_carry_out_getting_off B157_report_getting_off B158_check_looking B159_carry_out_looking B160_report_looking B161_check_examining B162_carry_out_examining B163_report_examining B164_check_looking_under B165_carry_out_looking_under B166_report_looking_under B167_check_searching B168_carry_out_searching B169_report_searching B170_check_consulting_it_abo B171_carry_out_consulting_it B172_report_consulting_it_ab B173_check_locking_it_with B174_carry_out_locking_it_wi B175_report_locking_it_with B176_check_unlocking_it_with B177_carry_out_unlocking_it_ B178_report_unlocking_it_wit B179_check_switching_on B180_carry_out_switching_on B181_report_switching_on B182_check_switching_off B183_carry_out_switching_off B184_report_switching_off B185_check_opening B186_carry_out_opening B187_report_opening B188_check_closing B189_carry_out_closing B190_report_closing B191_check_wearing B192_carry_out_wearing B193_report_wearing B194_check_taking_off B195_carry_out_taking_off B196_report_taking_off B197_check_giving_it_to B198_carry_out_giving_it_to B199_report_giving_it_to B200_check_showing_it_to B201_carry_out_showing_it_to B202_report_showing_it_to B203_check_waking B204_carry_out_waking B205_report_waking B206_check_throwing_it_at B207_carry_out_throwing_it_a B208_report_throwing_it_at B209_check_attacking B210_carry_out_attacking B211_report_attacking B212_check_kissing B213_carry_out_kissing B214_report_kissing B215_check_answering_it_that B216_carry_out_answering_it_ B217_report_answering_it_tha B218_check_telling_it_about B219_carry_out_telling_it_ab B220_report_telling_it_about B221_check_asking_it_about B222_carry_out_asking_it_abo B223_report_asking_it_about B224_check_asking_it_for B225_carry_out_asking_it_for B226_report_asking_it_for B227_check_waiting B228_carry_out_waiting B229_report_waiting B230_check_touching B231_carry_out_touching B232_report_touching B233_check_waving B234_carry_out_waving B235_report_waving B236_check_pulling B237_carry_out_pulling B238_report_pulling B239_check_pushing B240_carry_out_pushing B241_report_pushing B242_check_turning B243_carry_out_turning B244_report_turning B245_check_pushing_it_to B246_carry_out_pushing_it_to B247_report_pushing_it_to B248_check_squeezing B249_carry_out_squeezing B250_report_squeezing B251_check_saying_yes B252_carry_out_saying_yes B253_report_saying_yes B254_check_saying_no B255_carry_out_saying_no B256_report_saying_no B257_check_burning B258_carry_out_burning B259_report_burning B260_check_waking_up B261_carry_out_waking_up B262_report_waking_up B263_check_thinking B264_carry_out_thinking B265_report_thinking B266_check_smelling B267_carry_out_smelling B268_report_smelling B269_check_listening_to B270_carry_out_listening_to B271_report_listening_to B272_check_tasting B273_carry_out_tasting B274_report_tasting B275_check_cutting B276_carry_out_cutting B277_report_cutting B278_check_jumping B279_carry_out_jumping B280_report_jumping B281_check_tying_it_to B282_carry_out_tying_it_to B283_report_tying_it_to B284_check_drinking B285_carry_out_drinking B286_report_drinking B287_check_saying_sorry B288_carry_out_saying_sorry B289_report_saying_sorry B290_check_swearing_obscenel B291_carry_out_swearing_obsc B292_report_swearing_obscene B293_check_swearing_mildly B294_carry_out_swearing_mild B295_report_swearing_mildly B296_check_swinging B297_carry_out_swinging B298_report_swinging B299_check_rubbing B300_carry_out_rubbing B301_report_rubbing B302_check_setting_it_to B303_carry_out_setting_it_to B304_report_setting_it_to B305_check_waving_hands B306_carry_out_waving_hands B307_report_waving_hands B308_check_buying B309_carry_out_buying B310_report_buying B311_check_singing B312_carry_out_singing B313_report_singing B314_check_climbing B315_carry_out_climbing B316_report_climbing B317_check_sleeping B318_carry_out_sleeping B319_report_sleeping B320_check_quitting_the_game B321_carry_out_quitting_the_ B322_report_quitting_the_gam B323_check_saving_the_game B324_carry_out_saving_the_ga B325_report_saving_the_game B326_check_restoring_the_gam B327_carry_out_restoring_the B328_report_restoring_the_ga B329_check_restarting_the_ga B330_carry_out_restarting_th B331_report_restarting_the_g B332_check_verifying_the_sto B333_carry_out_verifying_the B334_report_verifying_the_st B335_check_switching_the_sto B336_carry_out_switching_the B337_report_switching_the_st B338_check_switching_the_sto B339_carry_out_switching_the B340_report_switching_the_st B341_check_requesting_the_st B342_carry_out_requesting_th B343_report_requesting_the_s B344_check_requesting_the_sc B345_carry_out_requesting_th B346_report_requesting_the_s B347_check_preferring_abbrev B348_carry_out_preferring_ab B349_report_preferring_abbre B350_check_preferring_unabbr B351_carry_out_preferring_un B352_report_preferring_unabb B353_check_preferring_someti B354_carry_out_preferring_so B355_report_preferring_somet B356_check_switching_score_n B357_carry_out_switching_sco B358_report_switching_score_ B359_check_switching_score_n B360_carry_out_switching_sco B361_report_switching_score_ B362_check_requesting_the_pr B363_carry_out_requesting_th B364_report_requesting_the_p B365_check_commanding B366_carry_out_commanding B367_report_commanding B368_check_using B369_carry_out_using B370_report_using B371_check_combining_it_with B372_carry_out_combining_it_ B373_report_combining_it_wit B374_check_attacking_it_with B375_carry_out_attacking_it_ B376_report_attacking_it_wit B377_check_shooting_it_with B378_carry_out_shooting_it_w B379_report_shooting_it_with B380_check_looking_behind B381_carry_out_looking_behin B382_report_looking_behind B383_check_talking_to B384_carry_out_talking_to B385_report_talking_to B386_check_using_it_with B387_carry_out_using_it_with B388_report_using_it_with B389_check_breaking_it_with B390_carry_out_breaking_it_w B391_report_breaking_it_with B392_check_putting_it_in B393_carry_out_putting_it_in B394_report_putting_it_in B395_check_casting_xyzzy B396_carry_out_casting_xyzzy B397_report_casting_xyzzy 0;
 
 Constant B0_procedural = EMPTY_RULEBOOK;
 Array B1_startup --> INITIALISE_MEMORY_R VIRTUAL_MACHINE_STARTUP_R SEED_RANDOM_NUMBER_GENERATOR_R UPDATE_CHRONOLOGICAL_RECORDS_R POSITION_PLAYER_IN_MODEL_R R_8 R_9 R_10 R_11 R_12 NULL; ! 10 rule(s)
@@ -23953,6 +23975,9 @@ Constant B391_report_breaking_it_with = EMPTY_RULEBOOK;
 Constant B392_check_putting_it_in = EMPTY_RULEBOOK;
 Constant B393_carry_out_putting_it_in = EMPTY_RULEBOOK;
 Constant B394_report_putting_it_in = EMPTY_RULEBOOK;
+Array B395_check_casting_xyzzy --> R_830 NULL; ! 1 rule(s)
+Constant B396_carry_out_casting_xyzzy = EMPTY_RULEBOOK;
+Constant B397_report_casting_xyzzy = EMPTY_RULEBOOK;
 
 Constant BR_0 = R_8;
 Constant BR_1 = R_9;
@@ -24219,28 +24244,28 @@ Constant BR_261 = R_296;
 Constant BR_262 = R_297;
 Constant BR_263 = R_298;
 Constant BR_264 = R_299;
-Constant BR_807 = R_8;
-Constant BR_813 = R_9;
-Constant BR_814 = R_10;
-Constant BR_815 = R_11;
-Constant BR_816 = R_12;
-Constant BR_824 = R_16;
-Constant BR_825 = R_17;
-Constant BR_827 = R_18;
-Constant BR_830 = R_21;
-Constant BR_831 = R_19;
-Constant BR_832 = R_20;
-Constant BR_836 = R_22;
-Constant BR_840 = R_23;
-Constant BR_846 = R_35;
-Constant BR_848 = R_59;
-Constant BR_849 = R_60;
-Constant BR_851 = R_61;
-Constant BR_856 = R_69;
-Constant BR_857 = R_68;
-Constant BR_859 = R_70;
-Constant BR_860 = R_91;
-Constant BR_861 = R_148;
+Constant BR_811 = R_8;
+Constant BR_817 = R_9;
+Constant BR_818 = R_10;
+Constant BR_819 = R_11;
+Constant BR_820 = R_12;
+Constant BR_828 = R_16;
+Constant BR_829 = R_17;
+Constant BR_831 = R_18;
+Constant BR_834 = R_21;
+Constant BR_835 = R_19;
+Constant BR_836 = R_20;
+Constant BR_840 = R_22;
+Constant BR_844 = R_23;
+Constant BR_850 = R_35;
+Constant BR_852 = R_59;
+Constant BR_853 = R_60;
+Constant BR_855 = R_61;
+Constant BR_860 = R_69;
+Constant BR_861 = R_68;
+Constant BR_863 = R_70;
+Constant BR_864 = R_91;
+Constant BR_865 = R_148;
 
 
 
@@ -25319,7 +25344,7 @@ Global MStack_Frame_Extent = 0;
 ];
 
 #IFNDEF MEMORY_ECONOMY;
-Array rulebook_var_creators --> 0 0 0 0 0 0 0 0 0 0 RBSTVC_10 0 RBSTVC_12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+Array rulebook_var_creators --> 0 0 0 0 0 0 0 0 0 0 RBSTVC_10 0 RBSTVC_12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #ENDIF;
 [  RBSTVC_10 pos state;
     if (state == 1) {
@@ -27834,6 +27859,9 @@ Array RulebookNames -->
     "check Putting it in rulebook" ! 392
     "carry out Putting it in rulebook" ! 393
     "report Putting it in rulebook" ! 394
+    "check Casting xyzzy rulebook" ! 395
+    "carry out Casting xyzzy rulebook" ! 396
+    "report Casting xyzzy rulebook" ! 397
 ;
 
 
@@ -28166,171 +28194,172 @@ Array RulebookNames -->
 		if (R == SWITCH_SCORE_NOTIFY_OFF_R) { print "switch score notification off rule"; return; } ! 681, case 1
 		if (R == REP_SWITCH_NOTIFY_OFF_R) { print "standard report switching score notification off rule"; return; } ! 682, case 1
 		if (R == ANNOUNCE_PRONOUN_MEANINGS_R) { print "announce the pronoun meanings rule"; return; } ! 686, case 1
-		if (R == R_14) { print "A first turn sequence rule"; return; } ! 717, case 2
-		if (R == R_15) { print "A last turn sequence rule"; return; } ! 718, case 2
-		if (R == R_30) { print "last specific action-processing rule"; return; } ! 719, case 2
-		if (R == R_159) { print "Setting action variables for exiting"; return; } ! 720, case 2
-		if (R == R_740) { print "When play begins"; return; } ! 721, case 2
-		if (R == R_741) { print "instead of commanding list"; return; } ! 722, case 2
-		if (R == R_742) { print "Instead of eating something"; return; } ! 723, case 2
-		if (R == R_746) { print "An every turn rule"; return; } ! 724, case 2
-		if (R == R_747) { print "every turn"; return; } ! 725, case 2
-		if (R == R_748) { print "After printing the name of a dead person"; return; } ! 726, case 2
-		if (R == R_749) { print "Instead of taking inventory"; return; } ! 727, case 2
-		if (R == R_750) { print "Check examining the player"; return; } ! 728, case 2
-		if (R == R_752) { print "Instead of eating the pain pills"; return; } ! 729, case 2
-		if (R == R_753) { print "An every turn rule"; return; } ! 730, case 2
-		if (R == R_754) { print "Instead of looking under couch"; return; } ! 731, case 2
-		if (R == R_755) { print "Instead of examining the glass coffee table"; return; } ! 732, case 2
-		if (R == R_756) { print "Instead of tying something to the window"; return; } ! 733, case 2
-		if (R == R_757) { print "Instead of unlocking cupboards with key"; return; } ! 734, case 2
-		if (R == R_758) { print "Instead of eating the cookies"; return; } ! 735, case 2
-		if (R == R_759) { print "Instead of looking under the Floor mat"; return; } ! 736, case 2
-		if (R == R_760) { print "Instead of opening the refrigerator"; return; } ! 737, case 2
-		if (R == R_761) { print "Instead of opening the stove"; return; } ! 738, case 2
-		if (R == R_762) { print "Instead of examining refrigerator"; return; } ! 739, case 2
-		if (R == R_763) { print "Instead of examining Letter magnets for the second time"; return; } ! 740, case 2
-		if (R == R_764) { print "Instead of taking letter magnets"; return; } ! 741, case 2
-		if (R == R_765) { print "Instead of looking under the sink"; return; } ! 742, case 2
-		if (R == R_766) { print "Setting action variables for combining something with something"; return; } ! 743, case 2
-		if (R == R_767) { print "Check combining it with"; return; } ! 744, case 2
-		if (R == R_768) { print "Carry out combining it with"; return; } ! 745, case 2
-		if (R == R_769) { print "Report combining it with"; return; } ! 746, case 2
-		if (R == R_770) { print "An every turn rule"; return; } ! 747, case 2
-		if (R == R_771) { print "Check taking a thing"; return; } ! 748, case 2
-		if (R == R_772) { print "Instead of taking scenery"; return; } ! 749, case 2
-		if (R == R_773) { print "Check examining the flashlight"; return; } ! 750, case 2
-		if (R == R_774) { print "Instead of opening nightstand"; return; } ! 751, case 2
-		if (R == R_775) { print "Instead of taking batteries"; return; } ! 752, case 2
-		if (R == R_776) { print "After switching on the flashlight"; return; } ! 753, case 2
-		if (R == R_777) { print "Instead of opening the medicine cabinet"; return; } ! 754, case 2
-		if (R == R_778) { print "Instead of going through Apartment Door"; return; } ! 755, case 2
-		if (R == R_779) { print "Instead of going through Apartment Door for the third time"; return; } ! 756, case 2
-		if (R == R_780) { print "Instead of tying bedsheets to the window"; return; } ! 757, case 2
-		if (R == R_781) { print "Instead of going through the window"; return; } ! 758, case 2
-		if (R == R_782) { print "An every turn rule"; return; } ! 759, case 2
-		if (R == R_783) { print "Instead of attacking the zombie with the axe"; return; } ! 760, case 2
-		if (R == R_784) { print "Instead of shooting the zombie with the revolver"; return; } ! 761, case 2
-		if (R == R_785) { print "Check shooting it with"; return; } ! 762, case 2
-		if (R == R_786) { print "Instead of attacking the zombie"; return; } ! 763, case 2
-		if (R == R_787) { print "Instead of attacking the zombie with the revolver"; return; } ! 764, case 2
-		if (R == R_788) { print "Every turn rule"; return; } ! 765, case 2
-		if (R == R_789) { print "Instead of opening small house's door"; return; } ! 766, case 2
-		if (R == R_790) { print "instead of examining the old rusty wrench"; return; } ! 767, case 2
-		if (R == R_791) { print "Instead of looking under the dusty couch"; return; } ! 768, case 2
-		if (R == R_792) { print "Instead of opening the kitchencupboards"; return; } ! 769, case 2
-		if (R == R_793) { print "Instead of eating the canned salisbury steak"; return; } ! 770, case 2
-		if (R == R_794) { print "Instead of eating the canned beans"; return; } ! 771, case 2
-		if (R == R_795) { print "Instead of drinking the coke"; return; } ! 772, case 2
-		if (R == R_796) { print "Rule for printing the description of a dark room"; return; } ! 773, case 2
-		if (R == R_797) { print "Rule for printing the announcement of darkness"; return; } ! 774, case 2
-		if (R == R_798) { print "An every turn rule"; return; } ! 775, case 2
-		if (R == R_799) { print "Instead of using the cistern"; return; } ! 776, case 2
-		if (R == R_800) { print "Check looking behind"; return; } ! 777, case 2
-		if (R == R_801) { print "Instead of looking behind the counter"; return; } ! 778, case 2
-		if (R == R_802) { print "Instead of opening the toolbox"; return; } ! 779, case 2
-		if (R == R_803) { print "Check talking to"; return; } ! 780, case 2
-		if (R == R_804) { print "Instead of talking to tallman"; return; } ! 781, case 2
-		if (R == R_805) { print "Instead of asking tallman for the large bag"; return; } ! 782, case 2
-		if (R == R_806) { print "Instead of eating the potato chips"; return; } ! 783, case 2
-		if (R == R_807) { print "Instead of eating the can of SPAM"; return; } ! 784, case 2
-		if (R == R_808) { print "Instead of eating the can of chicken noodle soup"; return; } ! 785, case 2
-		if (R == R_809) { print "Instead of examining the water bottle"; return; } ! 786, case 2
-		if (R == R_810) { print "Instead of drinking the water bottle"; return; } ! 787, case 2
-		if (R == R_811) { print "Instead of asking tallman about ~[large bag]~"; return; } ! 788, case 2
-		if (R == R_812) { print "Instead of giving something to tallman"; return; } ! 789, case 2
-		if (R == R_813) { print "Instead of giving revolver to tallman"; return; } ! 790, case 2
-		if (R == R_814) { print "Instead of giving axe to tallman"; return; } ! 791, case 2
-		if (R == R_815) { print "Instead of attacking the tallman"; return; } ! 792, case 2
-		if (R == R_816) { print "Instead of attacking the tallman with the revolver"; return; } ! 793, case 2
-		if (R == R_817) { print "Instead of attacking the tallman with the axe"; return; } ! 794, case 2
-		if (R == R_818) { print "Instead of going east in the Hardware Store for the first time"; return; } ! 795, case 2
-		if (R == R_819) { print "Instead of examining the train coupler"; return; } ! 796, case 2
-		if (R == R_820) { print "Instead of breaking the train coupler with the wrench"; return; } ! 797, case 2
-		if (R == R_821) { print "Instead of breaking the train coupler with the spanner"; return; } ! 798, case 2
-		if (R == R_822) { print "Instead of breaking the train coupler with the cable cutters"; return; } ! 799, case 2
-		if (R == R_823) { print "Instead of breaking train coupler with hands"; return; } ! 800, case 2
-		if (R == R_824) { print "Instead of examining Lever C"; return; } ! 801, case 2
-		if (R == R_825) { print "Instead of taking lever D"; return; } ! 802, case 2
-		if (R == R_826) { print "Instead of switching on Lever B"; return; } ! 803, case 2
-		if (R == R_827) { print "Instead of putting lever C in lever slot"; return; } ! 804, case 2
-		if (R == R_828) { print "Instead of pushing the button"; return; } ! 805, case 2
-		if (R == R_829) { print "Instead of taking poop"; return; } ! 806, case 2
-		if (R == R_8) { print "start in the correct scenes rule"; return; } ! 807, case 1
-		if (R == POSITION_PLAYER_IN_MODEL_R) { print "position player in model world rule"; return; } ! 808, case 1
-		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 809, case 1
-		if (R == SEED_RANDOM_NUMBER_GENERATOR_R) { print "seed random number generator rule"; return; } ! 810, case 1
-		if (R == VIRTUAL_MACHINE_STARTUP_R) { print "virtual machine startup rule"; return; } ! 811, case 1
-		if (R == INITIALISE_MEMORY_R) { print "initialise memory rule"; return; } ! 812, case 1
-		if (R == R_9) { print "when play begins stage rule"; return; } ! 813, case 1
-		if (R == R_10) { print "fix baseline scoring rule"; return; } ! 814, case 1
-		if (R == R_11) { print "display banner rule"; return; } ! 815, case 1
-		if (R == R_12) { print "initial room description rule"; return; } ! 816, case 1
-		if (R == GENERATE_ACTION_R) { print "generate action rule"; return; } ! 817, case 1
-		if (R == PARSE_COMMAND_R) { print "parse command rule"; return; } ! 818, case 1
-		if (R == TIMED_EVENTS_R) { print "timed events rule"; return; } ! 819, case 1
-		if (R == ADVANCE_TIME_R) { print "advance time rule"; return; } ! 820, case 1
-		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 821, case 1
-		if (R == ADJUST_LIGHT_R) { print "adjust light rule"; return; } ! 822, case 1
-		if (R == NOTE_OBJECT_ACQUISITIONS_R) { print "note object acquisitions rule"; return; } ! 823, case 1
-		if (R == R_16) { print "notify score changes rule"; return; } ! 824, case 1
-		if (R == R_17) { print "when play ends stage rule"; return; } ! 825, case 1
-		if (R == RESURRECT_PLAYER_IF_ASKED_R) { print "resurrect player if asked rule"; return; } ! 826, case 1
-		if (R == R_18) { print "print player's obituary rule"; return; } ! 827, case 1
-		if (R == ASK_FINAL_QUESTION_R) { print "ask the final question rule"; return; } ! 828, case 1
-		if (R == DetectSceneChange) { print "scene change machinery rule"; return; } ! 829, case 1
-		if (R == R_21) { print "before stage rule"; return; } ! 830, case 1
-		if (R == R_19) { print "set pronouns from items from multiple object lists rule"; return; } ! 831, case 1
-		if (R == R_20) { print "announce items from multiple object lists rule"; return; } ! 832, case 1
-		if (R == BASIC_VISIBILITY_R) { print "basic visibility rule"; return; } ! 833, case 1
-		if (R == BASIC_ACCESSIBILITY_R) { print "basic accessibility rule"; return; } ! 834, case 1
-		if (R == CARRYING_REQUIREMENTS_R) { print "carrying requirements rule"; return; } ! 835, case 1
-		if (R == R_22) { print "instead stage rule"; return; } ! 836, case 1
-		if (R == REQUESTED_ACTIONS_REQUIRE_R) { print "requested actions require persuasion rule"; return; } ! 837, case 1
-		if (R == CARRY_OUT_REQUESTED_ACTIONS_R) { print "carry out requested actions rule"; return; } ! 838, case 1
-		if (R == DESCEND_TO_SPECIFIC_ACTION_R) { print "descend to specific action-processing rule"; return; } ! 839, case 1
-		if (R == R_23) { print "end action-processing in success rule"; return; } ! 840, case 1
-		if (R == WORK_OUT_DETAILS_OF_SPECIFIC_R) { print "work out details of specific action rule"; return; } ! 841, case 1
-		if (R == ACCESS_THROUGH_BARRIERS_R) { print "access through barriers rule"; return; } ! 842, case 1
-		if (R == CANT_REACH_INSIDE_ROOMS_R) { print "can't reach inside rooms rule"; return; } ! 843, case 1
-		if (R == CANT_REACH_INSIDE_CLOSED_R) { print "can't reach inside closed containers rule"; return; } ! 844, case 1
-		if (R == CANT_REACH_OUTSIDE_CLOSED_R) { print "can't reach outside closed containers rule"; return; } ! 845, case 1
-		if (R == R_35) { print "can't act in the dark rule"; return; } ! 846, case 1
-		if (R == STANDARD_NAME_PRINTING_R) { print "standard name printing rule"; return; } ! 847, case 1
-		if (R == R_59) { print "standard printing the plural name rule"; return; } ! 848, case 1
-		if (R == R_60) { print "standard printing a number of something rule"; return; } ! 849, case 1
-		if (R == STANDARD_CONTENTS_LISTING_R) { print "standard contents listing rule"; return; } ! 850, case 1
-		if (R == R_61) { print "look around once light available rule"; return; } ! 851, case 1
-		if (R == ENABLE_GLULX_ACCEL_R) { print "enable Glulx acceleration rule"; return; } ! 852, case 1
-		if (R == PRINT_OBITUARY_HEADLINE_R) { print "print obituary headline rule"; return; } ! 853, case 1
-		if (R == PRINT_FINAL_SCORE_R) { print "print final score rule"; return; } ! 854, case 1
-		if (R == DISPLAY_FINAL_STATUS_LINE_R) { print "display final status line rule"; return; } ! 855, case 1
-		if (R == R_69) { print "print the final question rule"; return; } ! 856, case 1
-		if (R == R_68) { print "print the final prompt rule"; return; } ! 857, case 1
-		if (R == READ_FINAL_ANSWER_R) { print "read the final answer rule"; return; } ! 858, case 1
-		if (R == R_70) { print "standard respond to final question rule"; return; } ! 859, case 1
-		if (R == R_91) { print "can't take component parts rule"; return; } ! 860, case 1
-		if (R == R_148) { print "find what to enter rule"; return; } ! 861, case 1
-		if (R == QUIT_THE_GAME_R) { print "quit the game rule"; return; } ! 862, case 1
-		if (R == SAVE_THE_GAME_R) { print "save the game rule"; return; } ! 863, case 1
-		if (R == RESTORE_THE_GAME_R) { print "restore the game rule"; return; } ! 864, case 1
-		if (R == RESTART_THE_GAME_R) { print "restart the game rule"; return; } ! 865, case 1
-		if (R == VERIFY_THE_STORY_FILE_R) { print "verify the story file rule"; return; } ! 866, case 1
-		if (R == SWITCH_TRANSCRIPT_ON_R) { print "switch the story transcript on rule"; return; } ! 867, case 1
-		if (R == SWITCH_TRANSCRIPT_OFF_R) { print "switch the story transcript off rule"; return; } ! 868, case 1
-		if (R == ANNOUNCE_STORY_FILE_VERSION_R) { print "announce the story file version rule"; return; } ! 869, case 1
-		if (R == ANNOUNCE_SCORE_R) { print "announce the score rule"; return; } ! 870, case 1
-		if (R == PREFER_ABBREVIATED_R) { print "prefer abbreviated room descriptions rule"; return; } ! 871, case 1
-		if (R == REP_PREFER_ABBREVIATED_R) { print "standard report preferring abbreviated room descriptions rule"; return; } ! 872, case 1
-		if (R == PREFER_UNABBREVIATED_R) { print "prefer unabbreviated room descriptions rule"; return; } ! 873, case 1
-		if (R == REP_PREFER_UNABBREVIATED_R) { print "standard report preferring unabbreviated room descriptions rule"; return; } ! 874, case 1
-		if (R == PREFER_SOMETIMES_ABBREVIATED_R) { print "prefer sometimes abbreviated room descriptions rule"; return; } ! 875, case 1
-		if (R == REP_PREFER_SOMETIMES_ABBR_R) { print "standard report preferring sometimes abbreviated room descriptions rule"; return; } ! 876, case 1
-		if (R == SWITCH_SCORE_NOTIFY_ON_R) { print "switch score notification on rule"; return; } ! 877, case 1
-		if (R == REP_SWITCH_NOTIFY_ON_R) { print "standard report switching score notification on rule"; return; } ! 878, case 1
-		if (R == SWITCH_SCORE_NOTIFY_OFF_R) { print "switch score notification off rule"; return; } ! 879, case 1
-		if (R == REP_SWITCH_NOTIFY_OFF_R) { print "standard report switching score notification off rule"; return; } ! 880, case 1
-		if (R == ANNOUNCE_PRONOUN_MEANINGS_R) { print "announce the pronoun meanings rule"; return; } ! 881, case 1
+		if (R == R_14) { print "A first turn sequence rule"; return; } ! 720, case 2
+		if (R == R_15) { print "A last turn sequence rule"; return; } ! 721, case 2
+		if (R == R_30) { print "last specific action-processing rule"; return; } ! 722, case 2
+		if (R == R_159) { print "Setting action variables for exiting"; return; } ! 723, case 2
+		if (R == R_740) { print "When play begins"; return; } ! 724, case 2
+		if (R == R_741) { print "instead of commanding list"; return; } ! 725, case 2
+		if (R == R_742) { print "Instead of eating something"; return; } ! 726, case 2
+		if (R == R_746) { print "An every turn rule"; return; } ! 727, case 2
+		if (R == R_747) { print "every turn"; return; } ! 728, case 2
+		if (R == R_748) { print "After printing the name of a dead person"; return; } ! 729, case 2
+		if (R == R_749) { print "Instead of taking inventory"; return; } ! 730, case 2
+		if (R == R_750) { print "Check examining the player"; return; } ! 731, case 2
+		if (R == R_752) { print "Instead of eating the pain pills"; return; } ! 732, case 2
+		if (R == R_753) { print "An every turn rule"; return; } ! 733, case 2
+		if (R == R_754) { print "Instead of looking under couch"; return; } ! 734, case 2
+		if (R == R_755) { print "Instead of examining the glass coffee table"; return; } ! 735, case 2
+		if (R == R_756) { print "Instead of tying something to the window"; return; } ! 736, case 2
+		if (R == R_757) { print "Instead of unlocking cupboards with key"; return; } ! 737, case 2
+		if (R == R_758) { print "Instead of eating the cookies"; return; } ! 738, case 2
+		if (R == R_759) { print "Instead of looking under the Floor mat"; return; } ! 739, case 2
+		if (R == R_760) { print "Instead of opening the refrigerator"; return; } ! 740, case 2
+		if (R == R_761) { print "Instead of opening the stove"; return; } ! 741, case 2
+		if (R == R_762) { print "Instead of examining refrigerator"; return; } ! 742, case 2
+		if (R == R_763) { print "Instead of examining Letter magnets for the second time"; return; } ! 743, case 2
+		if (R == R_764) { print "Instead of taking letter magnets"; return; } ! 744, case 2
+		if (R == R_765) { print "Instead of looking under the sink"; return; } ! 745, case 2
+		if (R == R_766) { print "Setting action variables for combining something with something"; return; } ! 746, case 2
+		if (R == R_767) { print "Check combining it with"; return; } ! 747, case 2
+		if (R == R_768) { print "Carry out combining it with"; return; } ! 748, case 2
+		if (R == R_769) { print "Report combining it with"; return; } ! 749, case 2
+		if (R == R_770) { print "An every turn rule"; return; } ! 750, case 2
+		if (R == R_771) { print "Check taking a thing"; return; } ! 751, case 2
+		if (R == R_772) { print "Instead of taking scenery"; return; } ! 752, case 2
+		if (R == R_773) { print "Check examining the flashlight"; return; } ! 753, case 2
+		if (R == R_774) { print "Instead of opening nightstand"; return; } ! 754, case 2
+		if (R == R_775) { print "Instead of taking batteries"; return; } ! 755, case 2
+		if (R == R_776) { print "After switching on the flashlight"; return; } ! 756, case 2
+		if (R == R_777) { print "Instead of opening the medicine cabinet"; return; } ! 757, case 2
+		if (R == R_778) { print "Instead of going through Apartment Door"; return; } ! 758, case 2
+		if (R == R_779) { print "Instead of going through Apartment Door for the third time"; return; } ! 759, case 2
+		if (R == R_780) { print "Instead of tying bedsheets to the window"; return; } ! 760, case 2
+		if (R == R_781) { print "Instead of going through the window"; return; } ! 761, case 2
+		if (R == R_782) { print "An every turn rule"; return; } ! 762, case 2
+		if (R == R_783) { print "Instead of attacking the zombie with the axe"; return; } ! 763, case 2
+		if (R == R_784) { print "Instead of shooting the zombie with the revolver"; return; } ! 764, case 2
+		if (R == R_785) { print "Check shooting it with"; return; } ! 765, case 2
+		if (R == R_786) { print "Instead of attacking the zombie"; return; } ! 766, case 2
+		if (R == R_787) { print "Instead of attacking the zombie with the revolver"; return; } ! 767, case 2
+		if (R == R_788) { print "Every turn rule"; return; } ! 768, case 2
+		if (R == R_789) { print "Instead of opening small house's door"; return; } ! 769, case 2
+		if (R == R_790) { print "instead of examining the old rusty wrench"; return; } ! 770, case 2
+		if (R == R_791) { print "Instead of looking under the dusty couch"; return; } ! 771, case 2
+		if (R == R_792) { print "Instead of opening the kitchencupboards"; return; } ! 772, case 2
+		if (R == R_793) { print "Instead of eating the canned salisbury steak"; return; } ! 773, case 2
+		if (R == R_794) { print "Instead of eating the canned beans"; return; } ! 774, case 2
+		if (R == R_795) { print "Instead of drinking the coke"; return; } ! 775, case 2
+		if (R == R_796) { print "Rule for printing the description of a dark room"; return; } ! 776, case 2
+		if (R == R_797) { print "Rule for printing the announcement of darkness"; return; } ! 777, case 2
+		if (R == R_798) { print "An every turn rule"; return; } ! 778, case 2
+		if (R == R_799) { print "Instead of using the cistern"; return; } ! 779, case 2
+		if (R == R_800) { print "Check looking behind"; return; } ! 780, case 2
+		if (R == R_801) { print "Instead of looking behind the counter"; return; } ! 781, case 2
+		if (R == R_802) { print "Instead of opening the toolbox"; return; } ! 782, case 2
+		if (R == R_803) { print "Check talking to"; return; } ! 783, case 2
+		if (R == R_804) { print "Instead of talking to tallman"; return; } ! 784, case 2
+		if (R == R_805) { print "Instead of asking tallman for the large bag"; return; } ! 785, case 2
+		if (R == R_806) { print "Instead of eating the potato chips"; return; } ! 786, case 2
+		if (R == R_807) { print "Instead of eating the can of SPAM"; return; } ! 787, case 2
+		if (R == R_808) { print "Instead of eating the can of chicken noodle soup"; return; } ! 788, case 2
+		if (R == R_809) { print "Instead of examining the water bottle"; return; } ! 789, case 2
+		if (R == R_810) { print "Instead of drinking the water bottle"; return; } ! 790, case 2
+		if (R == R_811) { print "Instead of asking tallman about ~[large bag]~"; return; } ! 791, case 2
+		if (R == R_812) { print "Instead of giving something to tallman"; return; } ! 792, case 2
+		if (R == R_813) { print "Instead of giving revolver to tallman"; return; } ! 793, case 2
+		if (R == R_814) { print "Instead of giving axe to tallman"; return; } ! 794, case 2
+		if (R == R_815) { print "Instead of attacking the tallman"; return; } ! 795, case 2
+		if (R == R_816) { print "Instead of attacking the tallman with the revolver"; return; } ! 796, case 2
+		if (R == R_817) { print "Instead of attacking the tallman with the axe"; return; } ! 797, case 2
+		if (R == R_818) { print "Instead of going east in the Hardware Store for the first time"; return; } ! 798, case 2
+		if (R == R_819) { print "Instead of examining the train coupler"; return; } ! 799, case 2
+		if (R == R_820) { print "Instead of breaking the train coupler with the wrench"; return; } ! 800, case 2
+		if (R == R_821) { print "Instead of breaking the train coupler with the spanner"; return; } ! 801, case 2
+		if (R == R_822) { print "Instead of breaking the train coupler with the cable cutters"; return; } ! 802, case 2
+		if (R == R_823) { print "Instead of breaking train coupler with hands"; return; } ! 803, case 2
+		if (R == R_824) { print "Instead of examining Lever C"; return; } ! 804, case 2
+		if (R == R_825) { print "Instead of taking lever D"; return; } ! 805, case 2
+		if (R == R_826) { print "Instead of switching on Lever B"; return; } ! 806, case 2
+		if (R == R_827) { print "Instead of putting lever C in lever slot"; return; } ! 807, case 2
+		if (R == R_828) { print "Instead of pushing the button"; return; } ! 808, case 2
+		if (R == R_829) { print "Instead of taking poop"; return; } ! 809, case 2
+		if (R == R_830) { print "Check casting xyzzy"; return; } ! 810, case 2
+		if (R == R_8) { print "start in the correct scenes rule"; return; } ! 811, case 1
+		if (R == POSITION_PLAYER_IN_MODEL_R) { print "position player in model world rule"; return; } ! 812, case 1
+		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 813, case 1
+		if (R == SEED_RANDOM_NUMBER_GENERATOR_R) { print "seed random number generator rule"; return; } ! 814, case 1
+		if (R == VIRTUAL_MACHINE_STARTUP_R) { print "virtual machine startup rule"; return; } ! 815, case 1
+		if (R == INITIALISE_MEMORY_R) { print "initialise memory rule"; return; } ! 816, case 1
+		if (R == R_9) { print "when play begins stage rule"; return; } ! 817, case 1
+		if (R == R_10) { print "fix baseline scoring rule"; return; } ! 818, case 1
+		if (R == R_11) { print "display banner rule"; return; } ! 819, case 1
+		if (R == R_12) { print "initial room description rule"; return; } ! 820, case 1
+		if (R == GENERATE_ACTION_R) { print "generate action rule"; return; } ! 821, case 1
+		if (R == PARSE_COMMAND_R) { print "parse command rule"; return; } ! 822, case 1
+		if (R == TIMED_EVENTS_R) { print "timed events rule"; return; } ! 823, case 1
+		if (R == ADVANCE_TIME_R) { print "advance time rule"; return; } ! 824, case 1
+		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 825, case 1
+		if (R == ADJUST_LIGHT_R) { print "adjust light rule"; return; } ! 826, case 1
+		if (R == NOTE_OBJECT_ACQUISITIONS_R) { print "note object acquisitions rule"; return; } ! 827, case 1
+		if (R == R_16) { print "notify score changes rule"; return; } ! 828, case 1
+		if (R == R_17) { print "when play ends stage rule"; return; } ! 829, case 1
+		if (R == RESURRECT_PLAYER_IF_ASKED_R) { print "resurrect player if asked rule"; return; } ! 830, case 1
+		if (R == R_18) { print "print player's obituary rule"; return; } ! 831, case 1
+		if (R == ASK_FINAL_QUESTION_R) { print "ask the final question rule"; return; } ! 832, case 1
+		if (R == DetectSceneChange) { print "scene change machinery rule"; return; } ! 833, case 1
+		if (R == R_21) { print "before stage rule"; return; } ! 834, case 1
+		if (R == R_19) { print "set pronouns from items from multiple object lists rule"; return; } ! 835, case 1
+		if (R == R_20) { print "announce items from multiple object lists rule"; return; } ! 836, case 1
+		if (R == BASIC_VISIBILITY_R) { print "basic visibility rule"; return; } ! 837, case 1
+		if (R == BASIC_ACCESSIBILITY_R) { print "basic accessibility rule"; return; } ! 838, case 1
+		if (R == CARRYING_REQUIREMENTS_R) { print "carrying requirements rule"; return; } ! 839, case 1
+		if (R == R_22) { print "instead stage rule"; return; } ! 840, case 1
+		if (R == REQUESTED_ACTIONS_REQUIRE_R) { print "requested actions require persuasion rule"; return; } ! 841, case 1
+		if (R == CARRY_OUT_REQUESTED_ACTIONS_R) { print "carry out requested actions rule"; return; } ! 842, case 1
+		if (R == DESCEND_TO_SPECIFIC_ACTION_R) { print "descend to specific action-processing rule"; return; } ! 843, case 1
+		if (R == R_23) { print "end action-processing in success rule"; return; } ! 844, case 1
+		if (R == WORK_OUT_DETAILS_OF_SPECIFIC_R) { print "work out details of specific action rule"; return; } ! 845, case 1
+		if (R == ACCESS_THROUGH_BARRIERS_R) { print "access through barriers rule"; return; } ! 846, case 1
+		if (R == CANT_REACH_INSIDE_ROOMS_R) { print "can't reach inside rooms rule"; return; } ! 847, case 1
+		if (R == CANT_REACH_INSIDE_CLOSED_R) { print "can't reach inside closed containers rule"; return; } ! 848, case 1
+		if (R == CANT_REACH_OUTSIDE_CLOSED_R) { print "can't reach outside closed containers rule"; return; } ! 849, case 1
+		if (R == R_35) { print "can't act in the dark rule"; return; } ! 850, case 1
+		if (R == STANDARD_NAME_PRINTING_R) { print "standard name printing rule"; return; } ! 851, case 1
+		if (R == R_59) { print "standard printing the plural name rule"; return; } ! 852, case 1
+		if (R == R_60) { print "standard printing a number of something rule"; return; } ! 853, case 1
+		if (R == STANDARD_CONTENTS_LISTING_R) { print "standard contents listing rule"; return; } ! 854, case 1
+		if (R == R_61) { print "look around once light available rule"; return; } ! 855, case 1
+		if (R == ENABLE_GLULX_ACCEL_R) { print "enable Glulx acceleration rule"; return; } ! 856, case 1
+		if (R == PRINT_OBITUARY_HEADLINE_R) { print "print obituary headline rule"; return; } ! 857, case 1
+		if (R == PRINT_FINAL_SCORE_R) { print "print final score rule"; return; } ! 858, case 1
+		if (R == DISPLAY_FINAL_STATUS_LINE_R) { print "display final status line rule"; return; } ! 859, case 1
+		if (R == R_69) { print "print the final question rule"; return; } ! 860, case 1
+		if (R == R_68) { print "print the final prompt rule"; return; } ! 861, case 1
+		if (R == READ_FINAL_ANSWER_R) { print "read the final answer rule"; return; } ! 862, case 1
+		if (R == R_70) { print "standard respond to final question rule"; return; } ! 863, case 1
+		if (R == R_91) { print "can't take component parts rule"; return; } ! 864, case 1
+		if (R == R_148) { print "find what to enter rule"; return; } ! 865, case 1
+		if (R == QUIT_THE_GAME_R) { print "quit the game rule"; return; } ! 866, case 1
+		if (R == SAVE_THE_GAME_R) { print "save the game rule"; return; } ! 867, case 1
+		if (R == RESTORE_THE_GAME_R) { print "restore the game rule"; return; } ! 868, case 1
+		if (R == RESTART_THE_GAME_R) { print "restart the game rule"; return; } ! 869, case 1
+		if (R == VERIFY_THE_STORY_FILE_R) { print "verify the story file rule"; return; } ! 870, case 1
+		if (R == SWITCH_TRANSCRIPT_ON_R) { print "switch the story transcript on rule"; return; } ! 871, case 1
+		if (R == SWITCH_TRANSCRIPT_OFF_R) { print "switch the story transcript off rule"; return; } ! 872, case 1
+		if (R == ANNOUNCE_STORY_FILE_VERSION_R) { print "announce the story file version rule"; return; } ! 873, case 1
+		if (R == ANNOUNCE_SCORE_R) { print "announce the score rule"; return; } ! 874, case 1
+		if (R == PREFER_ABBREVIATED_R) { print "prefer abbreviated room descriptions rule"; return; } ! 875, case 1
+		if (R == REP_PREFER_ABBREVIATED_R) { print "standard report preferring abbreviated room descriptions rule"; return; } ! 876, case 1
+		if (R == PREFER_UNABBREVIATED_R) { print "prefer unabbreviated room descriptions rule"; return; } ! 877, case 1
+		if (R == REP_PREFER_UNABBREVIATED_R) { print "standard report preferring unabbreviated room descriptions rule"; return; } ! 878, case 1
+		if (R == PREFER_SOMETIMES_ABBREVIATED_R) { print "prefer sometimes abbreviated room descriptions rule"; return; } ! 879, case 1
+		if (R == REP_PREFER_SOMETIMES_ABBR_R) { print "standard report preferring sometimes abbreviated room descriptions rule"; return; } ! 880, case 1
+		if (R == SWITCH_SCORE_NOTIFY_ON_R) { print "switch score notification on rule"; return; } ! 881, case 1
+		if (R == REP_SWITCH_NOTIFY_ON_R) { print "standard report switching score notification on rule"; return; } ! 882, case 1
+		if (R == SWITCH_SCORE_NOTIFY_OFF_R) { print "switch score notification off rule"; return; } ! 883, case 1
+		if (R == REP_SWITCH_NOTIFY_OFF_R) { print "standard report switching score notification off rule"; return; } ! 884, case 1
+		if (R == ANNOUNCE_PRONOUN_MEANINGS_R) { print "announce the pronoun meanings rule"; return; } ! 885, case 1
 
 		print "(nameless rule at address ", R, ")";
 	}
@@ -30553,56 +30582,56 @@ Array LIST_CONST_1627 --> 0 9 2 (I112_pillowcase) (I117_yarn) ;
        if (((t_0 == 100)))  {
          ! phrase 3
          ! [3: say ~I feel perfectly fine, like being in a sunny field.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_264; ParaContent();  new_line;  .L_Say181; .L_SayX181;
+         say__p=1;ParaContent();  print (PrintText) SC_265; ParaContent();  new_line;  .L_Say182; .L_SayX182;
          ! phrase 4
          ! [4: otherwise if x is at most 10]
           } else if (((t_0 <= 10))) { 
          ! phrase 5
          ! [5: say ~I'm shaking all over and I can't see straight.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_265; ParaContent();  new_line;  .L_Say182; .L_SayX182;
+         say__p=1;ParaContent();  print (PrintText) SC_266; ParaContent();  new_line;  .L_Say183; .L_SayX183;
          ! phrase 6
          ! [6: otherwise if x is at most 20]
           } else if (((t_0 <= 20))) { 
          ! phrase 7
          ! [7: say ~I don't feel well at all. My knees are shaking and I can't see clearly. Where's Mommy?[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_266; ParaContent();  new_line;  .L_Say183; .L_SayX183;
+         say__p=1;ParaContent();  print (PrintText) SC_267; ParaContent();  new_line;  .L_Say184; .L_SayX184;
          ! phrase 8
          ! [8: otherwise if x is at most 30]
           } else if (((t_0 <= 30))) { 
          ! phrase 9
          ! [9: say ~I feel sore all over and could use some Band-Aids right now.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_267; ParaContent();  new_line;  .L_Say184; .L_SayX184;
+         say__p=1;ParaContent();  print (PrintText) SC_268; ParaContent();  new_line;  .L_Say185; .L_SayX185;
          ! phrase 10
          ! [10: otherwise if x is at most 60]
           } else if (((t_0 <= 60))) { 
          ! phrase 11
          ! [11: say ~I don't feel too good.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_268; ParaContent();  new_line;  .L_Say185; .L_SayX185;
+         say__p=1;ParaContent();  print (PrintText) SC_269; ParaContent();  new_line;  .L_Say186; .L_SayX186;
          ! phrase 12
          ! [12: otherwise if x is at most 70]
           } else if (((t_0 <= 70))) { 
          ! phrase 13
          ! [13: say ~I feel like my injuries are nothing! I may be a little girl, but I can take this![line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_269; ParaContent();  new_line;  .L_Say186; .L_SayX186;
+         say__p=1;ParaContent();  print (PrintText) SC_270; ParaContent();  new_line;  .L_Say187; .L_SayX187;
          ! phrase 14
          ! [14: otherwise if x is at most 80]
           } else if (((t_0 <= 80))) { 
          ! phrase 15
          ! [15: say ~I can almost pretend I don't hurt right now.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_270; ParaContent();  new_line;  .L_Say187; .L_SayX187;
+         say__p=1;ParaContent();  print (PrintText) SC_271; ParaContent();  new_line;  .L_Say188; .L_SayX188;
          ! phrase 16
          ! [16: otherwise if x is at most 90]
           } else if (((t_0 <= 90))) { 
          ! phrase 17
          ! [17: say ~I have some cuts and bruises. Where's Mommy to help put on Band-aids?[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_271; ParaContent();  new_line;  .L_Say188; .L_SayX188;
+         say__p=1;ParaContent();  print (PrintText) SC_272; ParaContent();  new_line;  .L_Say189; .L_SayX189;
          ! phrase 18
          ! [18: otherwise]
          } else {
 
          ! phrase 19
          ! [19: say ~I'm a little messy, but Mommy always tells me that I look cute.[line break]~]
-         say__p=1;ParaContent();  print (PrintText) SC_272; ParaContent();  new_line;  .L_Say189; .L_SayX189;
+         say__p=1;ParaContent();  print (PrintText) SC_273; ParaContent();  new_line;  .L_Say190; .L_SayX190;
          ! phrase 20
          ! [20: end if]
          }
@@ -30615,69 +30644,69 @@ Array LIST_CONST_1627 --> 0 9 2 (I112_pillowcase) (I117_yarn) ;
        if (((t_1 == 100)))  {
          ! phrase 23
          ! [23: say ~I don't feel hungry at all right now! Let's go do something.~]
-         say__p=1;ParaContent();  print (PrintText) SC_273;  new_line; .L_Say190; .L_SayX190;
+         say__p=1;ParaContent();  print (PrintText) SC_274;  new_line; .L_Say191; .L_SayX191;
          ! phrase 24
          ! [24: otherwise if y is at most 10]
           } else if (((t_1 <= 10))) { 
          ! phrase 25
          ! [25: say ~I feel really weak and tired. Maybe I should just close my eyes and go to sleep.~]
-         say__p=1;ParaContent();  print (PrintText) SC_274;  new_line; .L_Say191; .L_SayX191;
+         say__p=1;ParaContent();  print (PrintText) SC_275;  new_line; .L_Say192; .L_SayX192;
          ! phrase 26
          ! [26: otherwise if y is at most 20]
           } else if (((t_1 <= 20))) { 
          ! phrase 27
          ! [27: say ~I'm really hungry and I'm starting to feel really tired.~]
-         say__p=1;ParaContent();  print (PrintText) SC_275;  new_line; .L_Say192; .L_SayX192;
+         say__p=1;ParaContent();  print (PrintText) SC_276;  new_line; .L_Say193; .L_SayX193;
          ! phrase 28
          ! [28: otherwise if y is at most 30]
           } else if (((t_1 <= 30))) { 
          ! phrase 29
          ! [29: say ~I feel like I'm starting to starve. I could eat a cow right now, as my Daddy always used to say.~]
-         say__p=1;ParaContent();  print (PrintText) SC_276;  new_line; .L_Say193; .L_SayX193;
+         say__p=1;ParaContent();  print (PrintText) SC_277;  new_line; .L_Say194; .L_SayX194;
          ! phrase 30
          ! [30: otherwise if y is at most 40]
           } else if (((t_1 <= 40))) { 
          ! phrase 31
          ! [31: say ~I'm really really really hungry right now.~]
-         say__p=1;ParaContent();  print (PrintText) SC_277;  new_line; .L_Say194; .L_SayX194;
+         say__p=1;ParaContent();  print (PrintText) SC_278;  new_line; .L_Say195; .L_SayX195;
          ! phrase 32
          ! [32: otherwise if y is at most 50]
           } else if (((t_1 <= 50))) { 
          ! phrase 33
          ! [33: say ~I'm really really hungry right now. I want some animal crackers, or maybe some Goldfish?~]
-         say__p=1;ParaContent();  print (PrintText) SC_278;  new_line; .L_Say195; .L_SayX195;
+         say__p=1;ParaContent();  print (PrintText) SC_279;  new_line; .L_Say196; .L_SayX196;
          ! phrase 34
          ! [34: otherwise if y is at most 60]
           } else if (((t_1 <= 60))) { 
          ! phrase 35
          ! [35: say ~I probably should be thinking about getting some food. Or maybe I shouldn't? Gee, I'm quite hungry.~]
-         say__p=1;ParaContent();  print (PrintText) SC_279;  new_line; .L_Say196; .L_SayX196;
+         say__p=1;ParaContent();  print (PrintText) SC_280;  new_line; .L_Say197; .L_SayX197;
          ! phrase 36
          ! [36: otherwise if y is at most 70]
           } else if (((t_1 <= 70))) { 
          ! phrase 37
          ! [37: say ~My stomach is starting to gurgle. I wonder what there is to eat?~]
-         say__p=1;ParaContent();  print (PrintText) SC_280;  new_line; .L_Say197; .L_SayX197;
+         say__p=1;ParaContent();  print (PrintText) SC_281;  new_line; .L_Say198; .L_SayX198;
          ! phrase 38
          ! [38: otherwise if y is at most 80]
           } else if (((t_1 <= 80))) { 
          ! phrase 39
          ! [39: say ~Hmm, I haven't eaten in a small while. You know, I could really use some Oreos right now. I love the insides of them.~]
-         say__p=1;ParaContent();  print (PrintText) SC_281;  new_line; .L_Say198; .L_SayX198;
+         say__p=1;ParaContent();  print (PrintText) SC_282;  new_line; .L_Say199; .L_SayX199;
          ! phrase 40
          ! [40: otherwise if y is at most 90]
           } else if (((t_1 <= 90))) { 
          ! phrase 41
          ! [41: say ~I'm not really feeling that hungry right now[unicode 8230]~]
-         say__p=1;ParaContent();  print (PrintText) SC_282; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
-	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say199; .L_SayX199;
+         say__p=1;ParaContent();  print (PrintText) SC_283; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
+	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say200; .L_SayX200;
          ! phrase 42
          ! [42: otherwise]
          } else {
 
          ! phrase 43
          ! [43: say ~I'm not hungry at all. Let's go do something!~]
-         say__p=1;ParaContent();  print (PrintText) SC_283;  new_line; .L_Say200; .L_SayX200;
+         say__p=1;ParaContent();  print (PrintText) SC_284;  new_line; .L_Say201; .L_SayX201;
          ! phrase 44
          ! [44: end if]
          }
@@ -30716,157 +30745,157 @@ Array LIST_CONST_1627 --> 0 9 2 (I112_pillowcase) (I117_yarn) ;
    rfalse;
 ];
 [ text_routine_0;
-say__p=1;ParaContent();  print (PrintText) SC_284; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
-	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif; ParaContent();  print (PrintText) SC_285;  .L_Say201; .L_SayX201;
+say__p=1;ParaContent();  print (PrintText) SC_285; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
+	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif; ParaContent();  print (PrintText) SC_286;  .L_Say202; .L_SayX202;
     rtrue;
 ];
 
 [ text_routine_1;
-say__p=1;ParaContent();  print (PrintText) SC_286; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_287; ParaContent();  style bold; ParaContent();  print (PrintText) SC_288; ParaContent();  style roman; ParaContent();  print (PrintText) SC_289;  .L_Say202; .L_SayX202;
+say__p=1;ParaContent();  print (PrintText) SC_287; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_288; ParaContent();  style bold; ParaContent();  print (PrintText) SC_289; ParaContent();  style roman; ParaContent();  print (PrintText) SC_290;  .L_Say203; .L_SayX203;
     rtrue;
 ];
 
 [ text_routine_2;
-say__p=1;ParaContent();  print (PrintText) SC_290; ParaContent();  style bold; ParaContent();  print (PrintText) SC_291; ParaContent();  style roman; ParaContent();  print (PrintText) SC_292;  .L_Say203; .L_SayX203;
+say__p=1;ParaContent();  print (PrintText) SC_291; ParaContent();  style bold; ParaContent();  print (PrintText) SC_292; ParaContent();  style roman; ParaContent();  print (PrintText) SC_293;  .L_Say204; .L_SayX204;
     rtrue;
 ];
 
 [ text_routine_3;
-say__p=1;ParaContent();  print (PrintText) SC_293; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
-	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say204; .L_SayX204;
-    rtrue;
-];
-
-[ text_routine_4;
 say__p=1;ParaContent();  print (PrintText) SC_294; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
 	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say205; .L_SayX205;
     rtrue;
 ];
 
+[ text_routine_4;
+say__p=1;ParaContent();  print (PrintText) SC_295; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
+	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say206; .L_SayX206;
+    rtrue;
+];
+
 [ text_routine_5;
-say__p=1;ParaContent(); @push self;  print (say__n=GProperty(OBJECT_TY, self=self,p17_pill_count)); @pull self; ParaContent();  print (PrintText) SC_295;  .L_Say206; .L_SayX206;
+say__p=1;ParaContent(); @push self;  print (say__n=GProperty(OBJECT_TY, self=self,p17_pill_count)); @pull self; ParaContent();  print (PrintText) SC_296;  .L_Say207; .L_SayX207;
     rtrue;
 ];
 
 [ text_routine_6;
-say__p=1;ParaContent();  print (PrintText) SC_296; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_297;  .L_Say207; .L_SayX207;
+say__p=1;ParaContent();  print (PrintText) SC_297; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_298;  .L_Say208; .L_SayX208;
     rtrue;
 ];
 
 [ text_routine_7;
-say__p=1;ParaContent();  print (PrintText) SC_298; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_299;  .L_Say208; .L_SayX208;
+say__p=1;ParaContent();  print (PrintText) SC_299; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_300;  .L_Say209; .L_SayX209;
     rtrue;
 ];
 
 [ text_routine_8;
-say__p=1;ParaContent();  print (PrintText) SC_300; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_301;  .L_Say209; .L_SayX209;
+say__p=1;ParaContent();  print (PrintText) SC_301; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_302;  .L_Say210; .L_SayX210;
     rtrue;
 ];
 
 [ text_routine_9;
-say__p=1;ParaContent();  print (PrintText) SC_302; ParaContent();  style bold; ParaContent();  print (PrintText) SC_303; ParaContent();  style roman; ParaContent();  print (PrintText) SC_93;  .L_Say210; .L_SayX210;
+say__p=1;ParaContent();  print (PrintText) SC_303; ParaContent();  style bold; ParaContent();  print (PrintText) SC_304; ParaContent();  style roman; ParaContent();  print (PrintText) SC_93;  .L_Say211; .L_SayX211;
     rtrue;
 ];
 
 [ text_routine_10;
-say__p=1;ParaContent();  print (PrintText) SC_304; ParaContent();  style bold; ParaContent();  print (PrintText) SC_210; ParaContent();  style roman; ParaContent();  print (PrintText) SC_211;  .L_Say211; .L_SayX211;
+say__p=1;ParaContent();  print (PrintText) SC_305; ParaContent();  style bold; ParaContent();  print (PrintText) SC_210; ParaContent();  style roman; ParaContent();  print (PrintText) SC_211;  .L_Say212; .L_SayX212;
     rtrue;
 ];
 
 [ text_routine_11;
-say__p=1;ParaContent();  print (PrintText) SC_305; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_306;  .L_Say212; .L_SayX212;
+say__p=1;ParaContent();  print (PrintText) SC_306; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_307;  .L_Say213; .L_SayX213;
     rtrue;
 ];
 
 [ text_routine_12;
-say__p=1;ParaContent();  print (PrintText) SC_307; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_308;  .L_Say213; .L_SayX213;
+say__p=1;ParaContent();  print (PrintText) SC_308; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_309;  .L_Say214; .L_SayX214;
     rtrue;
 ];
 
 [ text_routine_13;
-say__p=1;ParaContent();  print (PrintText) SC_309; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_310;  .L_Say214; .L_SayX214;
+say__p=1;ParaContent();  print (PrintText) SC_310; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_311;  .L_Say215; .L_SayX215;
     rtrue;
 ];
 
 [ text_routine_14;
-say__p=1;ParaContent();  print (PrintText) SC_311; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_312;  .L_Say215; .L_SayX215;
+say__p=1;ParaContent();  print (PrintText) SC_312; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_313;  .L_Say216; .L_SayX216;
     rtrue;
 ];
 
 [ text_routine_15;
-say__p=1;ParaContent();  print (PrintText) SC_313; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
-	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say216; .L_SayX216;
+say__p=1;ParaContent();  print (PrintText) SC_314; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
+	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif;  .L_Say217; .L_SayX217;
     rtrue;
 ];
 
 [ text_routine_16;
-say__p=1;ParaContent();  print (PrintText) SC_314; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_315;  .L_Say217; .L_SayX217;
+say__p=1;ParaContent();  print (PrintText) SC_315; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_316;  .L_Say218; .L_SayX218;
     rtrue;
 ];
 
 [ text_routine_17;
-say__p=1;ParaContent();  print (PrintText) SC_316; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_317;  .L_Say218; .L_SayX218;
+say__p=1;ParaContent();  print (PrintText) SC_317; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_318;  .L_Say219; .L_SayX219;
     rtrue;
 ];
 
 [ text_routine_18;
-say__p=1;ParaContent();  print (PrintText) SC_318; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_319;  .L_Say219; .L_SayX219;
+say__p=1;ParaContent();  print (PrintText) SC_319; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_320;  .L_Say220; .L_SayX220;
     rtrue;
 ];
 
 [ text_routine_19;
-say__p=1;ParaContent();  print (PrintText) SC_320; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_321;  .L_Say220; .L_SayX220;
+say__p=1;ParaContent();  print (PrintText) SC_321; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_322;  .L_Say221; .L_SayX221;
     rtrue;
 ];
 
 [ text_routine_20;
-say__p=1;ParaContent();  print (PrintText) SC_322; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_323;  .L_Say221; .L_SayX221;
+say__p=1;ParaContent();  print (PrintText) SC_323; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_324;  .L_Say222; .L_SayX222;
     rtrue;
 ];
 
 [ text_routine_21;
-say__p=1;ParaContent();  print (PrintText) SC_324; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_325;  .L_Say222; .L_SayX222;
+say__p=1;ParaContent();  print (PrintText) SC_325; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_326;  .L_Say223; .L_SayX223;
     rtrue;
 ];
 
 [ text_routine_22;
-say__p=1;ParaContent();  print (PrintText) SC_326; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_327;  .L_Say223; .L_SayX223;
+say__p=1;ParaContent();  print (PrintText) SC_327; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_328;  .L_Say224; .L_SayX224;
     rtrue;
 ];
 
 [ text_routine_23;
-say__p=1;ParaContent();  print (PrintText) SC_328; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_329;  .L_Say224; .L_SayX224;
+say__p=1;ParaContent();  print (PrintText) SC_329; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_330;  .L_Say225; .L_SayX225;
     rtrue;
 ];
 
 [ text_routine_24;
-say__p=1;ParaContent();  print (PrintText) SC_203; ParaContent();  style bold; ParaContent();  print (PrintText) SC_204; ParaContent();  style roman; ParaContent();  print (PrintText) SC_205;  .L_Say225; .L_SayX225;
+say__p=1;ParaContent();  print (PrintText) SC_203; ParaContent();  style bold; ParaContent();  print (PrintText) SC_204; ParaContent();  style roman; ParaContent();  print (PrintText) SC_205;  .L_Say226; .L_SayX226;
     rtrue;
 ];
 
 [ text_routine_25;
-say__p=1;ParaContent();  print (PrintText) SC_330; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_331;  .L_Say226; .L_SayX226;
+say__p=1;ParaContent();  print (PrintText) SC_331; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_332;  .L_Say227; .L_SayX227;
     rtrue;
 ];
 
 [ text_routine_26;
-say__p=1;ParaContent();  print (PrintText) SC_332; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_333;  .L_Say227; .L_SayX227;
+say__p=1;ParaContent();  print (PrintText) SC_333; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_334;  .L_Say228; .L_SayX228;
     rtrue;
 ];
 
 [ text_routine_27;
-say__p=1;ParaContent();  print (PrintText) SC_334; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_335;  .L_Say228; .L_SayX228;
+say__p=1;ParaContent();  print (PrintText) SC_335; ParaContent();  new_line; ParaContent();  new_line; ParaContent();  print (PrintText) SC_336;  .L_Say229; .L_SayX229;
     rtrue;
 ];
 
 [ text_routine_28;
-say__p=1;ParaContent();  print (PrintText) SC_336; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
-	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif; ParaContent();  print (PrintText) SC_337;  .L_Say229; .L_SayX229;
+say__p=1;ParaContent();  print (PrintText) SC_337; ParaContent();  #ifdef TARGET_ZCODE; @push self; self = 8230; @print_unicode self; @pull self;
+	#ifnot; if (unicode_gestalt_ok) glk_put_char_uni(8230); else print "?"; #endif; ParaContent();  print (PrintText) SC_338;  .L_Say230; .L_SayX230;
     rtrue;
 ];
 
 [ text_routine_29;
-say__p=1;ParaContent();  print (PrintText) SC_338; ParaContent();  style bold; ParaContent();  print (PrintText) SC_210; ParaContent();  style roman; ParaContent();  print (PrintText) SC_211;  .L_Say230; .L_SayX230;
+say__p=1;ParaContent();  print (PrintText) SC_339; ParaContent();  style bold; ParaContent();  print (PrintText) SC_210; ParaContent();  style roman; ParaContent();  print (PrintText) SC_211;  .L_Say231; .L_SayX231;
     rtrue;
 ];
 
@@ -31183,6 +31212,7 @@ Verb 'wait' 'z//'
     *  -> Wait
 ;
 Verb 'answer' 'say' 'shout' 'speak'
+    * 'xyzzy'  -> A90_casting_xyzzy
     * topic 'to' creature  -> Answer reverse
 ;
 Verb 'tell'
@@ -31353,6 +31383,12 @@ Verb 'converse'
 ;
 Verb 'break'
     * noun 'with' noun  -> A88_breaking_it_with
+;
+Verb 'xyzzy'
+    *  -> A90_casting_xyzzy
+;
+Verb 'cast'
+    * 'xyzzy'  -> A90_casting_xyzzy
 ;
 [ Parse_Name_GV1
     original_wn  ! first word of text parsed
@@ -33900,7 +33936,7 @@ Verb 'break'
     DetectPluralWord(original_wn, n);
     return n;
 ];
-[ Consult_Grammar_141
+[ Consult_Grammar_143
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -33915,7 +33951,7 @@ Verb 'break'
     return GPR_FAIL;
 ];
 
-[ Consult_Grammar_142
+[ Consult_Grammar_144
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -33930,7 +33966,7 @@ Verb 'break'
     return GPR_FAIL;
 ];
 
-[ Consult_Grammar_143
+[ Consult_Grammar_145
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -33945,7 +33981,7 @@ Verb 'break'
     return GPR_FAIL;
 ];
 
-[ Consult_Grammar_144
+[ Consult_Grammar_146
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -33960,7 +33996,7 @@ Verb 'break'
     return GPR_FAIL;
 ];
 
-[ Consult_Grammar_145
+[ Consult_Grammar_147
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -33975,7 +34011,7 @@ Verb 'break'
     return GPR_FAIL;
 ];
 
-[ Consult_Grammar_146
+[ Consult_Grammar_148
     range_from  ! call parameter: word number of snippet start
     range_words  ! call parameter: snippet length
     original_wn  ! first word of text parsed
@@ -34657,11 +34693,11 @@ Constant SC_246 = " here";
 Constant SC_211 = " in the slot of Lever C.";
 Constant SC_255 = " into anything useful.";
 Constant SC_236 = " or ";
-Constant SC_295 = " pills";
-Constant SC_289 = " something to this window.";
+Constant SC_296 = " pills";
+Constant SC_290 = " something to this window.";
 Constant SC_205 = " this coupler apart.";
 Constant SC_259 = " with that. I should shoot a person with the revolver.";
-Constant SC_292 = " with this gun.";
+Constant SC_293 = " with this gun.";
 Constant SC_241 = " you ";
 Constant SC_257 = "!";
 Constant SC_121 = "~";
@@ -34709,7 +34745,7 @@ Constant SC_174 = "Attack with what? Try re-say that. I can't even understand yo
 Constant SC_143 = "Attack";
 Constant SC_21 = "Big and long! Maybe I can combine something with this to make something useful...";
 Constant SC_20 = "Big! Covered with big white pillowcases!";
-Constant SC_293 = "Big! Maybe I can combine something with this pillowcase to make something useful";
+Constant SC_294 = "Big! Maybe I can combine something with this pillowcase to make something useful";
 Constant SC_221 = "CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU'RE NOT THE MAKER OF THE GAME.";
 Constant SC_130 = "CRINK! The old rusty wrench breaks right in half!";
 Constant SC_231 = "Click--now I can't see anything!.";
@@ -34720,35 +34756,36 @@ Constant SC_23 = "Daddy's flashlight. He uses it to look under the sink.";
 Constant SC_250 = "Daddy's flashlight. It now has batteries inside.";
 Constant SC_33 = "Daddy's red fire axe.";
 Constant SC_39 = "Dead body of the disfigured person. Scary.";
+Constant SC_264 = "Did you know, taking the poop is against the rules?";
 Constant SC_8 = "Ella - We're heading into town for the day. We'll be back before nightfall. Don't worry, sweetie. - Love, Mommy.";
 Constant SC_84 = "For help, type ~Commands List~.";
 Constant SC_42 = "Front of the General Store";
 Constant SC_40 = "Front of the Hardware Store";
 Constant SC_52 = "General Store.";
 Constant SC_64 = "Hardware Store";
-Constant SC_320 = "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.";
+Constant SC_321 = "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.";
 Constant SC_156 = "Helpful Tip: Examine everything!";
-Constant SC_281 = "Hmm, I haven't eaten in a small while. You know, I could really use some Oreos right now. I love the insides of them.";
-Constant SC_270 = "I can almost pretend I don't hurt right now.";
-Constant SC_287 = "I can probably ";
+Constant SC_282 = "Hmm, I haven't eaten in a small while. You know, I could really use some Oreos right now. I love the insides of them.";
+Constant SC_271 = "I can almost pretend I don't hurt right now.";
+Constant SC_288 = "I can probably ";
 Constant SC_55 = "I can see a tall man crouching behind one of the shelves.";
-Constant SC_297 = "I can see a trainyard to the east and the town square to the west.";
-Constant SC_329 = "I can see another train compartment to the east and the engine car to the west.";
-Constant SC_299 = "I can see the parking lot west of here and the train to the north.";
-Constant SC_333 = "I can see the train coupler to the west.";
+Constant SC_298 = "I can see a trainyard to the east and the town square to the west.";
+Constant SC_330 = "I can see another train compartment to the east and the engine car to the west.";
+Constant SC_300 = "I can see the parking lot west of here and the train to the north.";
+Constant SC_334 = "I can see the train coupler to the west.";
 Constant SC_253 = "I can't combine ";
 Constant SC_223 = "I can't eat that.";
 Constant SC_248 = "I can't hold anymore! I'm going to have to find a way to hold more things";
 Constant SC_249 = "I can't hold anymore! I'm going to have to make some room in my bag";
 Constant SC_230 = "I can't see a thing! I'll have to get a light on in here!";
 Constant SC_232 = "I can't see anything!";
-Constant SC_321 = "I can: talk to man, ask for something, or give something.";
+Constant SC_322 = "I can: talk to man, ask for something, or give something.";
 Constant SC_108 = "I climb down the bedsheets to the street below. Horay!";
 Constant SC_113 = "I damaged the zombie for ";
 Constant SC_224 = "I don";
-Constant SC_273 = "I don't feel hungry at all right now! Let's go do something.";
-Constant SC_268 = "I don't feel too good.";
-Constant SC_266 = "I don't feel well at all. My knees are shaking and I can't see clearly. Where's Mommy?";
+Constant SC_274 = "I don't feel hungry at all right now! Let's go do something.";
+Constant SC_269 = "I don't feel too good.";
+Constant SC_267 = "I don't feel well at all. My knees are shaking and I can't see clearly. Where's Mommy?";
 Constant SC_262 = "I don't find much behind the ";
 Constant SC_120 = "I don't have a revolver!";
 Constant SC_117 = "I don't have an axe!";
@@ -34757,19 +34794,19 @@ Constant SC_164 = "I don't see nothin~ else of interest under there.";
 Constant SC_199 = "I drink the nice cool water from my water bottle! Mmm, refrshing!";
 Constant SC_158 = "I eat the pills and suddenly I have no more pain in my boo-boos!";
 Constant SC_157 = "I eat the pills and suddenly the pain in my boo-boos goes away.";
-Constant SC_276 = "I feel like I'm starting to starve. I could eat a cow right now, as my Daddy always used to say.";
-Constant SC_269 = "I feel like my injuries are nothing! I may be a little girl, but I can take this!";
-Constant SC_264 = "I feel perfectly fine, like being in a sunny field.";
-Constant SC_274 = "I feel really weak and tired. Maybe I should just close my eyes and go to sleep.";
-Constant SC_267 = "I feel sore all over and could use some Band-Aids right now.";
+Constant SC_277 = "I feel like I'm starting to starve. I could eat a cow right now, as my Daddy always used to say.";
+Constant SC_270 = "I feel like my injuries are nothing! I may be a little girl, but I can take this!";
+Constant SC_265 = "I feel perfectly fine, like being in a sunny field.";
+Constant SC_275 = "I feel really weak and tired. Maybe I should just close my eyes and go to sleep.";
+Constant SC_268 = "I feel sore all over and could use some Band-Aids right now.";
 Constant SC_182 = "I fill my water bottle full of crystal clean water!";
 Constant SC_165 = "I find a key under the floor mat, which I bend down and pick up.";
-Constant SC_271 = "I have some cuts and bruises. Where's Mommy to help put on Band-aids?";
+Constant SC_272 = "I have some cuts and bruises. Where's Mommy to help put on Band-aids?";
 Constant SC_101 = "I hear some odd breathing noises.";
 Constant SC_10 = "I hear some scary groaning and moaning noises through the door. I think I'll have to find a different way out.";
 Constant SC_200 = "I kill the man.";
 Constant SC_69 = "I look inside. I see some panels with knobs and switches. There is a conductor's chair in there. Sitting on the chair is a dead man.";
-Constant SC_286 = "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is.";
+Constant SC_287 = "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is.";
 Constant SC_16 = "I made it spell ~Hello~ before but Daddy made it spell ~tam rednu~ I wonder what that means?";
 Constant SC_256 = "I now have a ";
 Constant SC_129 = "I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
@@ -34780,7 +34817,7 @@ Constant SC_175 = "I open the door.";
 Constant SC_173 = "I open the medicine cabinet and see 2 pills in here!";
 Constant SC_171 = "I open the nightstand and I can see a flashlight here and some yarn.";
 Constant SC_186 = "I open the small toolbox and see a heavy duty spanner.";
-Constant SC_279 = "I probably should be thinking about getting some food. Or maybe I shouldn't? Gee, I'm quite hungry.";
+Constant SC_280 = "I probably should be thinking about getting some food. Or maybe I shouldn't? Gee, I'm quite hungry.";
 Constant SC_138 = "I probably shouldn't tie that to the window.";
 Constant SC_193 = "I pry open the can of SPAM, revealing the soft juicy meat! I quickly gobble it down.";
 Constant SC_194 = "I pry open the can of SPAM, revealing the soft, juicy meat! I quickly gobble it down.";
@@ -34794,14 +34831,14 @@ Constant SC_66 = "I see a pair of strong cable cutters here.";
 Constant SC_184 = "I see a small toolbox here.";
 Constant SC_185 = "I see a toolbox here.";
 Constant SC_68 = "I see some batteries here!";
-Constant SC_310 = "I see the Town Square to the east. The door to the general store is to the west.";
-Constant SC_308 = "I see the Town Square to the west.";
-Constant SC_312 = "I see the exit to the north and the kitchen to the west.";
-Constant SC_315 = "I see the living room to the east and the backyard to the south.";
-Constant SC_327 = "I see the main room to the east.";
-Constant SC_325 = "I see the main room to the south.";
+Constant SC_311 = "I see the Town Square to the east. The door to the general store is to the west.";
+Constant SC_309 = "I see the Town Square to the west.";
+Constant SC_313 = "I see the exit to the north and the kitchen to the west.";
+Constant SC_316 = "I see the living room to the east and the backyard to the south.";
+Constant SC_328 = "I see the main room to the east.";
+Constant SC_326 = "I see the main room to the south.";
 Constant SC_37 = "I see the rail go on and on and on. I have a feeling that this is my ticket out of here.";
-Constant SC_306 = "I see the town square to the north.";
+Constant SC_307 = "I see the town square to the north.";
 Constant SC_119 = "I shoot my revolver but I miss!";
 Constant SC_118 = "I shoot the person with my revolver, hitting him!";
 Constant SC_191 = "I should ask him about something.";
@@ -34816,48 +34853,48 @@ Constant SC_111 = "I tie the bedsheets to the window and let it hang down below 
 Constant SC_128 = "I try to kill the man but he screams and runs out the door. He leaves his bag behind.";
 Constant SC_201 = "I try to shoot the man with my gun but I miss! He runs out of the room.";
 Constant SC_110 = "I unlock the cupboards and open it.";
-Constant SC_272 = "I'm a little messy, but Mommy always tells me that I look cute.";
-Constant SC_305 = "I'm at the small, dark house. It looks scary! There's a door leading inside.";
+Constant SC_273 = "I'm a little messy, but Mommy always tells me that I look cute.";
+Constant SC_306 = "I'm at the small, dark house. It looks scary! There's a door leading inside.";
 Constant SC_226 = "I'm carrying: ";
-Constant SC_300 = "I'm here at the town square. I see some zombies milling about.";
-Constant SC_298 = "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.";
-Constant SC_296 = "I'm here in the parking lot in front of our small little apartment.";
-Constant SC_318 = "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor. There's a counter in the corner.";
-Constant SC_322 = "I'm in the hardware store. There are a lot of towering shelves here.";
-Constant SC_314 = "I'm in the kitchen. This place looks like a mess, with everything spilled everywhere and things hanging lopsidedly. There are some cupboards here.";
-Constant SC_311 = "I'm in the small house's living room. There's not much here, just a dusty couch and a broken TV.";
-Constant SC_334 = "I'm inside the engine room. There's a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.";
-Constant SC_283 = "I'm not hungry at all. Let's go do something!";
-Constant SC_282 = "I'm not really feeling that hungry right now";
+Constant SC_301 = "I'm here at the town square. I see some zombies milling about.";
+Constant SC_299 = "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.";
+Constant SC_297 = "I'm here in the parking lot in front of our small little apartment.";
+Constant SC_319 = "I'm in the general store. The shelves have been knocked over and there are things strewn across the floor. There's a counter in the corner.";
+Constant SC_323 = "I'm in the hardware store. There are a lot of towering shelves here.";
+Constant SC_315 = "I'm in the kitchen. This place looks like a mess, with everything spilled everywhere and things hanging lopsidedly. There are some cupboards here.";
+Constant SC_312 = "I'm in the small house's living room. There's not much here, just a dusty couch and a broken TV.";
+Constant SC_335 = "I'm inside the engine room. There's a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.";
+Constant SC_284 = "I'm not hungry at all. Let's go do something!";
+Constant SC_283 = "I'm not really feeling that hungry right now";
 Constant SC_136 = "I'm not that strong!";
-Constant SC_275 = "I'm really hungry and I'm starting to feel really tired.";
-Constant SC_278 = "I'm really really hungry right now. I want some animal crackers, or maybe some Goldfish?";
-Constant SC_277 = "I'm really really really hungry right now.";
-Constant SC_265 = "I'm shaking all over and I can't see straight.";
-Constant SC_307 = "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.";
-Constant SC_309 = "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.";
-Constant SC_324 = "I'm standing in the aisle of shelf A.";
+Constant SC_276 = "I'm really hungry and I'm starting to feel really tired.";
+Constant SC_279 = "I'm really really hungry right now. I want some animal crackers, or maybe some Goldfish?";
+Constant SC_278 = "I'm really really really hungry right now.";
+Constant SC_266 = "I'm shaking all over and I can't see straight.";
+Constant SC_308 = "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.";
+Constant SC_310 = "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.";
+Constant SC_325 = "I'm standing in the aisle of shelf A.";
 Constant SC_44 = "I'm standing in the aisle of shelf B. I see the main room to the west.";
-Constant SC_326 = "I'm standing in the aisle of shelf C.";
-Constant SC_332 = "I'm standing inside the container car. It is yellow. I see a sleeping mat here and a crate.";
-Constant SC_330 = "I'm standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.";
-Constant SC_328 = "I'm standing on the train. It's derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.";
+Constant SC_327 = "I'm standing in the aisle of shelf C.";
+Constant SC_333 = "I'm standing inside the container car. It is yellow. I see a sleeping mat here and a crate.";
+Constant SC_331 = "I'm standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.";
+Constant SC_329 = "I'm standing on the train. It's derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.";
 Constant SC_252 = "I'm wearing my favorite yellow shirt and blouse! My hair is in my favorite ponytail, as usual.";
 Constant SC_206 = "I've taken this from the dead man. I put it into the slot of lever C.";
-Constant SC_304 = "I've taken this from the dead man. It looks like it can be ";
+Constant SC_305 = "I've taken this from the dead man. It looks like it can be ";
 Constant SC_207 = "I've taken this from the dead man. It looks like the ";
 Constant SC_240 = "In ";
 Constant SC_74 = "It belongs to Lever C.";
-Constant SC_338 = "It looks like it can be ";
+Constant SC_339 = "It looks like it can be ";
 Constant SC_86 = "It sounds like zombies are trying to break down the front door! I better hurry!!!";
-Constant SC_302 = "It's a dead man that is walking! I should ";
+Constant SC_303 = "It's a dead man that is walking! I should ";
 Constant SC_109 = "It's a looooong way down!";
 Constant SC_5 = "It's a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo.";
-Constant SC_316 = "It's a nice, small backyard, covered with grass and plants. I see a small water cistern near the wall.";
+Constant SC_317 = "It's a nice, small backyard, covered with grass and plants. I see a small water cistern near the wall.";
 Constant SC_176 = "It's an old wrench, now broken into tiny pieces.";
 Constant SC_46 = "It's an old wrench, used many times.";
 Constant SC_83 = "It's getting dark outside and Mommy and Daddy haven't been home for 2 months. There are strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out.";
-Constant SC_313 = "It's just a dusty couch. It looks like it was recently disturbed";
+Constant SC_314 = "It's just a dusty couch. It looks like it was recently disturbed";
 Constant SC_161 = "It's just our glass coffee table.";
 Constant SC_25 = "It's just our shiny, white toilet.";
 Constant SC_26 = "It's just our shower.";
@@ -34868,7 +34905,7 @@ Constant SC_216 = "Just as I press the button, the tall man from the store hops 
 Constant SC_214 = "Just as I press the button, the tall man from the store hops into the car with me! ~Not so fast, little girl! You're giving me the controls to this thing. Now back off!~";
 Constant SC_2 = "Kai Wong";
 Constant SC_155 = "Look behind/under/inside ______ , Eat ______ , Break ____ with ____, Tie ____ with ____, Examine (x) me.";
-Constant SC_336 = "Looks like he died here";
+Constant SC_337 = "Looks like he died here";
 Constant SC_135 = "MMMMMMMPH! Darn, I'm not strong enough to cut the coupler.";
 Constant SC_132 = "MMMMMMMPH!";
 Constant SC_67 = "Maybe these batteries can fit into my flashlight!";
@@ -34881,7 +34918,7 @@ Constant SC_7 = "Mommy left a note on top of the table for me.";
 Constant SC_112 = "My axe swing sinks into the zombie!";
 Constant SC_92 = "My health goes down by ";
 Constant SC_251 = "My name is Anabelle. I am 10 years old.";
-Constant SC_280 = "My stomach is starting to gurgle. I wonder what there is to eat?";
+Constant SC_281 = "My stomach is starting to gurgle. I wonder what there is to eat?";
 Constant SC_162 = "Nom nom nom I eat up the chocolate chip cookies!";
 Constant SC_219 = "Not all of the levers are switched on yet!";
 Constant SC_166 = "Nothing much in here.";
@@ -34890,7 +34927,7 @@ Constant SC_122 = "Oh, it's just my bag, you know~ he says. ~Nothing in it for y
 Constant SC_242 = "On ";
 Constant SC_6 = "Our TV is on. It's replaying the statewide message that was sent out months ago. ~Seek shelter and food. Stay inside at all times. Do NOT go outside in any case. This has been an official CEDA announcement.~";
 Constant SC_18 = "Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.^^I can see our living room to the north and our bathroom to the west.";
-Constant SC_284 = "Our living room";
+Constant SC_285 = "Our living room";
 Constant SC_17 = "Our sink. Daddy puts stuff underneath it.";
 Constant SC_28 = "Our sink. Nothing too special.";
 Constant SC_24 = "Our small bathroom. There's a toilet, a shower, a sink, and a medicine cabinet here.^^I can see our bedroom to the east.";
@@ -34899,23 +34936,23 @@ Constant SC_142 = "Press____ , ";
 Constant SC_81 = "QUIT";
 Constant SC_78 = "RESTART";
 Constant SC_79 = "RESTORE a saved game";
-Constant SC_323 = "Shelf A is to the north. Shelf B is to the east. Shelf C is to the west. The door out is to the south.";
+Constant SC_324 = "Shelf A is to the north. Shelf B is to the east. Shelf C is to the west. The door out is to the south.";
 Constant SC_147 = "Shoot ____ with ____ ,";
 Constant SC_27 = "Sink";
 Constant SC_47 = "Small House's Kitchen";
 Constant SC_43 = "Small House's Living Room";
 Constant SC_32 = "Some are walking, some are sitting. They don't look very nice.";
 Constant SC_49 = "Some cupboards. There's a door on it.";
-Constant SC_294 = "Some of Mommy's yarn. Maybe I can combine something with it";
+Constant SC_295 = "Some of Mommy's yarn. Maybe I can combine something with it";
 Constant SC_35 = "Some of walking, some are sitting. They don't look very nice.";
 Constant SC_153 = "Take";
 Constant SC_212 = "Taken.";
 Constant SC_75 = "The button is red. It has the word ~Start~ on it.";
 Constant SC_70 = "The conductor's chair.";
 Constant SC_71 = "The dead man's hand is still grasping a lever.";
-Constant SC_335 = "The door to the engine car is to the east.";
+Constant SC_336 = "The door to the engine car is to the east.";
 Constant SC_51 = "The door to the general store.";
-Constant SC_319 = "The exit is to the east.";
+Constant SC_320 = "The exit is to the east.";
 Constant SC_228 = "The flashlight doesn't have batteries";
 Constant SC_227 = "The flashlight turns on!";
 Constant SC_45 = "The front door to the small house.";
@@ -34940,12 +34977,12 @@ Constant SC_15 = "There isn't much special about our stove.";
 Constant SC_100 = "There's a zombie here!";
 Constant SC_177 = "There's an old rusty wrench under here. I take it because maybe it'll be useful later.";
 Constant SC_140 = "This is a list of commands available in the game. Other synonymous actions may exist. All possible exits are listed in the descriptions of every room. Available shortcuts for commands are in parenthesis. ";
-Constant SC_331 = "To the east I can see the train coupler.";
-Constant SC_317 = "To the north I can see the living room.";
-Constant SC_301 = "To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store.";
+Constant SC_332 = "To the east I can see the train coupler.";
+Constant SC_318 = "To the north I can see the living room.";
+Constant SC_302 = "To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store.";
 Constant SC_82 = "UNDO the last command";
 Constant SC_29 = "When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here.";
-Constant SC_290 = "With great power comes great responsibility, my Daddy always told me. I barely know how to ";
+Constant SC_291 = "With great power comes great responsibility, my Daddy always told me. I barely know how to ";
 Constant SC_217 = "With the man's help, you steer the train to a future full of hope and happiness.";
 Constant SC_233 = "Would you like to ";
 Constant SC_239 = "You ";
@@ -34955,7 +34992,7 @@ Constant SC_215 = "You may have escaped from the town, but you have not escaped 
 Constant SC_260 = "You need a gun to shoot, not a ";
 Constant SC_13 = "Yummy cookies!";
 Constant SC_244 = "also ";
-Constant SC_303 = "attack it with something";
+Constant SC_304 = "attack it with something";
 Constant SC_204 = "break";
 Constant SC_243 = "can ";
 Constant SC_209 = "can be ";
@@ -34964,21 +35001,21 @@ Constant SC_38 = "dead person";
 Constant SC_63 = "hardware store's door";
 Constant SC_106 = "hmmm.";
 Constant SC_151 = "in";
-Constant SC_337 = "it makes me too sad to think about. He's holding something in his hand.";
+Constant SC_338 = "it makes me too sad to think about. He's holding something in his hand.";
 Constant SC_208 = "lever";
-Constant SC_285 = "or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.^^I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.";
+Constant SC_286 = "or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.^^I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.";
 Constant SC_34 = "pillowcase bag";
 Constant SC_210 = "put";
 Constant SC_229 = "s dead body";
 Constant SC_245 = "see ";
 Constant SC_80 = "see some suggestions for AMUSING things to do";
-Constant SC_291 = "shoot something";
+Constant SC_292 = "shoot something";
 Constant SC_225 = "t seem to have anything at the moment.";
 Constant SC_54 = "tall man";
 Constant SC_105 = "tam rednu";
 Constant SC_73 = "the lever that the dead man is holding";
 Constant SC_3 = "the";
-Constant SC_288 = "tie";
+Constant SC_289 = "tie";
 Constant SC_145 = "with";
 Constant SC_31 = "zombies";
 

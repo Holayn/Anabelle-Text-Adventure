@@ -1113,6 +1113,12 @@ deadman is a man in DEATH. The printed name is "dead person". The description is
 
 
 
+Understand "xyzzy" or "say xyzzy" or "cast xyzzy" as casting xyzzy.
 
+Casting xyzzy is an action applying to nothing.
+
+Check casting xyzzy: 
+	say "Did you know, taking the poop is against the rules?" instead; 
+   
 
 

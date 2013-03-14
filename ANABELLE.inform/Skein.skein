@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x210520" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x210520" />
+  <activeNode nodeId="node-0x18b91360" />
   <item nodeId="node-0x210520">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -24,12 +24,13 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="165">NO</temporary>
+    <temporary score="168">NO</temporary>
     <children>
       <child nodeId="node-0x54f7e40" />
       <child nodeId="node-0x11a7fca0" />
       <child nodeId="node-0x11ae91d0" />
       <child nodeId="node-0x54f60f0" />
+      <child nodeId="node-0x18b91360" />
       <child nodeId="node-0x54f4b40" />
       <child nodeId="node-0x54f4f60" />
       <child nodeId="node-0x54f59f0" />
@@ -907,6 +908,14 @@ I can see another train compartment to the east and the engine car to the west.
     <played>YES</played>
     <changed>YES</changed>
     <temporary score="841">YES</temporary>
+  </item>
+  <item nodeId="node-0x18b91360">
+    <command xml:space="preserve">xyzzy</command>
+    <result xml:space="preserve">Take one step forward: https://maps.google.com/maps?hl=en&amp;ll=43.829221,12.304277&amp;spn=0.001654,0.004128&amp;t=h&amp;layer=c&amp;cbll=43.829283,12.303628&amp;panoid=XwDtWY6SV5qMQcU3nr5KEQ&amp;cbp=13,114.96,,0,14.51&amp;z=19
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="167">YES</temporary>
   </item>
   <item nodeId="node-0x54f60f0">
     <command xml:space="preserve">shoot zombie</command>
@@ -2071,15 +2080,6 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <played>YES</played>
     <changed>YES</changed>
     <temporary score="158">YES</temporary>
-    <children>
-      <child nodeId="node-0x11a3ae50" />
-    </children>
-  </item>
-  <item nodeId="node-0x11a3ae50">
-    <command xml:space="preserve">restart</command>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="157">YES</temporary>
   </item>
   <item nodeId="node-0x11a7fca0">
     <command xml:space="preserve">w</command>
