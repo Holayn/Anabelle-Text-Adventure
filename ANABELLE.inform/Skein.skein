@@ -1,18 +1,20 @@
 <?xml version="1.0"?>
-<Skein rootNode="node-0x65a770" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x210520" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x10805890" />
-  <item nodeId="node-0x65a770">
+  <activeNode nodeId="node-0x210520" />
+  <item nodeId="node-0x210520">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
 
 
-It&apos;s getting dark outside and Mommy and Daddy haven&apos;t been home for 2 months. There&apos;s strange, dead people walking around outside, making scary noises. I don&apos;t like it here. It is frightening. I&apos;ve run out of food. I need to find a way out.
+It&apos;s getting dark outside and Mommy and Daddy haven&apos;t been home for 2 months. There are strange, dead people walking around outside, making scary noises. I don&apos;t like it here. It is frightening. I&apos;ve run out of food. I need to find a way out.
+
+For help, type &quot;Commands List&quot;.
 
 ANABELLE
 An Interactive Fiction by Kai Wong
-Release 1 / Serial number 130312 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130314 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Apartment Living Room
 Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
@@ -22,184 +24,325 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="364">NO</temporary>
+    <temporary score="165">NO</temporary>
     <children>
-      <child nodeId="node-0x108745b0" />
-      <child nodeId="node-0x108c9c30" />
-      <child nodeId="node-0x10805890" />
-      <child nodeId="node-0x65a900" />
-      <child nodeId="node-0x1085f520" />
-      <child nodeId="node-0x659e10" />
+      <child nodeId="node-0x54f7e40" />
+      <child nodeId="node-0x11a7fca0" />
+      <child nodeId="node-0x11ae91d0" />
+      <child nodeId="node-0x54f60f0" />
+      <child nodeId="node-0x54f4b40" />
+      <child nodeId="node-0x54f4f60" />
+      <child nodeId="node-0x54f59f0" />
+      <child nodeId="node-0x54f49e0" />
+      <child nodeId="node-0x54f4990" />
+      <child nodeId="node-0x210120" />
+      <child nodeId="node-0x210570" />
     </children>
   </item>
-  <item nodeId="node-0x659e10">
-    <command xml:space="preserve">x hands</command>
+  <item nodeId="node-0x210570">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
+
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="867">YES</temporary>
+    <children>
+      <child nodeId="node-0x2100b0" />
+      <child nodeId="node-0x20ff80" />
+    </children>
+  </item>
+  <item nodeId="node-0x20ff80">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="867">YES</temporary>
+    <children>
+      <child nodeId="node-0x20ffd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x20ffd0">
+    <command xml:space="preserve">nothing</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="356">YES</temporary>
+    <temporary score="867">YES</temporary>
+    <children>
+      <child nodeId="node-0x210040" />
+    </children>
   </item>
-  <item nodeId="node-0x1085f520">
+  <item nodeId="node-0x210040">
+    <command xml:space="preserve">shoot revolver with flashlight</command>
+    <result xml:space="preserve">There&apos;s nothing for me to shoot with the revolver…
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="866">YES</temporary>
+  </item>
+  <item nodeId="node-0x2100b0">
+    <command xml:space="preserve">xyzzy</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="805">YES</temporary>
+  </item>
+  <item nodeId="node-0x210120">
+    <command xml:space="preserve">take popo</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="873">YES</temporary>
+    <children>
+      <child nodeId="node-0x20fd50" />
+    </children>
+  </item>
+  <item nodeId="node-0x20fd50">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
+
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="873">YES</temporary>
+    <children>
+      <child nodeId="node-0x20fda0" />
+    </children>
+  </item>
+  <item nodeId="node-0x20fda0">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="873">YES</temporary>
+    <children>
+      <child nodeId="node-0x20fdf0" />
+    </children>
+  </item>
+  <item nodeId="node-0x20fdf0">
+    <command xml:space="preserve">nothig</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="873">YES</temporary>
+    <children>
+      <child nodeId="node-0x20fe40" />
+    </children>
+  </item>
+  <item nodeId="node-0x20fe40">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="873">YES</temporary>
+    <children>
+      <child nodeId="node-0x20feb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x20feb0">
+    <command xml:space="preserve">nothing</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="872">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f4990">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="801">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f49e0">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="882">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4a30" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4a30">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
+
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="882">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4a80" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4a80">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="882">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4ad0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4ad0">
+    <command xml:space="preserve">flashlight</command>
+    <result xml:space="preserve">You can&apos;t shoot revolver.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="881">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f59f0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="878">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6080" />
+      <child nodeId="node-0x54f5ec0" />
+      <child nodeId="node-0x54f53c0" />
+      <child nodeId="node-0x54f5b40" />
+      <child nodeId="node-0x54f5a60" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5a60">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="771">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5ad0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5ad0">
     <command xml:space="preserve">yes</command>
-    <result xml:space="preserve">That was a rhetorical question.
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="770">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f5b40">
+    <command xml:space="preserve">x coupler</command>
+    <result xml:space="preserve">The train coupler is broken! The train can now move!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="307">YES</temporary>
+    <temporary score="801">YES</temporary>
     <children>
-      <child nodeId="node-0x1088aca0" />
+      <child nodeId="node-0x54f5bb0" />
     </children>
   </item>
-  <item nodeId="node-0x1088aca0">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+  <item nodeId="node-0x54f5bb0">
+    <command xml:space="preserve">break coupler with spanner</command>
+    <result xml:space="preserve">MMMMMMMPH!
 
-I can see another train compartment to the east and the engine car to the west.
+*snap!*
+
+The train coupler slides apart! Hooooray!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="307">YES</temporary>
+    <temporary score="801">YES</temporary>
     <children>
-      <child nodeId="node-0x108f9070" />
+      <child nodeId="node-0x54f5c20" />
     </children>
   </item>
-  <item nodeId="node-0x108f9070">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">
-Trainyard
-I&apos;m here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.
+  <item nodeId="node-0x54f5c20">
+    <command xml:space="preserve">break coupler with spanner</command>
+    <result xml:space="preserve">MMMMMMMPH!
 
-I can see the parking lot west of here and the train to the north.
+*snap!*
 
-There are zombies about!
+The train coupler slides apart! Hooooray!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="307">YES</temporary>
+    <temporary score="801">YES</temporary>
     <children>
-      <child nodeId="node-0xf6c5870" />
+      <child nodeId="node-0x54f52e0" />
     </children>
   </item>
-  <item nodeId="node-0xf6c5870">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Parking Lot
-I&apos;m here in the parking lot in front of our small little apartment.
+  <item nodeId="node-0x54f52e0">
+    <command xml:space="preserve">break coupler with spanner</command>
+    <result xml:space="preserve">MMMMMMMPH!
 
-I can see a trainyard to the east and the town square to the west.
+*snap!*
 
-There are zombies about!
+The train coupler slides apart! Hooooray!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="307">YES</temporary>
+    <temporary score="801">YES</temporary>
     <children>
-      <child nodeId="node-0x10832260" />
+      <child nodeId="node-0x54f5350" />
     </children>
   </item>
-  <item nodeId="node-0x10832260">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Town Square
-I&apos;m here at the town square. I see some zombies milling about.
+  <item nodeId="node-0x54f5350">
+    <command xml:space="preserve">break coupler with spanner</command>
+    <result xml:space="preserve">MMMMMMMPH!
 
-To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store.
+*snap!*
 
-There are zombies about!
+The train coupler slides apart! Hooooray!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="307">YES</temporary>
-    <children>
-      <child nodeId="node-0xf692b80" />
-    </children>
+    <temporary score="800">YES</temporary>
   </item>
-  <item nodeId="node-0xf692b80">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Front of the General Store
-I&apos;m standing in front of the town&apos;s small general store. Some of the letters on the sign are gone.
-
-I see the Town Square to the east. The door to the general store is to the west.
-
-A zombie takes notice of me!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="307">YES</temporary>
-    <children>
-      <child nodeId="node-0xf6b6e00" />
-    </children>
-  </item>
-  <item nodeId="node-0xf6b6e00">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-A zombie is groaning and moaning and is trying to kill me!
-
-The zombie lunges at me but I dodge it.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="307">YES</temporary>
-    <children>
-      <child nodeId="node-0x10852500" />
-    </children>
-  </item>
-  <item nodeId="node-0x10852500">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-A zombie is groaning and moaning and is trying to kill me!
-
-The zombie lunges at me but I dodge it.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="307">YES</temporary>
-    <children>
-      <child nodeId="node-0x108690a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x108690a0">
-    <command xml:space="preserve">go into door</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="306">YES</temporary>
-  </item>
-  <item nodeId="node-0x65a900">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
-
-I can see another train compartment to the east and the engine car to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="356">YES</temporary>
-    <children>
-      <child nodeId="node-0x108100f0" />
-      <child nodeId="node-0x10829820" />
-      <child nodeId="node-0xf6e3920" />
-      <child nodeId="node-0x10878730" />
-    </children>
-  </item>
-  <item nodeId="node-0x10878730">
+  <item nodeId="node-0x54f53c0">
     <command xml:space="preserve">s</command>
     <result xml:space="preserve">
 Trainyard
@@ -211,251 +354,32 @@ A zombie takes notice of me!
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="356">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="795">YES</temporary>
     <children>
-      <child nodeId="node-0xf67cf50" />
-      <child nodeId="node-0xf63ebf0" />
+      <child nodeId="node-0x54f5430" />
     </children>
   </item>
-  <item nodeId="node-0xf63ebf0">
-    <command xml:space="preserve">x dead zombie</command>
-    <result xml:space="preserve">I see some dead zombies lying around.
+  <item nodeId="node-0x54f5430">
+    <command xml:space="preserve">x train</command>
+    <result xml:space="preserve">A derailed train to the north.
 
 A zombie is groaning and moaning and is trying to kill me!
 
 The zombie hits me hard.
 
-My health goes down by 5.
-(Health: 95)
+My health goes down by 1.
+(Health: 99)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="355">YES</temporary>
-  </item>
-  <item nodeId="node-0xf67cf50">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Parking Lot
-I&apos;m here in the parking lot in front of our small little apartment.
-
-I can see a trainyard to the east and the town square to the west.
-
-There are zombies about!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="349">YES</temporary>
+    <temporary score="795">YES</temporary>
     <children>
-      <child nodeId="node-0x10886aa0" />
+      <child nodeId="node-0x54f54a0" />
     </children>
   </item>
-  <item nodeId="node-0x10886aa0">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Town Square
-I&apos;m here at the town square. I see some zombies milling about.
-
-To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store.
-
-There are zombies about!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0xf630b90" />
-    </children>
-  </item>
-  <item nodeId="node-0xf630b90">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Front of the General Store
-I&apos;m standing in front of the town&apos;s small general store. Some of the letters on the sign are gone.
-
-I see the Town Square to the east. The door to the general store is to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0xc7d7490" />
-    </children>
-  </item>
-  <item nodeId="node-0xc7d7490">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-General Store.
-I&apos;m in the general store. The shelves have been knocked over and there are things strewn across the floor. There&apos;s a counter in the corner.
-
-The exit is to the east.
-
-I can see a tall man crouching behind one of the shelves.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0x108a55d0" />
-      <child nodeId="node-0x10867d00" />
-    </children>
-  </item>
-  <item nodeId="node-0x10867d00">
-    <command xml:space="preserve">x man</command>
-    <result xml:space="preserve">He&apos;s pretty tall. He&apos;s watching me carefully. He has no weapons so I don&apos;t think he can hurt me. He has a large bag with him.
-
-I can: talk, ask, give.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a9ad0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a9ad0">
-    <command xml:space="preserve">nw</command>
-    <result xml:space="preserve">Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
-
-I can see another train compartment to the east and the engine car to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0xd0f1220" />
-    </children>
-  </item>
-  <item nodeId="node-0xd0f1220">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0x5bd99e0" />
-    </children>
-  </item>
-  <item nodeId="node-0x5bd99e0">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="349">YES</temporary>
-    <children>
-      <child nodeId="node-0xf6794d0" />
-    </children>
-  </item>
-  <item nodeId="node-0xf6794d0">
-    <command xml:space="preserve">push button</command>
-    <result xml:space="preserve">Just as I press the button, the tall man from the store hops into the car with me! &quot;Not so fast, little girl! You&apos;re giving me the controls to this thing. Now back off!&quot;
-
-You may have escaped from the town, but you have not escaped from the man.
-
-
-
-    *** You have won ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="348">YES</temporary>
-  </item>
-  <item nodeId="node-0x108a55d0">
-    <command xml:space="preserve">go through door</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="332">YES</temporary>
-    <children>
-      <child nodeId="node-0x108d06f0" />
-    </children>
-  </item>
-  <item nodeId="node-0x108d06f0">
-    <command xml:space="preserve">x generalstoordoor</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="332">YES</temporary>
-    <children>
-      <child nodeId="node-0x1346e200" />
-    </children>
-  </item>
-  <item nodeId="node-0x1346e200">
-    <command xml:space="preserve">x generalstoredoor</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="332">YES</temporary>
-    <children>
-      <child nodeId="node-0x108d51c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x108d51c0">
-    <command xml:space="preserve">x door</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="332">YES</temporary>
-    <children>
-      <child nodeId="node-0xf653a40" />
-    </children>
-  </item>
-  <item nodeId="node-0xf653a40">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Front of the General Store
-I&apos;m standing in front of the town&apos;s small general store. Some of the letters on the sign are gone.
-
-I see the Town Square to the east. The door to the general store is to the west.
-
-A zombie is groaning and moaning and is trying to kill me!
-
-The zombie hits me hard.
-
-My health goes down by 4.
-(Health: 94)
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="332">YES</temporary>
-    <children>
-      <child nodeId="node-0xc797440" />
-    </children>
-  </item>
-  <item nodeId="node-0xc797440">
+  <item nodeId="node-0x54f54a0">
     <command xml:space="preserve">shoot zombie with gun</command>
     <result xml:space="preserve">I shoot the person with my revolver, hitting him!
 I damaged the zombie for 100 HP.
@@ -466,40 +390,52 @@ The zombie crumples to the ground.
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="332">YES</temporary>
+    <temporary score="795">YES</temporary>
     <children>
-      <child nodeId="node-0x134866d0" />
+      <child nodeId="node-0x54f5c90" />
     </children>
   </item>
-  <item nodeId="node-0x134866d0">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Front of the General Store
-I&apos;m standing in front of the town&apos;s small general store. Some of the letters on the sign are gone.
-
-I see the Town Square to the east. The door to the general store is to the west.
-
-There are zombies about!
+  <item nodeId="node-0x54f5c90">
+    <command xml:space="preserve">shoot gun</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="332">YES</temporary>
+    <temporary score="795">YES</temporary>
     <children>
-      <child nodeId="node-0x10869840" />
+      <child nodeId="node-0x54f5d00" />
     </children>
   </item>
-  <item nodeId="node-0x10869840">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-There are zombies about!
+  <item nodeId="node-0x54f5d00">
+    <command xml:space="preserve">bullets</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="331">YES</temporary>
+    <temporary score="795">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5d70" />
+    </children>
   </item>
-  <item nodeId="node-0xf6e3920">
+  <item nodeId="node-0x54f5d70">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="795">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5de0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5de0">
     <command xml:space="preserve">break coupler with spanner</command>
     <result xml:space="preserve">MMMMMMMPH!
 
@@ -509,98 +445,73 @@ The train coupler slides apart! Hooooray!
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="264">YES</temporary>
-    <children>
-      <child nodeId="node-0xc789080" />
-    </children>
-  </item>
-  <item nodeId="node-0xc789080">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="264">YES</temporary>
-    <children>
-      <child nodeId="node-0x108f61f0" />
-    </children>
-  </item>
-  <item nodeId="node-0x108f61f0">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="264">YES</temporary>
-    <children>
-      <child nodeId="node-0xf6e0f30" />
-      <child nodeId="node-0x10819890" />
-    </children>
-  </item>
-  <item nodeId="node-0x10819890">
-    <command xml:space="preserve">put slot into slot</command>
-    <result xml:space="preserve">&gt;</result>
-    <played>YES</played>
     <changed>YES</changed>
-    <temporary score="264">YES</temporary>
+    <temporary score="795">YES</temporary>
     <children>
-      <child nodeId="node-0x1084a160" />
+      <child nodeId="node-0x54f5e50" />
     </children>
   </item>
-  <item nodeId="node-0x1084a160">
-    <command xml:space="preserve">put lever into slot</command>
-    <result xml:space="preserve">(Lever C into lever slot)
-I put the lever C into the lever slot and flip it on!
+  <item nodeId="node-0x54f5e50">
+    <command xml:space="preserve">x coupler</command>
+    <result xml:space="preserve">It&apos;s twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow break this coupler apart.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="263">YES</temporary>
+    <temporary score="794">YES</temporary>
   </item>
-  <item nodeId="node-0xf6e0f30">
-    <command xml:space="preserve">x panel</command>
-    <result xml:space="preserve">The panel is covered with switches and buttons.
+  <item nodeId="node-0x54f5ec0">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
 
-Lever A&apos;s light is turned off.
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
 
-Lever B&apos;s light is turned on.
-
-Lever C&apos;s light is turned off and the lever is missing.
-
-There is a large red button that says &quot;Start&quot;.
+I can see another train compartment to the east and the engine car to the west.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="258">YES</temporary>
+    <temporary score="878">YES</temporary>
     <children>
-      <child nodeId="node-0xf69b2c0" />
+      <child nodeId="node-0x54f5f30" />
     </children>
   </item>
-  <item nodeId="node-0xf69b2c0">
-    <command xml:space="preserve">put lever into slot</command>
-    <result xml:space="preserve">I didn&apos;t understand that sentence.
+  <item nodeId="node-0x54f5f30">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="258">YES</temporary>
+    <temporary score="878">YES</temporary>
     <children>
-      <child nodeId="node-0xf6ea7b0" />
+      <child nodeId="node-0x54f5fa0" />
     </children>
   </item>
-  <item nodeId="node-0xf6ea7b0">
+  <item nodeId="node-0x54f5fa0">
+    <command xml:space="preserve">nothing</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="878">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6010" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6010">
+    <command xml:space="preserve">shoot revolver with flashlight</command>
+    <result xml:space="preserve">You can&apos;t shoot revolver.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="877">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f6080">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">I&apos;m carrying: 
 Cable cutters
@@ -613,149 +524,508 @@ pillowcase bag
 bedsheets
 Flashlight
 2 pills
-1 bandaids
-a case of 8 bullet(s) for Daddy&apos;s revolver
 a revolver
 (Health: 100)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="258">YES</temporary>
-    <children>
-      <child nodeId="node-0x2254f0" />
-    </children>
+    <temporary score="803">YES</temporary>
   </item>
-  <item nodeId="node-0x2254f0">
-    <command xml:space="preserve">put lever c into slot c</command>
-    <result xml:space="preserve">I didn&apos;t understand that sentence.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="258">YES</temporary>
-    <children>
-      <child nodeId="node-0xc792000" />
-    </children>
-  </item>
-  <item nodeId="node-0xc792000">
-    <command xml:space="preserve">put lever in slot</command>
-    <result xml:space="preserve">(Lever C in lever slot)
-I put the lever C into the lever slot and flip it on!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="257">YES</temporary>
-  </item>
-  <item nodeId="node-0x10829820">
-    <command xml:space="preserve">e</command>
+  <item nodeId="node-0x54f4f60">
+    <command xml:space="preserve">s</command>
     <result xml:space="preserve">
-Parking Lot
-I&apos;m here in the parking lot in front of our small little apartment.
+Bedroom
+Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.
 
-I can see a trainyard to the east and the town square to the west.
+I can see our living room to the north and our bathroom to the west.
 
-There are zombies about!
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="786">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5600" />
+      <child nodeId="node-0x54f4d70" />
+      <child nodeId="node-0x54f4fd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4fd0">
+    <command xml:space="preserve">take pillowcases</command>
+    <result xml:space="preserve">Taken.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="248">YES</temporary>
+    <temporary score="768">YES</temporary>
     <children>
-      <child nodeId="node-0x10857ab0" />
+      <child nodeId="node-0x54f5040" />
     </children>
   </item>
-  <item nodeId="node-0x10857ab0">
-    <command xml:space="preserve">e</command>
+  <item nodeId="node-0x54f5040">
+    <command xml:space="preserve">open nightstand</command>
+    <result xml:space="preserve">I open the nightstand and I can see a flashlight here and some yarn.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f50b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f50b0">
+    <command xml:space="preserve">take yar</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5120" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5120">
+    <command xml:space="preserve">take yarn</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5190" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5190">
+    <command xml:space="preserve">combine yarn and pillowcase</command>
+    <result xml:space="preserve">You can&apos;t use multiple objects with that verb.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5200" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5200">
+    <command xml:space="preserve">x yarn</command>
+    <result xml:space="preserve">Some of Mommy&apos;s yarn. Maybe I can make something with it…
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5270" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5270">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Bathroom
+Our small bathroom. There&apos;s a toilet, a shower, a sink, and a medicine cabinet here.
+
+I can see our bedroom to the east.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4c90" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4c90">
+    <command xml:space="preserve">x medicine cabinet</command>
+    <result xml:space="preserve">When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="768">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4d00" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4d00">
+    <command xml:space="preserve">open medicine cabinet</command>
+    <result xml:space="preserve">You open Medicine cabinet, revealing 2 pills.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="767">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f4d70">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="786">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5520" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5520">
+    <command xml:space="preserve">s</command>
     <result xml:space="preserve">
 Trainyard
 I&apos;m here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.
 
 I can see the parking lot west of here and the train to the north.
 
-A zombie takes notice of me!
-
-It&apos;s an old wrench, used many times.
+There are zombies about!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="247">YES</temporary>
+    <temporary score="786">YES</temporary>
     <children>
-      <child nodeId="node-0x5b7a3a0" />
+      <child nodeId="node-0x54f5590" />
     </children>
   </item>
-  <item nodeId="node-0x5b7a3a0">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">
-Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
-
-I can see another train compartment to the east and the engine car to the west.
-
-It&apos;s an old wrench, used many times.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="247">YES</temporary>
-    <children>
-      <child nodeId="node-0x10841850" />
-      <child nodeId="node-0x108f2990" />
-    </children>
-  </item>
-  <item nodeId="node-0x108f2990">
-    <command xml:space="preserve">c coupler</command>
-    <result xml:space="preserve">That&apos;s not a verb I recognise.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="242">YES</temporary>
-    <children>
-      <child nodeId="node-0x108e8160" />
-    </children>
-  </item>
-  <item nodeId="node-0x108e8160">
-    <command xml:space="preserve">x coupler</command>
-    <result xml:space="preserve">It&apos;s twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow break this coupler apart.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="242">YES</temporary>
-    <children>
-      <child nodeId="node-0xf677a00" />
-    </children>
-  </item>
-  <item nodeId="node-0xf677a00">
-    <command xml:space="preserve">break couple with wrench</command>
+  <item nodeId="node-0x54f5590">
+    <command xml:space="preserve">x train</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="242">YES</temporary>
-    <children>
-      <child nodeId="node-0xd0b3990" />
-    </children>
+    <temporary score="785">YES</temporary>
   </item>
-  <item nodeId="node-0xd0b3990">
-    <command xml:space="preserve">break coupler with wrench</command>
-    <result xml:space="preserve">HA!
+  <item nodeId="node-0x54f5600">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Bathroom
+Our small bathroom. There&apos;s a toilet, a shower, a sink, and a medicine cabinet here.
+
+I can see our bedroom to the east.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="242">YES</temporary>
+    <temporary score="782">YES</temporary>
     <children>
-      <child nodeId="node-0xf6f2fc0" />
+      <child nodeId="node-0x54f5670" />
     </children>
   </item>
-  <item nodeId="node-0xf6f2fc0">
+  <item nodeId="node-0x54f5670">
+    <command xml:space="preserve">open medicine cabinet</command>
+    <result xml:space="preserve">I open the medicine cabinet and see 2 pills in here!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f56e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f56e0">
+    <command xml:space="preserve">take pills</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5750" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5750">
+    <command xml:space="preserve">eat pills</command>
+    <result xml:space="preserve">I eat the pills and suddenly I have no more pain in my boo-boos!
+(Health: 100)
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f57c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f57c0">
+    <command xml:space="preserve">eat pills</command>
+    <result xml:space="preserve">I eat the pills and suddenly I have no more pain in my boo-boos!
+(Health: 100)
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5830" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5830">
+    <command xml:space="preserve">eat pills</command>
+    <result xml:space="preserve">I don&apos;t have any more pills left…
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f58a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f58a0">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">I&apos;m carrying: 
+0 pills
+(Health: 100)
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5910" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5910">
+    <command xml:space="preserve">x toilet</command>
+    <result xml:space="preserve">It&apos;s just our shiny, white toilet.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="782">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f5980" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f5980">
+    <command xml:space="preserve">sit on toilet</command>
+    <result xml:space="preserve">That&apos;s not something you can sit down on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="781">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f4b40">
+    <command xml:space="preserve">shoot myself with gun</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4bb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4bb0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4c20" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4c20">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f48d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f48d0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4920" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4920">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4e10" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4e10">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
+
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4e80" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4e80">
+    <command xml:space="preserve">shoot myself</command>
+    <result xml:space="preserve">What do you want to shoot yourself with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="842">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f4ef0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f4ef0">
+    <command xml:space="preserve">gun</command>
+    <result xml:space="preserve">&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="841">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f60f0">
+    <command xml:space="preserve">shoot zombie</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6160" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6160">
+    <command xml:space="preserve">shoot gun</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f61d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f61d0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6240" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6240">
+    <command xml:space="preserve">take poop</command>
+    <result xml:space="preserve">ANDY BAE IS A MILF.
+CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU&apos;RE NOT THE MAKER OF THE GAME.
+
+Train
+I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
+
+I can see another train compartment to the east and the engine car to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f62b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f62b0">
+    <command xml:space="preserve">shoot gun</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6320" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6320">
+    <command xml:space="preserve">shoot revolver</command>
+    <result xml:space="preserve">What do you want to shoot the revolver with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6390" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6390">
+    <command xml:space="preserve">bullets</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6400" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6400">
+    <command xml:space="preserve">x revolver</command>
+    <result xml:space="preserve">With great power comes great responsibility, my Daddy always told me. I barely know how to shoot something with this gun.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6470" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f6470">
+    <command xml:space="preserve">shoot zombie with flashlight</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f64e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54f64e0">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">I&apos;m carrying: 
+Cable cutters
 Old rusty wrench
 Spanner
 a water bottle
@@ -765,516 +1035,1081 @@ pillowcase bag
 bedsheets
 Flashlight
 2 pills
-1 bandaids
-a case of 8 bullet(s) for Daddy&apos;s revolver
 a revolver
 (Health: 100)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="241">YES</temporary>
+    <temporary score="859">YES</temporary>
+    <children>
+      <child nodeId="node-0x54f6550" />
+    </children>
   </item>
-  <item nodeId="node-0x10841850">
-    <command xml:space="preserve">w</command>
+  <item nodeId="node-0x54f6550">
+    <command xml:space="preserve">s</command>
     <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
+Trainyard
+I&apos;m here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.
 
-To the east I can see the train coupler.
+I can see the parking lot west of here and the train to the north.
 
-It&apos;s an old wrench, used many times.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="246">YES</temporary>
-  </item>
-  <item nodeId="node-0x108100f0">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="353">YES</temporary>
-    <children>
-      <child nodeId="node-0x108cb560" />
-    </children>
-  </item>
-  <item nodeId="node-0x108cb560">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="353">YES</temporary>
-    <children>
-      <child nodeId="node-0xf639d20" />
-      <child nodeId="node-0x1081b850" />
-      <child nodeId="node-0x1088bf40" />
-      <child nodeId="node-0xf68d460" />
-    </children>
-  </item>
-  <item nodeId="node-0xf68d460">
-    <command xml:space="preserve">push button</command>
-    <result xml:space="preserve">Just as I press the button, the tall man from the store hops into the car with me! &quot;Hold on, little girl. Thanks for lending me this gun! I happen to know where these tracks go and I&apos;ll help you get to where you want to go!&quot;
-
-With the man&apos;s help, you steer the train to a future full of hope and happiness.
-
-
-
-    *** You have won ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="352">YES</temporary>
-  </item>
-  <item nodeId="node-0x1088bf40">
-    <command xml:space="preserve">press button</command>
-    <result xml:space="preserve">Just as I press the button, the tall man from the store hops into the car with me! &quot;Not so fast, little girl! You&apos;re giving me the controls to this thing. Now back off!&quot;
-
-You may have escaped from the town, but you have not escaped from the man.
-
-
-
-    *** You have won ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="312">YES</temporary>
-    <children>
-      <child nodeId="node-0xf628860" />
-    </children>
-  </item>
-  <item nodeId="node-0xf628860">
-    <command xml:space="preserve">restart</command>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="311">YES</temporary>
-  </item>
-  <item nodeId="node-0x1081b850">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
+There are zombies about!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="298">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0x108086c0" />
+      <child nodeId="node-0x54f65c0" />
     </children>
   </item>
-  <item nodeId="node-0x108086c0">
-    <command xml:space="preserve">go inside door</command>
-    <result xml:space="preserve">
-Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="298">YES</temporary>
-    <children>
-      <child nodeId="node-0x10895720" />
-    </children>
-  </item>
-  <item nodeId="node-0x10895720">
-    <command xml:space="preserve">push button</command>
-    <result xml:space="preserve">Just as I press the button, the tall man from the store hops into the car with me! &quot;Not so fast, little girl! You&apos;re giving me the controls to this thing. Now back off!&quot;
-
-You may have escaped from the town, but you have not escaped from the man.
-
-
-
-    *** You have won ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="298">YES</temporary>
-    <children>
-      <child nodeId="node-0x108048f0" />
-    </children>
-  </item>
-  <item nodeId="node-0x108048f0">
-    <command xml:space="preserve">restart</command>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="297">YES</temporary>
-  </item>
-  <item nodeId="node-0xf639d20">
-    <command xml:space="preserve">put lever into slot</command>
-    <result xml:space="preserve">(Lever C into lever slot)
-I put the lever C into the lever slot and flip it on!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0x5bb3b50" />
-      <child nodeId="node-0xf6994a0" />
-    </children>
-  </item>
-  <item nodeId="node-0xf6994a0">
-    <command xml:space="preserve">turn on lever b</command>
-    <result xml:space="preserve">I switch the Lever B on. There&apos;s a satisfying clunk!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="272">YES</temporary>
-    <children>
-      <child nodeId="node-0xc76d5a0" />
-    </children>
-  </item>
-  <item nodeId="node-0xc76d5a0">
+  <item nodeId="node-0x54f65c0">
     <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
+    <result xml:space="preserve">Trainyard
+I&apos;m here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.
 
-The door to the engine car is to the east.
+I can see the parking lot west of here and the train to the north.
+
+There are zombies about!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="272">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0x108e2090" />
+      <child nodeId="node-0x54f6630" />
     </children>
   </item>
-  <item nodeId="node-0x108e2090">
-    <command xml:space="preserve">x panel</command>
-    <result xml:space="preserve">The panel is covered with switches and buttons.
+  <item nodeId="node-0x54f6630">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Trainyard
+I&apos;m here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.
 
-Lever A&apos;s light is turned off.
+I can see the parking lot west of here and the train to the north.
 
-Lever B&apos;s light is turned on.
-
-Lever C&apos;s light is turned off and the lever is missing from the slot.
-
-There is a large red button that says &quot;Start&quot;.
+A zombie takes notice of me!
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="272">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0xf6ec3c0" />
+      <child nodeId="node-0x54f66a0" />
     </children>
   </item>
-  <item nodeId="node-0xf6ec3c0">
-    <command xml:space="preserve">turn on lever a</command>
-    <result xml:space="preserve">That&apos;s already on.
+  <item nodeId="node-0x54f66a0">
+    <command xml:space="preserve">shoot zombie</command>
+    <result xml:space="preserve">What do you want to shoot Zombie with?
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="271">YES</temporary>
-  </item>
-  <item nodeId="node-0x5bb3b50">
-    <command xml:space="preserve">x lever b</command>
-    <result xml:space="preserve">Lever B is currently switched off.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0xf68fce0" />
+      <child nodeId="node-0x54f6710" />
     </children>
   </item>
-  <item nodeId="node-0xf68fce0">
-    <command xml:space="preserve">x lever a</command>
-    <result xml:space="preserve">Lever A is currently switched on.
+  <item nodeId="node-0x54f6710">
+    <command xml:space="preserve">revolver</command>
+    <result xml:space="preserve">I shoot my revolver but I miss!
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me really hard! Owieee…to
+
+My health goes down by 11.
+(Health: 89)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0x10889030" />
+      <child nodeId="node-0x54f6780" />
     </children>
   </item>
-  <item nodeId="node-0x10889030">
-    <command xml:space="preserve">switch lever b</command>
-    <result xml:space="preserve">I switch the Lever B on. There&apos;s a satisfying clunk!
+  <item nodeId="node-0x54f6780">
+    <command xml:space="preserve">shoot zombie with flashlight</command>
+    <result xml:space="preserve">You need a gun to shoot, not a Flashlight.
+
+A zombie is groaning and moaning and is trying to kill me!
+
+The zombie hits me hard.
+
+My health goes down by 2.
+(Health: 87)
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="859">YES</temporary>
     <children>
-      <child nodeId="node-0x108073b0" />
+      <child nodeId="node-0x54f67f0" />
     </children>
   </item>
-  <item nodeId="node-0x108073b0">
-    <command xml:space="preserve">press button</command>
-    <result xml:space="preserve">The train won&apos;t budge with the coupler still attached!
+  <item nodeId="node-0x54f67f0">
+    <command xml:space="preserve">shoot zombie</command>
+    <result xml:space="preserve">What do you want to shoot Zombie with?
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0x108619a0" />
-    </children>
+    <temporary score="858">YES</temporary>
   </item>
-  <item nodeId="node-0x108619a0">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
+  <item nodeId="node-0x11ae91d0">
+    <command xml:space="preserve">commands list</command>
+    <result xml:space="preserve">This is a list of commands available in the game. Other synonymous actions may exist. All possible exits are listed in the descriptions of every room. Available shortcuts for commands are in parenthesis. 
 
-To the east I can see the train coupler.
+Commands: North (n), East (e), South (s), West (w), Examine (x), Look (l), Inventory (i), Unlock, Open, Press____ , 
+Attack ____ with ____ , Shoot ____ with ____ ,  Put _____ in _____, Take ____ , Combine ____ with ____ , Look behind/under/inside ______ , Eat ______ , Break ____ with ____, Tie ____ with ____, Examine (x) me.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0x108391a0" />
+      <child nodeId="node-0x63c3610" />
     </children>
   </item>
-  <item nodeId="node-0x108391a0">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
-
-I can see another train compartment to the east and the engine car to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0x10801140" />
-    </children>
-  </item>
-  <item nodeId="node-0x10801140">
-    <command xml:space="preserve">break train coupler with wrench</command>
-    <result xml:space="preserve">CRINK! The old rusty wrench breaks right in half!
-The wrench is broken. I can&apos;t use it anymore!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0xd00a840" />
-    </children>
-  </item>
-  <item nodeId="node-0xd00a840">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0xf69ad30" />
-    </children>
-  </item>
-  <item nodeId="node-0xf69ad30">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Train
-I&apos;m standing on the train. It&apos;s derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.
-
-I can see another train compartment to the east and the engine car to the west.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0xf69f9e0" />
-    </children>
-  </item>
-  <item nodeId="node-0xf69f9e0">
-    <command xml:space="preserve">brean train coupler with cable cutters</command>
+  <item nodeId="node-0x63c3610">
+    <command xml:space="preserve">shetoisehtoieshtte</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0xc7ae040" />
+      <child nodeId="node-0x11a5f5d0" />
     </children>
   </item>
-  <item nodeId="node-0xc7ae040">
-    <command xml:space="preserve">break train coupler with cable cutters</command>
-    <result xml:space="preserve">MMMMMMMPH! Darn, I&apos;m not strong enough to cut the coupler.
+  <item nodeId="node-0x11a5f5d0">
+    <command xml:space="preserve">x tv</command>
+    <result xml:space="preserve">Our TV is on. It&apos;s replaying the statewide message that was sent out months ago. &quot;Seek shelter and food. Stay inside at all times. Do NOT go outside in any case. This has been an official CEDA announcement.&quot;
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0x5ba31d0" />
+      <child nodeId="node-0x10ed8020" />
     </children>
   </item>
-  <item nodeId="node-0x5ba31d0">
-    <command xml:space="preserve">break train coupler with spanner</command>
-    <result xml:space="preserve">MMMMMMMPH!
+  <item nodeId="node-0x10ed8020">
+    <command xml:space="preserve">x window</command>
+    <result xml:space="preserve">I look out our open window. I can see a form of something crawling down below on the street but I can&apos;t really tell what it is.
 
-*snap!*
-
-The train coupler slides apart! Hooooray!
+I can probably tie something to this window.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0x10886a50" />
+      <child nodeId="node-0x10e63750" />
     </children>
   </item>
-  <item nodeId="node-0x10886a50">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine car
-I&apos;m standing on the engine car. I see a panel in the side of the car and a door going inside the engine room. I can see a window looking inside the room.
-
-To the east I can see the train coupler.
+  <item nodeId="node-0x10e63750">
+    <command xml:space="preserve">x kitchen</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="291">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0x1081a6b0" />
+      <child nodeId="node-0x63c6780" />
     </children>
   </item>
-  <item nodeId="node-0x1081a6b0">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-Engine Room
-I&apos;m inside the engine room. There&apos;s a dead man sitting on the chair here. On the wall is a panel full of switches and buttons.
-
-The door to the engine car is to the east.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="291">YES</temporary>
-    <children>
-      <child nodeId="node-0xf683180" />
-    </children>
-  </item>
-  <item nodeId="node-0xf683180">
-    <command xml:space="preserve">push button</command>
-    <result xml:space="preserve">Just as I press the button, the tall man from the store hops into the car with me! &quot;Not so fast, little girl! You&apos;re giving me the controls to this thing. Now back off!&quot;
-
-You may have escaped from the town, but you have not escaped from the man.
-
-
-
-    *** You have won ***
-
-
-
-
-Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
-&gt; </result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="290">YES</temporary>
-  </item>
-  <item nodeId="node-0x10805890">
-    <command xml:space="preserve">x me</command>
-    <result xml:space="preserve">My name is Anabelle. I am 10 years old.
-I&apos;m wearing my favorite yellow shirt and blouse! My hair is in my favorite ponytail, as usual.
-
-I feel perfectly fine, like being in a sunny field.
-I don&apos;t feel hungry at all right now! Let&apos;s go do something.
-
-(Health: 100)
-(Hunger: 100)
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="363">YES</temporary>
-  </item>
-  <item nodeId="node-0x108c9c30">
+  <item nodeId="node-0x63c6780">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">
 Kitchen
-Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat.
+Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. There&apos;s a jar of cookies here too.
 
 I can see our living room to the east.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="363">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0xf650510" />
+      <child nodeId="node-0x11aea0e0" />
     </children>
   </item>
-  <item nodeId="node-0xf650510">
-    <command xml:space="preserve">open cupboards</command>
-    <result xml:space="preserve">It seems to be locked.
+  <item nodeId="node-0x11aea0e0">
+    <command xml:space="preserve">x cupboards</command>
+    <result xml:space="preserve">Daddy hides something in here. I&apos;ve tried opening it one time, but he keeps it locked up.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="363">YES</temporary>
+    <temporary score="158">YES</temporary>
     <children>
-      <child nodeId="node-0xf6fa4f0" />
+      <child nodeId="node-0x63d8e10" />
     </children>
   </item>
-  <item nodeId="node-0xf6fa4f0">
+  <item nodeId="node-0x63d8e10">
+    <command xml:space="preserve"> sink</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10eb5270" />
+    </children>
+  </item>
+  <item nodeId="node-0x10eb5270">
+    <command xml:space="preserve"> sink</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x62ab20" />
+    </children>
+  </item>
+  <item nodeId="node-0x62ab20">
+    <command xml:space="preserve">x sink</command>
+    <result xml:space="preserve">Our sink. Daddy puts stuff underneath it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e0bd10" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e0bd10">
+    <command xml:space="preserve">look underneath</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x233ff0" />
+    </children>
+  </item>
+  <item nodeId="node-0x233ff0">
+    <command xml:space="preserve">x refrigerator</command>
+    <result xml:space="preserve">It&apos;s the brand new white refrigerator we got a few months ago. There are letter magnets on it.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x231610" />
+    </children>
+  </item>
+  <item nodeId="node-0x231610">
+    <command xml:space="preserve">take magnets</command>
+    <result xml:space="preserve">Mmmph! I can&apos;t move it!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e30380" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e30380">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x65432f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x65432f0">
+    <command xml:space="preserve">x magnets</command>
+    <result xml:space="preserve">I made it spell &quot;Hello&quot; before but Daddy made it spell &quot;tam rednu&quot; I wonder what that means?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e332f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e332f0">
+    <command xml:space="preserve">x stove</command>
+    <result xml:space="preserve">There isn&apos;t much special about our stove.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x13396be0" />
+    </children>
+  </item>
+  <item nodeId="node-0x13396be0">
+    <command xml:space="preserve">x mat</command>
+    <result xml:space="preserve">A regular, brown floor mat. It looks like it has been recently moved...
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x655d250" />
+    </children>
+  </item>
+  <item nodeId="node-0x655d250">
+    <command xml:space="preserve">look under matt</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a3b350" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a3b350">
+    <command xml:space="preserve">x under matt</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e97160" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e97160">
+    <command xml:space="preserve">x under mat</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e55a50" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e55a50">
+    <command xml:space="preserve">x cookie</command>
+    <result xml:space="preserve">Yummy cookies!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e1fc80" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e1fc80">
+    <command xml:space="preserve">take cookies</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a0afb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a0afb0">
+    <command xml:space="preserve">eat cookies</command>
+    <result xml:space="preserve">Nom nom nom I eat up the chocolate chip cookies!
+
+(Health: 100)
+(Hunger: 100)
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x54c9ff0" />
+    </children>
+  </item>
+  <item nodeId="node-0x54c9ff0">
+    <command xml:space="preserve">x floor mat</command>
+    <result xml:space="preserve">A regular, brown floor mat. It looks like it has been recently moved...
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x658130" />
+    </children>
+  </item>
+  <item nodeId="node-0x658130">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10ee7b20" />
+    </children>
+  </item>
+  <item nodeId="node-0x10ee7b20">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x6591bd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6591bd0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x133a8f40" />
+    </children>
+  </item>
+  <item nodeId="node-0x133a8f40">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Apartment Living Room
+Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
+
+I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e1ffb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e1ffb0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Bedroom
+Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.
+
+I can see our living room to the north and our bathroom to the west.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10eccc70" />
+    </children>
+  </item>
+  <item nodeId="node-0x10eccc70">
+    <command xml:space="preserve">x bed</command>
+    <result xml:space="preserve">Mommy and Daddy&apos;s big bed! I feel so small lying on it. They have such big pillows and big bedsheets!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11ac7af0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11ac7af0">
+    <command xml:space="preserve">x pillows</command>
+    <result xml:space="preserve">Big! Covered with big white pillowcases!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10ea3310" />
+    </children>
+  </item>
+  <item nodeId="node-0x10ea3310">
+    <command xml:space="preserve">x sheets</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x63d9110" />
+    </children>
+  </item>
+  <item nodeId="node-0x63d9110">
+    <command xml:space="preserve">x bedsheets</command>
+    <result xml:space="preserve">Big and long! Maybe I can combine something with this to make something useful...
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a2eea0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a2eea0">
+    <command xml:space="preserve">take bed sheets</command>
+    <result xml:space="preserve">I only understood you as far as wanting to take the bed.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a4bbc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a4bbc0">
+    <command xml:space="preserve">take bedsheets</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a14dd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a14dd0">
+    <command xml:space="preserve">take pillows</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e4e2e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e4e2e0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a374c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a374c0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x65122f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x65122f0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Bathroom
+Our small bathroom. There&apos;s a toilet, a shower, a sink, and a medicine cabinet here.
+
+I can see our bedroom to the east.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a39e80" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a39e80">
+    <command xml:space="preserve">x toilet</command>
+    <result xml:space="preserve">It&apos;s just our shiny, white toilet.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a136d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a136d0">
+    <command xml:space="preserve">x shower</command>
+    <result xml:space="preserve">It&apos;s just our shower.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a1e850" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a1e850">
+    <command xml:space="preserve">x sink</command>
+    <result xml:space="preserve">Our sink. Nothing too special.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a39c10" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a39c10">
+    <command xml:space="preserve">x cabinet</command>
+    <result xml:space="preserve">When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e3c6f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e3c6f0">
+    <command xml:space="preserve">pen cabinet</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x655d510" />
+    </children>
+  </item>
+  <item nodeId="node-0x655d510">
+    <command xml:space="preserve">open cabinet</command>
+    <result xml:space="preserve">I open the medicine cabinet and see 2 pills in here!
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x133ab170" />
+    </children>
+  </item>
+  <item nodeId="node-0x133ab170">
+    <command xml:space="preserve">take pills</command>
+    <result xml:space="preserve">Taken.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a08f70" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a08f70">
+    <command xml:space="preserve">at pills</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a1ae40" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a1ae40">
+    <command xml:space="preserve">at pills</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a25740" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a25740">
+    <command xml:space="preserve">eat pills</command>
+    <result xml:space="preserve">I eat the pills and suddenly I have no more pain in my boo-boos!
+(Health: 100)
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a09a30" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a09a30">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x133a8fa0" />
+    </children>
+  </item>
+  <item nodeId="node-0x133a8fa0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x6543070" />
+    </children>
+  </item>
+  <item nodeId="node-0x6543070">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Bedroom
+Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.
+
+I can see our living room to the north and our bathroom to the west.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e35a00" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e35a00">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Apartment Living Room
+Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
+
+I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10eda5e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10eda5e0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Kitchen
+Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. There&apos;s a jar of cookies here too.
+
+I can see our living room to the east.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e96a10" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e96a10">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x18b64250" />
+    </children>
+  </item>
+  <item nodeId="node-0x18b64250">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e8ebf0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e8ebf0">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e1c300" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e1c300">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e07c60" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e07c60">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x63d26c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x63d26c0">
+    <command xml:space="preserve">a</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x10e5eac0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10e5eac0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a02b10" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a02b10">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Apartment Living Room
+Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
+
+I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a05b80" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a05b80">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there. I should find a different way out.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a94820" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a94820">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Bedroom
+Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall.
+
+I can see our living room to the north and our bathroom to the west.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x1336cbe0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1336cbe0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Apartment Living Room
+Our living room…or mine now, anyways. There&apos;s our couch in the corner, facing daddy&apos;s TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street.
+
+I can see our kitchen to the west and our bedroom to the south. Our door out is to the east.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x133716a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x133716a0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">As I walk to our front door, I hear scary noises coming from the other side. I don&apos;t want to go through there. I should find a different way out.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x18b66650" />
+    </children>
+  </item>
+  <item nodeId="node-0x18b66650">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Kitchen
+Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. There&apos;s a jar of cookies here too.
+
+I can see our living room to the east.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a24e00" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a24e00">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+It sounds like zombies are trying to break down the front door! I better hurry!!!
+The zombies knock down my front door and come swaming in! I guess it&apos;s over now…At least I get to see Mommy and Daddy now.
+
+
+
+    *** You have died ***
+
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
+    <children>
+      <child nodeId="node-0x11a3ae50" />
+    </children>
+  </item>
+  <item nodeId="node-0x11a3ae50">
+    <command xml:space="preserve">restart</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="157">YES</temporary>
+  </item>
+  <item nodeId="node-0x11a7fca0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Kitchen
+Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. There&apos;s a jar of cookies here too.
+
+I can see our living room to the east.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x63f2c10" />
+    </children>
+  </item>
+  <item nodeId="node-0x63f2c10">
     <command xml:space="preserve">look under mat</command>
     <result xml:space="preserve">I find a key under the floor mat, which I bend down and pick up.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="363">YES</temporary>
+    <temporary score="165">YES</temporary>
     <children>
-      <child nodeId="node-0x108ca500" />
+      <child nodeId="node-0x658a390" />
     </children>
   </item>
-  <item nodeId="node-0x108ca500">
+  <item nodeId="node-0x658a390">
     <command xml:space="preserve">unlock cupboards</command>
     <result xml:space="preserve">(with the cupboard key)
 I unlock the cupboards and open it.
@@ -1282,27 +2117,48 @@ I unlock the cupboards and open it.
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="363">YES</temporary>
+    <temporary score="165">YES</temporary>
     <children>
-      <child nodeId="node-0x108115c0" />
+      <child nodeId="node-0x10e99530" />
     </children>
   </item>
-  <item nodeId="node-0x108115c0">
-    <command xml:space="preserve">look in cupboards</command>
-    <result xml:space="preserve">In Cupboards are a case of 8 bullet(s) for Daddy&apos;s revolver and a revolver.
+  <item nodeId="node-0x10e99530">
+    <command xml:space="preserve">look inside cupboards</command>
+    <result xml:space="preserve">In Cupboards is a revolver.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="362">YES</temporary>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x65a32a0" />
+    </children>
   </item>
-  <item nodeId="node-0x108745b0">
-    <command xml:space="preserve">x walls</command>
+  <item nodeId="node-0x65a32a0">
+    <command xml:space="preserve">take colver</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="357">YES</temporary>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x133efb90" />
+    </children>
+  </item>
+  <item nodeId="node-0x133efb90">
+    <command xml:space="preserve">take revolver</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="164">YES</temporary>
+  </item>
+  <item nodeId="node-0x54f7e40">
+    <command xml:space="preserve"></command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
   </item>
 </Skein>

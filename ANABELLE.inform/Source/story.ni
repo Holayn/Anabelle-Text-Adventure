@@ -2,12 +2,28 @@
 
 use no scoring
 
-When play begins: say "It's getting dark outside and Mommy and Daddy hasn't been home for 2 months. There's strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out."
+Release along with cover art, a file of "Cover art" called "Cover".
+
+When play begins: say "It's getting dark outside and Mommy and Daddy haven't been home for 2 months. There are strange, dead people walking around outside, making scary noises. I don't like it here. It is frightening. I've run out of food. I need to find a way out.[line break][line break][bold type]For help, type 'Commands List'."
 
 Chapter 0 The Rules
 
+The list is a backdrop which is everywhere.
+
+understand the command "commands" as something new. Commanding is an action applying to one thing. understand "commands [things]" as commanding. understand "command [things]" as commanding.
+
+instead of commanding list:
+	say "This is a list of commands available in the game. Other synonymous actions may exist. All possible exits are listed in the descriptions of every room. Available shortcuts for commands are in parenthesis. [line break][line break]Commands: North (n), East (e), South (s), West (w), Examine (x), Look (l), Inventory (i), Unlock, Open, [bold type]Press____ , [line break][bold type]Attack[roman type] ____ [bold type]with[roman type] ____ , [bold type]Shoot ____ with ____ ,[roman type] [bold type] Put[roman type] _____ [bold type]in[roman type] _____, [bold type]Take[roman type] ____ , [bold type]Combine[roman type] ____ [bold type]with[roman type] ____ , [bold type]Look behind/under/inside ______ , Eat ______ , Break ____ with ____, Tie ____ with ____, Examine (x) me.[paragraph break]Helpful Tip: Examine everything!".
+	
+[commands list taken from brandon]
+	
+Instead of eating something:
+	say "I can't eat that."
+	
+
 [START RULES]
 
+[Health]
 A person has a number called max health.
 A person has a number called present health.
 
@@ -19,6 +35,7 @@ The present health of the player is usually 100.
 
 The present health of a person is usually 100.
 
+[Hunger]
 A person has a number called max hunger.
 A person has a number called present hunger.
 
@@ -38,7 +55,7 @@ An every turn rule:
 		end the game in death.
 		
 every turn:
-	if a random chance of 1 in 3 succeeds, decrease present hunger of the player by a random number between 3 and 6.
+	if a random chance of 1 in 4 succeeds, decrease present hunger of the player by a random number between 3 and 5.
 
 After printing the name of a dead person:
 	if the person is dead for at least 1 turn, say "[apostrophe]s dead body" instead.
@@ -111,17 +128,6 @@ Instead of eating the pain pills:
 		
 Understand "putting on" as using.
 
-Instead of using the bandaids:
-	if the bandaid-count of the bandaids is greater than 0:
-		decrease the bandaid-count of the bandaids by 1.;
-		if the present health of the player is at most 75:
-			increase the present health of the player by 25.;
-			say "I put on a bandaid and suddenly the pain in my boo-boos goes away.[line break](Health: [the present health of the player])".;
-		otherwise:
-			now the present health of the player is 100.;
-			say "I put on a bandaid and suddenly I have no more pain in my boo-boos![line break](Health: [the present health of the player])".;
-	otherwise:
-		say "I don't have any more pills left…".
 		
 [taken from Assassin]
 		
@@ -139,6 +145,18 @@ Chapter 1 Apartment
 [APARTMENT]
 
 
+Apartment123 is a region.
+Apartment Living Room, Kitchen, Bedroom, and Bathroom are in Apartment123.
+
+An every turn rule:
+	if the player is in Apartment123 for at least 60 turns:
+		say "It sounds like zombies are trying to break down the front door! I better hurry!!!";
+	if the player is in Apartment123 for at least 100 turns:
+		say "The zombies knock down my front door and come swaming in! I guess it's over now…At least I get to see Mommy and Daddy now.";
+		end the game in death;
+	
+
+
 Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street. 
 
 I can see our kitchen to the west and our bedroom to the south. Our door out is to the east."
@@ -146,38 +164,64 @@ I can see our kitchen to the west and our bedroom to the south. Our door out is 
 understand "coffee table" as the glass coffee table.
 understand "table" as the glass coffee table.
 
-Couch is scenery in Apartment Living Room. "It's a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo."
+couch is scenery in Apartment Living Room. "It's a nice, cozy, black couch where I spent many days with Mommy and Daddy watching movies on our TV. My favorite was Finding Nemo."
 
 Instead of looking under couch:
 	say "Nothing much."
 	
 TV is scenery in Apartment Living Room. "Our TV is on. It's replaying the statewide message that was sent out months ago. 'Seek shelter and food. Stay inside at all times. Do NOT go outside in any case. This has been an official CEDA announcement.'" 
 
-Glass coffee table is scenery supporter in Apartment Living Room. The description is "Mommy left a note on top of the table for me."
+glass coffee table is scenery supporter in Apartment Living Room. The description is "Mommy left a note on top of the table for me."
 
-Note is on the Glass Coffee Table. It is undescribed. The description is "Ella - We're heading into town for the day. We'll be back before nightfall. Don't worry, sweetie. - Love, Mommy."
+Instead of examining the glass coffee table:
+	if the note is on the table:
+		say "Mommy left a note on top of the table for me.";
+	otherwise:
+		say "It's just our glass coffee table."
+
+note is on the Glass Coffee Table. It is undescribed. The description is "Ella - We're heading into town for the day. We'll be back before nightfall. Don't worry, sweetie. - Love, Mommy."
 
 understand "baywindow" as window.
 
-The window is a door in Apartment Living Room. The window is undescribed. The window is open. The window is north of the Apartment Living Room. Through the Window is Parking Lot. The description is "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is. I can probably tie something to this window."
+The window is a door in Apartment Living Room. The window is undescribed. The window is open. The window is north of the Apartment Living Room. Through the Window is Parking Lot. The description is "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is.[line break][line break]I can probably [bold type]tie[roman type] something to this window."
+
+Instead of tying something to the window:
+	say "I probably shouldn't tie that to the window."
 
 [KITCHEN]
 
-Kitchen is west of Apartment Living Room. "Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. 
+Kitchen is west of Apartment Living Room. "Our small, little kitchen. Mommy always baked yummy chocolate chip cookies for me. There are some cupboards overhead. We have a sink, a refrigerator, a stove, and a floor mat. There's a jar of cookies here too.
 
 I can see our living room to the east."
 
 Cupboards is a closed openable scenery container in the Kitchen. It is locked and lockable. The description is "Daddy hides something in here. I've tried opening it one time, but he keeps it locked up."
+
+understand "cupboard" as cupboards.
 
 Instead of unlocking cupboards with key:
 	say "I unlock the cupboards and open it.";
 	now the cupboards are unlocked;
 	now the cupboards are open.
 	
-	
+Cookies is a thing in Kitchen. It is undescribed. The description is "Yummy cookies!"
+
+understand "cookie jar", "jar of cookies", and "cookie" as the cookies.
+
+Instead of eating the cookies:
+	if the present health of the player is at most 75 and the present hunger of the player is at most 85:
+		increase the present health of the player by 25;
+		increase the present hunger of the player by 15;
+		say "Nom nom nom I eat up the chocolate chip cookies![line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the cookies to DEATH;
+	otherwise:
+		now the present health of the player is 100;
+		now the present hunger of the player is 100;
+		say "Nom nom nom I eat up the chocolate chip cookies![line break][line break](Health: [present health of the player])[line break](Hunger: [present hunger of the player])";
+		move the cookies to DEATH.
+
 				[GUN]
 
-The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot[roman type] this thing."
+The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot something[roman type] with this gun."
 
 The cupboard key is a thing. The cupboard key unlocks the cupboards. The cupboard key can be found. The cupboard key is not found.
 
@@ -195,15 +239,28 @@ The Floor mat is a scenery supporter in the Kitchen. The description is "A regul
 
 The stove is a scenery container in Kitchen. It is closed and openable. The description is "There isn't much special about our stove."
 
-The refrigerator is a scenery container in Kitchen. It is closed and openable.
+The refrigerator is a scenery container in Kitchen. It is closed and not openable.
+
+understand "pillow" as the pillows.
+
+understand "bedsheet" as the bedsheets.
+
+Instead of opening the refrigerator:
+	say "Nothing much in here."
+	
+Instead of opening the stove:
+	say "Nothing much in here."
 
 Instead of examining refrigerator:
-	say "It's the brand new white refrigerator we got a few months ago. There's letter magnets on it."
+	say "It's the brand new white refrigerator we got a few months ago. There are letter magnets on it."
 
 Letter magnets is scenery in Kitchen. The description is "I made it spell 'Hello' before but Daddy made it spell 'tam rednu' I wonder what that means?"
 
 Instead of examining Letter magnets for the second time:
 	say "tam rednu…hmmm.".
+	
+Instead of taking letter magnets:
+	say "It's spelled out into a word…I shouldn't move it."
 
 The sink is a scenery supporter in Kitchen. The description is "Our sink. Daddy puts stuff underneath it."
 
@@ -226,7 +283,7 @@ Pillows is a thing on the bed. It is undescribed. The description is "Big! Cover
 
 Pillowcase is a thing on the bed. It is undescribed. The description is "Big! Maybe I can combine something with this pillowcase to make something useful…".
 
-Understand "combine [something] with [something]" as combining it with. Combining it with is an action applying to two carried things. 
+Understand "combine [something] with [something]" and "combine [something] and [something]" as combining it with. Combining it with is an action applying to two carried things. 
 
 The combining it with action has an object called the item built.
 
@@ -286,14 +343,11 @@ Instead of taking scenery:
 		
 poop is thing in apartment living room. it is undescribed. the description is "Andy Bae is a MILF".
 
-Instead of taking poop:
-	say "ANDY BAE IS A MILF."
-
 bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
 
 Nightstand is scenery container in the Bedroom. It is closed and openable. The description is "Mommy and Daddy's nightstand. It has a drawer in it."
 
-Yarn is a thing inside the Nightstand. The description is "Some of Mommy's yarn. Maybe I can make something with it…". 
+Yarn is a thing inside the Nightstand. The description is "Some of Mommy's yarn. Maybe I can combine something with it…". 
 
 Flashlight is a device inside the Nightstand. The description is "Daddy's flashlight. He uses it to look under the sink." The flashlight is unlit.
 
@@ -336,9 +390,11 @@ understand "sink" as bathroomsink.
 
 Medicine cabinet is scenery container in Bathroom. It is closed and openable. The description is "When I get sick or have a boo boo, Daddy gets some medicine or Band-aids from here."
 
-Pain pills is a thing inside the Medicine cabinet. The printed name is "[pill-count] pills". The pills has a number called pill-count. The pill-count of the pills is usually 2. The description is "Mmm yum! Some pain pills! Maybe I can eat these if I get hurt."
+Instead of opening the medicine cabinet:
+	say "I open the medicine cabinet and see 2 pills in here!";
+	now the medicine cabinet is open.
 
-Bandaids is a thing inside Medicine cabinet. The printed name is "[bandaid-count] bandaids". The bandaids has a number called bandaid-count. The bandaid-count of the bandaids is usually 1. The description is "Some bandaids  I can [bold type]use[roman type]if I get any boo-boos."
+Pain pills is a thing inside the Medicine cabinet. The printed name is "[pill-count] pills". The pills has a number called pill-count. The pill-count of the pills is usually 2. The description is "Mmm yum! Some pain pills! Maybe I can eat these if I get hurt."
 
 The Hallway is a room.
 
@@ -423,6 +479,21 @@ Instead of shooting the zombie with the revolver:
 			say "I shoot my revolver but I miss!";
 	otherwise:
 		say "I don't have a revolver!".
+		
+[`~]
+Check shooting it with:
+	if the noun is not zombie:
+		say "You can't shoot [noun] with that. I should shoot a person with the revolver.";
+		stop the action;
+	if the second noun is not revolver:
+		say "You need a gun to shoot, not a [second noun].";
+		stop the action;
+	if the player is not carrying the revolver:
+		say "You don't have anything to shoot with. You need a gun.";
+		stop the action.
+		
+[~]
+
 
 [ZOMBIE]
 
@@ -466,6 +537,11 @@ Every turn rule:
 				change the present health of the zombie to 100;
 			otherwise:
 				say "There are zombies about!"
+				
+[Shooting the revolver is an action applying to one thing. Understand "shoot revolver" and "shooting revolver" as shooting the revolver.
+				
+Instead of shooting revolver:
+	say "I shouldn't be just shooting this thing around…"]
 		
 Chapter 2 Outdoors
 			
@@ -631,7 +707,7 @@ Counter is scenery in GeneralStore. The description is "A small counter where pe
 Looking behind is an action applying to one thing. Understand "look behind [something]" as looking behind.
 
 Check looking behind:
-	say "I don't find much behind [the noun]."
+	say "I don't find much behind the [the noun]."
 
 Instead of looking behind the counter:
 	if the toolbox is not in the generalstore:
@@ -653,7 +729,7 @@ Instead of opening the toolbox:
 	now the toolbox is open;
 	move the spanner to the toolbox.
 
-tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: talk, ask, give."
+tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: talk to man, ask for something, or give something."
 
 understand "man" and "tall man" as the tallman.
 
@@ -835,12 +911,22 @@ Chapter 5 The Train
 
 Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
 
+Train1 is scenery in Trainyard. The description is "A derailed train to the north."
+
+understand "train" as the train1 when the player is in the trainyard.
+
 Rail is scenery in Trainyard. The description is "I see the rail go on and on and on. I have a feeling that this is my ticket out of here."
 
 [TRAIN COUPLER]
 The Train is a room. The Train is north of the Trainyard. The description is "I'm standing on the train. It's derailed, but to the west the train engine car is still on. I look down at my feet and I can see the couple attaching the engine car to the rest of the derailed train.[line break][line break]I can see another train compartment to the east and the engine car to the west."
 
 train coupler is a thing in Train. the train coupler is undescribed. the train coupler can be broken or not broken. the train coupler is not broken. The description is "It's twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow [bold type]break[roman type] this coupler apart."
+
+Instead of examining the train coupler:
+	if the train coupler is broken:
+		say "The train coupler is broken! The train can now move!";
+	if the train coupler is not broken:
+		say "It's twisted together in an ugly angle, a result of the rear train cars becoming derailed. Maybe I can somehow [bold type]break[roman type] this coupler apart."
 
 
 
@@ -979,7 +1065,7 @@ Instead of pushing the button:
 
 
 
-understand "bandaid" as the bandaids.
+
 
 [~~~~~~~~~~]
 [~~~~~~~~~~~~]
@@ -989,10 +1075,11 @@ understand "bandaid" as the bandaids.
 
 
 [OUT OF WORLD MOVE]
-Instead of going northwest:
+Instead of taking poop:
+	say "ANDY BAE IS A MILF.";
+	say "CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU'RE NOT THE MAKER OF THE GAME.";
 	move player to train;
 	move revolver to player;
-	move bandaids to player;
 	move pills to player;
 	move flashlight to player;
 	[move batteries to player;]
