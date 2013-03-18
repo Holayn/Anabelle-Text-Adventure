@@ -8,18 +8,36 @@ When play begins: say "It's getting dark outside and Mommy and Daddy haven't bee
 
 Chapter 0 The Rules
 
+Rule for deciding whether all includes something: it does not.
+
+Rule for printing a parser error when the latest parser error is the nothing to do error:
+say "I can't take everything here!" instead
+
 The list is a backdrop which is everywhere.
 
 understand the command "commands" as something new. Commanding is an action applying to one thing. understand "commands [things]" as commanding. understand "command [things]" as commanding.
 
+
 instead of commanding list:
-	say "This is a list of commands available in the game. Other synonymous actions may exist. All possible exits are listed in the descriptions of every room. Available shortcuts for commands are in parenthesis. [line break][line break]Commands: North (n), East (e), South (s), West (w), Examine (x), Look (l), Inventory (i), Unlock, Open, [bold type]Press____ , [line break][bold type]Attack[roman type] ____ [bold type]with[roman type] ____ , [bold type]Shoot ____ with ____ ,[roman type] [bold type] Put[roman type] _____ [bold type]in[roman type] _____, [bold type]Take[roman type] ____ , [bold type]Combine[roman type] ____ [bold type]with[roman type] ____ , [bold type]Look behind/under/inside ______ , Eat ______ , Break ____ with ____, Tie ____ with ____, Examine (x) me.[paragraph break]Helpful Tip: Examine everything!".
+	say "This is a list of commands available in the game. Other synonymous actions may exist. All possible exits are listed in the descriptions of every room. Available shortcuts for commands are in parenthesis. [line break][line break]Commands: North (n), East (e), South (s), West (w), Examine (x), Look (l), Inventory (i), Unlock, Open, [bold type]Press ____ , [bold type]Attack[roman type] ____ [bold type]with[roman type] ____ , [bold type]Shoot ____ with ____ ,[roman type] [bold type] Put[roman type] _____ [bold type]in[roman type] _____ , [bold type]Take[roman type] ____ , [bold type]Combine[roman type] ____ [bold type]with[roman type] ____ , [bold type]Look behind/under/inside ______ , Eat ______ , Break ____ with ____ , Tie ____ with ____ , Examine (x) me, Talk to ____[paragraph break][bold type]Helpful Tip: Examine everything!".
 	
-[commands list taken from brandon]
+[commands list taken from brandon's assassin]
 	
 Instead of eating something:
 	say "I can't eat that."
 	
+Instead of shooting something with the revolver:
+	say "I probably shouldn't shoot that."
+	
+Understand "shoot [something]" as shooting. 
+Shooting is an action applying to one thing.
+
+Instead of shooting the revolver:
+	say "What do I shoot with the revolver?" instead.
+	
+Instead of shooting something:
+	say "I probably shouldn't shoot that." instead.
+		
 
 [START RULES]
 
@@ -91,7 +109,7 @@ To say status of the player:
 	if y is 100:
 		say "I don't feel hungry at all right now! Let's go do something.";
 	otherwise if y is at most 10:
-		say "I feel really weak and tired. Maybe I should just close my eyes and go to sleep.";
+		say "I feel really hungry. I'm getting very weak. Maybe I should just close my eyes and go to sleep.";
 	otherwise if y is at most 20:
 		say "I'm really hungry and I'm starting to feel really tired.";
 	otherwise if y is at most 30:
@@ -150,14 +168,14 @@ Apartment Living Room, Kitchen, Bedroom, and Bathroom are in Apartment123.
 
 An every turn rule:
 	if the player is in Apartment123 for at least 60 turns:
-		say "It sounds like zombies are trying to break down the front door! I better hurry!!!";
+		say "It sounds like zombies are trying to break down the front door! I better hurry!!!" instead;
 	if the player is in Apartment123 for at least 100 turns:
-		say "The zombies knock down my front door and come swaming in! I guess it's over now…At least I get to see Mommy and Daddy now.";
+		say "The zombies knock down my front door and come swarming in! I guess it's over now…at least I get to see Mommy and Daddy now." instead;
 		end the game in death;
 	
 
 
-Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large baywindow looks out to the street. 
+Apartment Living Room is a room. "Our living room…or mine now, anyways. There's our couch in the corner, facing daddy's TV. A glass coffee table is next to the couch. Our large bay window looks out to the street. 
 
 I can see our kitchen to the west and our bedroom to the south. Our door out is to the east."
 
@@ -181,7 +199,7 @@ Instead of examining the glass coffee table:
 
 note is on the Glass Coffee Table. It is undescribed. The description is "Ella - We're heading into town for the day. We'll be back before nightfall. Don't worry, sweetie. - Love, Mommy."
 
-understand "baywindow" as window.
+understand "baywindow", "large bay window", "bay window" as window.
 
 The window is a door in Apartment Living Room. The window is undescribed. The window is open. The window is north of the Apartment Living Room. Through the Window is Parking Lot. The description is "I look out our open window. I can see a form of something crawling down below on the street but I can't really tell what it is.[line break][line break]I can probably [bold type]tie[roman type] something to this window."
 
@@ -223,6 +241,11 @@ Instead of eating the cookies:
 
 The revolver is a thing. The revolver is in the cupboards. The description is "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot something[roman type] with this gun."
 
+Instead of taking the revolver:
+	say "With great power comes great responsibility, my Daddy always told me. I barely know how to [bold type]shoot something[roman type] with this gun.";
+	move the revolver to the player.
+
+
 The cupboard key is a thing. The cupboard key unlocks the cupboards. The cupboard key can be found. The cupboard key is not found.
 
 Instead of looking under the Floor mat:
@@ -235,7 +258,6 @@ Instead of looking under the Floor mat:
 		
 The Floor mat is a scenery supporter in the Kitchen. The description is "A regular, brown floor mat. It looks like it has been recently moved..."
 
-[CHECK OPENING REFRIGERATOR]
 
 The stove is a scenery container in Kitchen. It is closed and openable. The description is "There isn't much special about our stove."
 
@@ -273,7 +295,10 @@ Instead of looking under the sink:
 	
 [BEDROOM]	
 
-Bedroom is south of Apartment Living Room. "Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it. Our small closet is in the wall. 
+Instead of looking under the bed:
+	say "Dust."
+
+Bedroom is south of Apartment Living Room. "Our cozy, little bedroom. Mommy and Daddy have a big bed in the middle of the room, with a nightstand next to it.  
 
 I can see our living room to the north and our bathroom to the west."
 
@@ -320,6 +345,8 @@ understand "pillowcase bag" as the pillowcasebag.
 
 A thing can be tied or untied.
 
+[my own programming: inventory system carry weight]
+
 An every turn rule:
 	if the player is not carrying the pillowcasebag:
 		change the carrying capacity of the player to 3;
@@ -328,22 +355,22 @@ An every turn rule:
 
 Check taking a thing:
 	if the player is not carrying the pillowcasebag:
-		if the player is carrying 3 things:
+		if the player is carrying 4 things:
 			say "I can't hold anymore! I'm going to have to find a way to hold more things…" instead;
 	if the player is carrying the pillowcasebag:
-		if the player is carrying 15 things:
+		if the player is carrying 16 things:
 			say "I can't hold anymore! I'm going to have to make some room in my bag…" instead;
 			
 [my own code!]
 			
 Instead of taking scenery:
-	say "Mmmph! I can't move it!"
+	say "I probably shouldn't take that."
 
 	
 		
 poop is thing in apartment living room. it is undescribed. the description is "Andy Bae is a MILF".
 
-bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can combine something with this to make something useful...".
+bedsheets is a thing on the bed. The bedsheets are untied. It is undescribed. The description is "Big and long! Maybe I can tie something to this to do something useful...".
 
 Nightstand is scenery container in the Bedroom. It is closed and openable. The description is "Mommy and Daddy's nightstand. It has a drawer in it."
 
@@ -483,13 +510,13 @@ Instead of shooting the zombie with the revolver:
 [`~]
 Check shooting it with:
 	if the noun is not zombie:
-		say "You can't shoot [noun] with that. I should shoot a person with the revolver.";
+		say "I can't shoot [noun] with that. I should shoot a person with the revolver.";
 		stop the action;
 	if the second noun is not revolver:
-		say "You need a gun to shoot, not a [second noun].";
+		say "I need a gun to shoot, not a [second noun].";
 		stop the action;
 	if the player is not carrying the revolver:
-		say "You don't have anything to shoot with. You need a gun.";
+		say "I don't have anything to shoot with. I need a gun.";
 		stop the action.
 		
 [~]
@@ -498,7 +525,7 @@ Check shooting it with:
 [ZOMBIE]
 
 Instead of attacking the zombie:
-	say "Attack with what? Try re-say that. I can't even understand you."
+	say "Attack with what?"
 	
 Instead of attacking the zombie with the revolver:
 	try shooting the zombie with the revolver.
@@ -537,11 +564,7 @@ Every turn rule:
 				change the present health of the zombie to 100;
 			otherwise:
 				say "There are zombies about!"
-				
-[Shooting the revolver is an action applying to one thing. Understand "shoot revolver" and "shooting revolver" as shooting the revolver.
-				
-Instead of shooting revolver:
-	say "I shouldn't be just shooting this thing around…"]
+		
 		
 Chapter 2 Outdoors
 			
@@ -550,18 +573,30 @@ Chapter 2 Outdoors
 Outdoors is a region.
 Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneral Store and Parking Lot are in Outdoors.
 
-DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneralStore, Parking Lot, Small House's Living Room, and Shelf B. "A zombie I recently mauled."
+DeadZombie is a backdrop. The DeadZombie is in the Town Square, Trainyard, Front of the Small House, FrontoftheHardwareStore, FrontoftheGeneralStore, Parking Lot, Small House's Living Room, and Shelf B. "A zombie I just killed…I wonder who it used to be?"
 
 understand "dead zombie" as the deadzombie.
+
+understand "zombie" as the deadzombie when zombie is in DEATH.
+
+[not too sure how to have a dead body after a zombie dies, so did this instead.]
+
 
 Town Square is a room. The Town Square is west of Parking Lot. The description is "I'm here at the town square. I see some zombies milling about.[line break][line break]To the south I can see a small house. To the west I can see a general store. The parking lot is back to the east. To the north I can see a hardware store."
 
 Zombies is scenery in Town Square. The description is "Some are walking, some are sitting. They don't look very nice."
 Zombies1 is scenery in Parking Lot. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
 Zombies2 is scenery in Trainyard. The printed name is "zombies". The description is "Some of walking, some are sitting. They don't look very nice."
+Zombies4 is scenery in frontofthegeneralstore. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
+Zombies5 is scenery in frontofthehardwarestore. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
+Zombies6 is scenery in front of the small house. The printed name is "zombies". The description is "Some are walking, some are sitting. They don't look very nice."
 
+
+Understand "zombies" as zombies1.
 Understand "zombies" as zombies2.
-Understand "zombie" as zombie.
+Understand "zombies" as zombies4.
+Understand "zombies" as zombies5.
+Understand "zombies" as zombies6.
 
 
 Front of the Small House is a room. The Front of the Small house is south of Town Square. The description is "I'm at the small, dark house. It looks scary! There's a door leading inside.[line break][line break]I see the town square to the north."
@@ -657,7 +692,6 @@ Instead of drinking the coke:
 Rule for printing the description of a dark room:
 	say "I can't see a thing! I'll have to get a light on in here!"
 	
-[HOW TO MAKE IT SO IT SAYS I CANT SEE THAT!!!]
 
 Rule for printing the announcement of darkness:
 	if the location is the Small House's Living Room:
@@ -678,6 +712,24 @@ An every turn rule:
 	otherwise:
 		do nothing;
 		
+Instead of smelling:
+	say "I don't smell much."
+	
+Instead of listening:
+	if the player is not in Outdoors:
+		say "I don't hear much.";
+	if the player is in outdoors:
+		say "I hear the groans of zombies. Scary!";		
+	if the player is in the small house's living room:
+		if the flashlight is not lit:
+			say "I hear some odd breathing noises.";
+		if the flashlight is lit:
+			say "I don't hear much."
+	
+		
+	
+	
+		
 Backyard of the Small House is a room. It is south of the Small House's Living Room. The description is "It's a nice, small backyard, covered with grass and plants. I see a small water cistern near the wall.[line break][line break]To the north I can see the living room."
 
 Understand "small water cistern" and "water cistern" as the cistern.
@@ -691,9 +743,11 @@ Instead of using the cistern:
 		say "I fill my water bottle full of crystal clean water!";
 		now the water bottle is not empty;
 	if the player is not carrying the water bottle:
-		say "The water spalshes out onto the ground. I'm going to have to find a way to hold all this water!".
+		say "The water splashes out onto the ground. I'm going to have to find a way to hold all this water!".
 
 	
+[I made fronts because I wanted it to become more likely for a player to run into a zombie]
+
 Chapter 3 The General Store
 
 The FrontoftheGeneralStore is a room. The printed name is "Front of the General Store". The frontofthegeneralstore is west of the Town Square. The description is "I'm standing in front of the town's small general store. Some of the letters on the sign are gone.[line break][line break]I see the Town Square to the east. The door to the general store is to the west."
@@ -729,31 +783,55 @@ Instead of opening the toolbox:
 	now the toolbox is open;
 	move the spanner to the toolbox.
 
-tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: talk to man, ask for something, or give something."
+tallman is a male person in the generalstore. The printed name is "tall man". "I can see a tall man crouching behind one of the shelves." The description is "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: kill the man, talk to the man, ask for something, or give something."
+
+Instead of examining the tallman:
+	if the tallman is not carrying the revolver:
+		say "He's pretty tall. He's watching me carefully. He has no weapons so I don't think he can hurt me. He has a large bag with him.[paragraph break]I can: kill the man, talk to man, ask for something, or give something.";
+	if the tallman is carrying the revolver:
+		say "The man looks very happy now. He willingly gave me his bag in exchange for my revolver.[paragraph break]I should leave now."
 
 understand "man" and "tall man" as the tallman.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "converse with [someone]" as talking to.
 Check talking to: say "[The noun] doesn't reply."
 
-The large bag is scenery in generalstore. The description is "The man's large bag."
+A thing can be till or not till.
+
+The large bag is a thing in generalstore. The large bag is not till. It is undescribed. The description is "The man's large bag."
+
+Instead of taking the large bag:
+	if the large bag is not till:
+		say "I can't take that! It's the man's! He could hurt me.";
+	if the large bag is till:
+		say "I already have the bag."
+
 Instead of talking to tallman:
-	say "[one of]'Hi, mister.' you say timidly.[paragraph break]'Hello, little girl. What is your name?' says the tall man.[paragraph break]'My name is Anabelle.'[paragraph break]'That's a nice name, Anabelle.' he says, shifting his weight to hide his bag.[or]I should ask him about something.[stopping]"	
+	if the large bag is not till:
+		say "[one of]'Hi, mister.' you say timidly.[paragraph break]'Hello, little girl. What is your name?' says the tall man.[paragraph break]'My name is Anabelle.'[paragraph break]'That's a nice name, Anabelle.' he says, shifting his weight to hide his bag.[or]I should ask him about something.[stopping]";
+	if the large bag is till:
+		say "[one of]'Hi, mister.' you say.[paragraph break]'Hello, Anabelle' says the tall man.[paragraph break]'I hope you enjoy my bag.' he says. 'Thanks again for the gun.'[or]I should go now. [stopping]"
 
 Understand "bag", "the bag", "his bag", "man's large bag", and "his large bag" as "[large bag]".
+
 
 
 Instead of asking tallman for the large bag:
 	if the player carries the revolver:
 		say "'[one of]Oh, it's just my bag, you know' he says. 'Nothing in it for you, really.'[or]I should somehow convince him to give me his bag.[stopping]";
 	if the tallman carries the revolver:
-		say "'Sure, little girl!' he says happily. 'Take what you want from my bag!'";
-		say "[paragraph break]I open the bag and there are tons of goodies! I take some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle.";
-		move potato chips to player;
-		move can of SPAM to player;
-		move chicken noodle soup to player;
-		move water bottle to player;
-		now the water bottle is empty.
+		if the large bag is till:
+			say "I already have the bag!";
+		if the large bag is not till:
+			say "'Sure, little girl!' he says happily. 'Take what you want from my bag!'";
+			say "[paragraph break]I open the bag and there are tons of goodies! I take some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle.";
+			move potato chips to player;
+			move can of SPAM to player;
+			move chicken noodle soup to player;
+			move water bottle to player;
+			now the water bottle is empty;
+			now the large bag is till;
+		
 		
 A thing can be empty or not empty.
 
@@ -847,20 +925,19 @@ Instead of giving revolver to tallman:
 	move revolver to tallman.
 	
 Instead of giving axe to tallman:
-	say "The tall man looks disdainfully at the axe and says 'I don't really like axes.'".
+	say "The tall man looks disdainfully at the axe and says 'I don't really like axes. When I was a little boy in France, I chopped off a girl's head by accident.'".
 	
-
-Instead of attacking the tallman:
-	if a random chance of 1 in 2 succeeds:
-		remove the tallman from play;
-		say "I kill the man.";
-	otherwise:
-		say "I try to shoot the man with my gun but I miss! He runs out of the room.";
-		remove the tallman from play.
 		
 Instead of attacking the tallman with the revolver:
 	remove the tallman from play;
 	say "I try to kill the man but he screams and runs out the door. He leaves his bag behind.[paragraph break]I now have some potato chips, a can of SPAM, a can of chicken noodle soup and a water bottle. I grimly take these things.";
+	move potato chips to player;
+	move can of SPAM to player;
+	move chicken noodle soup to player;
+	move water bottle to player;
+	now the water bottle is empty;
+	now the large bag is till.
+
 
 		
 Instead of attacking the tallman with the axe:
@@ -871,15 +948,16 @@ Instead of attacking the tallman with the axe:
 	move chicken noodle soup to player;
 	move water bottle to player;
 	now the water bottle is empty;
+	now the large bag is till.
 	
 
 	
 
-Chapter 4 The Hardward Store
+Chapter 4 The Hardware Store
 
-FrontoftheHardwareStore is a room. The printed name is "Front of the Hardware Store". The frontofthehardwarestore is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The doors and windows are all boarded up.[line break][line break]I see the Town Square to the west."
+FrontoftheHardwareStore is a room. The printed name is "Front of the Hardware Store". The frontofthehardwarestore is north of the Town Square. The description is "I'm standing in front of the town's hardware store. The windows are all boarded up. The door is hanging open.[line break][line break]I see the Town Square to the south."
 
-The hardwarestoredoor is north of the frontofthehardwarestore and south of the Hardware Store. Hardwarestoredoor is a scenery door. The hardwarestoredoor is open. The printed name is "hardware store's door".
+The hardwarestoredoor is north of the frontofthehardwarestore and south of the Hardware Store. Hardwarestoredoor is a scenery door. The hardwarestoredoor is open. The printed name is "hardware store's door". The description is "It's hanging open like an idiot's slackjaw grin."
 
 understand "door" as the hardwarestoredoor.
 
@@ -906,7 +984,7 @@ Batteries is a thing inside Shelf C. "I see some batteries here!" The descriptio
 Chapter 5 The Train
 
 
-[MADE THE TRAIN A SEPERATE ROOM]
+[MADE THE TRAIN 3 SEPERATE ROOMs]
 
 
 Trainyard is a room. The Trainyard is east of Parking Lot. The description is "I'm here at the trainyard. I see a rail stretching into the distance. A train is on the rail to the north but it is derailed. I can see a small little shack off to the south.[line break][line break]I can see the parking lot west of here and the train to the north."
@@ -954,6 +1032,12 @@ Engine car is a room. The engine car is west of the Train. The description is "I
 
 Container car is a room. The container car is east of the train. The description is "I'm standing inside the container car. It is yellow. I see a sleeping mat here and a crate.[line break][line break]I can see the train coupler to the west."
 
+Sleeping mat is scenery in Container Car. The description is "An old sleeping mat. It looks recently used."
+
+Crate is scenery in Container Car. The description is "Nothing special about the crate, but there's a small picture on top."
+
+Picture is a thing in container car. It is undescribed. The description is "It's a picture of a tall man with a small woman."
+
 understand the command "break" as something new.
 Breaking it with is an action applying to two things. Understand "break [something] with [something]" as breaking it with.
 
@@ -981,7 +1065,7 @@ Lever A is a device in engine room. Lever A is scenery. Lever A is switched on.
 
 Lever B is a device in engine room. Lever B is scenery. Lever B is switched off.
 
-Lever D is a thing in engine room. It is undescribed.The description is "It looks like it can be [bold type]put[roman type] in the slot of Lever C." The printed name is "the lever that the dead man is holding".
+Lever D is a thing in engine room. It is undescribed. The description is "It looks like it can be [bold type]put[roman type] in the slot of Lever C." The printed name is "the lever that the dead man is holding".
 
 Lever C is a device in DEATH. Lever C is scenery. The lever C is switched off. The description is "I've taken this from the dead man. It looks like it can be [bold type]put[roman type] in the slot of Lever C."
 
@@ -989,18 +1073,31 @@ Instead of examining Lever C:
 	if Lever C is in lever slot:
 		say "I've taken this from the dead man. I put it into the slot of lever C.";
 	otherwise:
-		say "I've taken this from the dead man. It looks like the [bold type]lever[roman type]can be [bold type]put[roman type] in the slot of Lever C." instead;
+		say "I've taken this from the dead man. It looks like the [bold type]lever[roman type] can be [bold type]put[roman type] in the slot of Lever C." instead;
 
 Instead of taking lever D:
 	say "Taken.";
 	move lever c to player;
 	move lever D to DEATH.
 
-[kind of a kinky way to get lever C]
+[kind of a kinky way to get lever C: was my way to move lever C to player]
+
+Instead of switching on Lever A:
+	say "I shouldn't switch that off."
 	
 Instead of switching on Lever B:
 	say "I switch the Lever B on. There's a satisfying clunk!";
 	now the Lever B is switched on.
+	
+Instead of switching on Lever C:
+	say "I switch the Lever C on. There's a satisfying clunk!";
+	now the Lever C is switched on.
+	
+
+Instead of switching off Lever B:
+	say "I shouldn't switch that off."
+
+
 	
 lever slot is scenery in engine room. It is undescribed. The description is "It belongs to Lever C."
 
@@ -1011,6 +1108,8 @@ understand "slot C" as the lever slot.
 Instead of putting lever C in lever slot:
 	say "I put the lever C into the lever slot and flip it on!";
 	now the Lever C is switched on.
+
+Understand "lever C" as the lever D when the Lever C is in DEATH.
 
 understand "lever that the dead man is holding" as lever D.
 understand "the lever that the dead man is holding" as lever D.
@@ -1049,8 +1148,12 @@ Instead of pushing the button:
 						say "Just as I press the button, the tall man from the store hops into the car with me! 'Not so fast, little girl! You're giving me the controls to this thing. Now back off!'[line break][line break]You may have escaped from the town, but you have not escaped from the man.";
 						end the game in victory;
 					if the tallman is in the GeneralStore:
-						say "Just as I press the button, the tall man from the store hops into the car with me! 'Hold on, little girl! Thanks for lending me this gun! I happen to know where these tracks go and I'll help you get to where you want to go!'[line break][line break]With the man's help, you steer the train to a future full of hope and happiness.";
-					end the game in victory;
+						if the tallman is carrying the revolver:
+							say "Just as I press the button, the tall man from the store hops into the car with me! 'Hold on, little girl! Thanks for lending me this gun! I happen to know where these tracks go and I'll help you get to where you want to go!'[line break][line break]With the man's help, you steer the train in the right direction to a future full of hope and happiness.";
+							end the game in victory;
+						if the tallman is not carrying the revolver:
+							say "Just as I press the button, the tall man from the store hops into the car with me! 'Hold on, little girl! I want to come with you! I saw you take the spanner from the counter and knew right away that you were going to take the train. Take my with you!'[line break][line break]You steer the train to a future full of hope and happiness, with the man alongside you. You're not sure where you will go, but you hope it will lead to good things.";
+							end the game in victory;
 				otherwise:
 					say "The train won't budge with the coupler still attached!";
 			otherwise:
@@ -1076,7 +1179,6 @@ Instead of pushing the button:
 
 [OUT OF WORLD MOVE]
 Instead of taking poop:
-	say "ANDY BAE IS A MILF.";
 	say "CHEAT CODE ACTIVATED. DUN DUN DUN. RESTART IF YOU'RE NOT THE MAKER OF THE GAME.";
 	move player to train;
 	move revolver to player;
@@ -1086,15 +1188,11 @@ Instead of taking poop:
 	move bedsheets to player;
 	move pillowcasebag to player;
 	move axe to player;
-	move lever C to player;
 	now the flashlight is lit;
 	move water bottle to player;
 	move spanner to player;
 	move wrench to player;
 	move cable cutters to player;
-	now lever A is switched on;
-	now lever B is switched on;
-	now lever C is switched on;
 	now the train coupler is broken.
 
 
@@ -1112,13 +1210,24 @@ Hands is a thing.
 deadman is a man in DEATH. The printed name is "dead person". The description is "Dead body of the disfigured person. Scary."
 
 
-
 Understand "xyzzy" or "say xyzzy" or "cast xyzzy" as casting xyzzy.
 
 Casting xyzzy is an action applying to nothing.
 
 Check casting xyzzy: 
-	say "Did you know, taking the poop is against the rules?" instead; 
+	say "abccb" instead; 
+	
+Understand "abccb" or "say abccb" or "cast abccb" as casting abccb.
+
+Casting abccb is an action applying to nothing.
+
+Check casting abccb: 
+	say "xyzzy" instead; 
+
+
+
+Instead of casting xyzzy for the second time:
+	say "Trolololol ;)"
    
 
 
